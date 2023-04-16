@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 100%;
+}
+
+.listUsers {
+  display: flex;
+  flex: 1;
+  padding: 5px;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 600px;
+  min-height: 100%;
+  list-style: none;
+  background-color: azure;
+}
+
+button {
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 20px 40px;
+  min-width: 100px;
+}

@@ -1,0 +1,12 @@
+<div class="form-field">
+  <label for="profile-image">Profile Image:</label>
+  <div class="image-list">
+    <div
+      *ngFor="let image of images"
+      class="image"
+      [class.selected]="image === selectedImage"
+    >
+      <img src="{{ image }}" (click)="selectImage(image)" />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+<form (ngSubmit)="handleSubmit()" class="form">
+  <!-- <h2 class="title">Ajouter un utilisateur</h2> -->
+  <div class="form-field">
+    <label for="username">Nom d&apos;utilisateur:</label>
+    <input
+      type="text"
+      name="username"
+      id="username"
+      [(ngModel)]="username"
+      required
+      class="input"
+    />
+  </div>
+  <app-profile-image-selector
+    (selected)="onImageSelected($event)"
+  ></app-profile-image-selector>
+  <div class="form-field">
+    <button type="submit" class="button">Ajouter</button>
+  </div>
+</form>

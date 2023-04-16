@@ -1,1 +1,18 @@
-<p>player-setup-page works!</p>
+<main
+  class="main"
+>
+  <div class="container">
+    <app-add-user (onSubmit)="handleAddUser($event)"></app-add-user>
+    <ul
+      class="listUsers"
+    >
+      <app-user-item
+        *ngFor="let user of allUsers; let i = index"
+        [user]="user"
+        
+        (onDelete)="handleDeleteUser($event)"
+      ></app-user-item>
+    </ul>
+  </div>
+  <button (click)="start()">Commencer le Jeu</button>
+</main>

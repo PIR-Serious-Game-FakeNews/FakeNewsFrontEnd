@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,6 +9,9 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { PlayerSetupPageComponent } from './player-setup-page/player-setup-page.component';
 import { PlayerListComponent } from './player-list/player-list.component';
 import { LocationListComponent } from './location-list/location-list.component';
+import { AddUserComponent } from './add-user/add-user.component';
+import { ProfileImageSelectorComponent } from './profile-image-selector/profile-image-selector.component';
+import { UserItemComponent } from './user-item/user-item.component';  
 
 @NgModule({
   declarations: [
@@ -16,11 +20,15 @@ import { LocationListComponent } from './location-list/location-list.component';
     MainPageComponent,
     PlayerSetupPageComponent,
     PlayerListComponent,
-    LocationListComponent
+    LocationListComponent,
+    AddUserComponent,
+    ProfileImageSelectorComponent,
+    UserItemComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
