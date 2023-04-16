@@ -1,1 +1,15 @@
 <p>location-list works!</p>
+<div class="form-field">
+    <div class="country-list">
+      <div
+        *ngFor="let flag of european_country_flag; index as i"
+        class="flag"
+        [class.selected]="flag === selectedFlag"
+        (click)="selectFlag(flag)"
+        (dblclick)="dblSelectFlag(i)"
+      >
+        <img src="{{ flag }}" />
+        <span [innerText]="european_country_name[i]"></span>
+      </div>
+    </div>
+  </div>

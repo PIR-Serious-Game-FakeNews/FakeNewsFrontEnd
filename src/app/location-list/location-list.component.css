@@ -1,0 +1,41 @@
+*{
+    box-sizing: border-box;
+}
+
+.form-field {
+  margin-bottom: 20px;
+}
+
+.country-list {
+  margin-top: 8px;
+  display: flex;
+  width: 70%;
+  height: 1000px;
+  overflow-y: scroll;
+  flex-wrap: wrap;
+}
+
+.flag {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #ccc;
+  margin-right: 50px;
+  margin-bottom: 50px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.flag.selected {
+  border-color: #000;
+}
+
+.flag img {
+  width: 200px;
+  height: 200px;
+}
+
+.flag span{
+    font-size:30px;
+}
