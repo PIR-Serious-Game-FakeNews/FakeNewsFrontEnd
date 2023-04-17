@@ -2,11 +2,8 @@
     box-sizing: border-box;
 }
 
-.form-field {
-  margin-bottom: 20px;
-}
 
-.country-list {
+.listLocation {
   margin-top: 8px;
   display: flex;
   width: 70%;
@@ -15,7 +12,7 @@
   flex-wrap: wrap;
 }
 
-.flag {
+.location {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,15 +24,15 @@
   cursor: pointer;
 }
 
-.flag.selected {
-  border-color: #000;
+.location.selected {
+  border-color: #000000;
 }
 
-.flag img {
+.location.available{
+  filter : grayscale(100%);
+}
+
+.location img {
   width: 200px;
   height: 200px;
-}
-
-.flag span{
-    font-size:30px;
 }

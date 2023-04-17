@@ -11,7 +11,8 @@ import { PlayerListComponent } from './player-list/player-list.component';
 import { LocationListComponent } from './location-list/location-list.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { ProfileImageSelectorComponent } from './profile-image-selector/profile-image-selector.component';
-import { UserItemComponent } from './user-item/user-item.component';  
+import { UserItemComponent } from './user-item/user-item.component';
+import { LocationItemComponent } from './location-item/location-item.component';  
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { UserItemComponent } from './user-item/user-item.component';
     LocationListComponent,
     AddUserComponent,
     ProfileImageSelectorComponent,
-    UserItemComponent
+    UserItemComponent,
+    LocationItemComponent
   ],
   imports: [
     BrowserModule,
