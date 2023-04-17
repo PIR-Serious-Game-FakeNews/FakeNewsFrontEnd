@@ -13,7 +13,8 @@ import { AddUserComponent } from './add-user/add-user.component';
 import { ProfileImageSelectorComponent } from './profile-image-selector/profile-image-selector.component';
 import { UserItemComponent } from './user-item/user-item.component';
 import { LocationItemComponent } from './location-item/location-item.component';
-import { ContinentItemComponent } from './continent-item/continent-item.component';  
+import { ContinentItemComponent } from './continent-item/continent-item.component';
+import { PlayerItemComponent } from './player-item/player-item.component';  
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ContinentItemComponent } from './continent-item/continent-item.componen
     ProfileImageSelectorComponent,
     UserItemComponent,
     LocationItemComponent,
-    ContinentItemComponent
+    ContinentItemComponent,
+    PlayerItemComponent
   ],
   imports: [
     BrowserModule,

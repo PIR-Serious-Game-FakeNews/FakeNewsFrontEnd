@@ -1,0 +1,16 @@
+.mainPage{
+    display: flex;
+    height: 100vh;
+    padding: 5px 10px;
+    width: 98vw;
+    overflow: hidden;
+}
+
+.playerList{
+    width: 25%;
+}
+
+.locationList{
+    width: 75%;
+    height: 100%;
+}

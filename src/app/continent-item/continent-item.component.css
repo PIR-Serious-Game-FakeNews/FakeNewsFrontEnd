@@ -2,11 +2,13 @@
   box-sizing: border-box;
 
 }.continent {
-  margin: 25px;
+  margin: 5px 15px;
   display: flex;
   flex-direction: row;
   gap: 10px;
   justify-content: center;
+  cursor: pointer;
+  user-select: none;
 }
 
 .continent div {

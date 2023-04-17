@@ -1,0 +1,50 @@
+*{
+    box-sizing: border-box;
+}
+
+.player-item{
+    cursor: pointer;
+    padding: 15px;
+    height: max-content;
+    width: 80%;
+    margin: 3% 10%;
+    border: 2px solid blue;
+    border-radius: 20%;
+}
+
+.player-item:hover{
+    border: 2px solid rgb(0, 255, 47);
+}
+
+.player-item img{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+}
+
+.player-item .info{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.player-item .info .username{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.player-item .point{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.player-item .credibility{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

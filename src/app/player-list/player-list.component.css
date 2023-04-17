@@ -1,0 +1,5 @@
+.player-list {
+  height: 97vh;
+  width: 100%;
+  overflow-y: scroll;
+}

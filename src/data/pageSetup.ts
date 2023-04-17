@@ -35,7 +35,7 @@ export let europeanCountryFlags: Array<{ countryName: string; flagUrl: string }>
   { countryName: "Azerbaijan", flagUrl: "https://flagsapi.com/AZ/flat/64.png" },
   { countryName: "Belarus", flagUrl: "https://flagsapi.com/BY/flat/64.png" },
   { countryName: "Belgium", flagUrl: "https://flagsapi.com/BE/flat/64.png" },
-  { countryName: "Bosnia and Herzegovina", flagUrl: "https://flagsapi.com/BA/flat/64.png" },
+  { countryName: "Bosnia Herzegovina", flagUrl: "https://flagsapi.com/BA/flat/64.png" },
   { countryName: "Bulgaria", flagUrl: "https://flagsapi.com/BG/flat/64.png" },
   { countryName: "Croatia", flagUrl: "https://flagsapi.com/HR/flat/64.png" },
   { countryName: "Cyprus", flagUrl: "https://flagsapi.com/CY/flat/64.png" },

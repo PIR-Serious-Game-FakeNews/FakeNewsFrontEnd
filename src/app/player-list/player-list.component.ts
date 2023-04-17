@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { allUsers } from 'src/data/pageSetup';
 
 @Component({
   selector: 'app-player-list',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./player-list.component.css']
 })
 export class PlayerListComponent {
+  
+  players  = allUsers;
+  selectedPlayer = this.players[0];
 
+  @Output() selected = new EventEmitter<any>();
+
+  selectPlayer(player:any) {
+    this.selectedPlayer = player;
+    this.selected.emit(player);
+  }
 }

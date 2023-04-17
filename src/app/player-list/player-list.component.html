@@ -1,1 +1,8 @@
-<p>player-list works!</p>
+<div class="player-list">
+  <app-player-item
+    *ngFor="let player of players"
+    [class.selected]="player === selectedPlayer"
+    [player]="player"
+    (click)="selectPlayer(player)"
+  ></app-player-item>
+</div>
