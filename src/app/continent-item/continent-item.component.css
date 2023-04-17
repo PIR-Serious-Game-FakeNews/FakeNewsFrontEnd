@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+
+}.continent {
+  margin: 25px;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+}
+
+.continent div {
+  text-align: center;
+  font-weight: bold;
+}

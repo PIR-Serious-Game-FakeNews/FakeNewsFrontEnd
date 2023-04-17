@@ -3,18 +3,31 @@
   >
   <div class="container">
     <ul
-      class="listLocation"
+      class="listContinent"
     >
-      <app-location-item
-        *ngFor="let location of europeanCountryFlags; let i = index"
+      
+     <app-continent-item 
+        *ngFor="let continent of continents; let i = index"
+        [continent]="continent"
+        class="continent"
+        [class.selected]="continent === selectedContinent"
+        (click)="selectContinent(continent)"
+        (dblclick)="dblSelectContinent(i)"
+     >
+      </app-continent-item>
+    </ul>
+    <ul
+      class="listLocation"
+    > 
+     <app-location-item
+        *ngFor="let location of selectedContinent.continentCountries; let i = index"
         [location]="location"
         class="location"
         [class.selected]="location === selectedLocation"
         [class.available]="location.countryName != 'France'"
         (click)="selectLocation(location)"
         (dblclick)="dblSelectLocation(i)"
-      >
-        
+      > 
      </app-location-item>
     </ul>
   </div>

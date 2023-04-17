@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { europeanCountryFlags } from '../../data/pageSetup';
+import { europeanCountryFlags, continents } from '../../data/pageSetup';
 
 @Component({
   selector: 'app-location-list',
@@ -8,8 +8,10 @@ import { europeanCountryFlags } from '../../data/pageSetup';
 })
 export class LocationListComponent {
   europeanCountryFlags = europeanCountryFlags;
+  continents = continents;
   
   selectedLocation: {countryName : string , flagUrl : string}= europeanCountryFlags[0];
+  selectedContinent : {continentName : string, continentCountries : Array<{ countryName: string; flagUrl: string }>} = continents[0]; 
 
   selectLocation(location: any) {
     this.selectedLocation = location;
@@ -17,6 +19,14 @@ export class LocationListComponent {
 
   dblSelectLocation(flag_index: number) {
     alert("dbclick on country " + europeanCountryFlags[flag_index].countryName);
+  }
+
+  selectContinent(continent: any) {
+    this.selectedContinent = continent;
+  }
+
+  dblSelectContinent(flag_index: number) {
+    alert("dbclick on country " + continents[flag_index].continentName);
   }
 
 }
