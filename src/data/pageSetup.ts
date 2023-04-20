@@ -1,4 +1,4 @@
-import { fakeNews } from './fakeNews';
+import { CountryData, CountryMap, fakeNews } from './fakeNews';
 
 export let allUsers: Array<{ username: string; image: string }> = [
   {
@@ -30,11 +30,6 @@ export let allUsers: Array<{ username: string; image: string }> = [
 export let europeanCountryFlags: Array<{
   countryName: string;
   flagUrl: string;
- /* news : Array<{id: number,
-    veracity: boolean,
-    point: number,
-    text: string,
-    used: boolean}>*/
 }> = [
   { countryName: 'France', flagUrl: 'https://flagsapi.com/FR/flat/64.png'},
   { countryName: 'Albania', flagUrl: 'https://flagsapi.com/AL/flat/64.png'},

@@ -19,6 +19,7 @@ import { ContinentItemComponent } from './continent-item/continent-item.componen
 import { PlayerItemComponent } from './player-item/player-item.component';
 import { NewsModalComponent } from './news-modal/news-modal.component';
 import { UserInfoDetailsComponent } from './user-info-details/user-info-details.component';
+import { NewsItemComponent } from './news-item/news-item.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { UserInfoDetailsComponent } from './user-info-details/user-info-details.
     ContinentItemComponent,
     PlayerItemComponent,
     NewsModalComponent,
-    UserInfoDetailsComponent
+    UserInfoDetailsComponent,
+    NewsItemComponent
   ],
   imports: [
     BrowserModule,

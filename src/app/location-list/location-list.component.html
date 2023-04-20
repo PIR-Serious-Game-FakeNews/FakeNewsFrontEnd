@@ -26,7 +26,7 @@
         [class.selected]="location === selectedLocation"
         [class.available]="location.countryName != 'France'"
         (click)="selectLocation(location)"
-        
+        (dblclick)="openDialog()"
       > 
      </app-location-item>
     </ul>
