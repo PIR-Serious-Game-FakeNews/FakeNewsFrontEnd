@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
 import { allUsers } from '../../data/pageSetup';
 import { Router } from '@angular/router';
+import { Globals } from 'src/data/sharedData';
 
 @Component({
   selector: 'app-player-setup-page',
   templateUrl: './player-setup-page.component.html',
   styleUrls: ['./player-setup-page.component.css'],
+  providers: [Globals]
 })
 export class PlayerSetupPageComponent {
-  constructor(private router: Router) { }
+  constructor(private router: Router, public globals: Globals) { }
   allUsers = allUsers;
 
   handleAddUser(formData: any) {

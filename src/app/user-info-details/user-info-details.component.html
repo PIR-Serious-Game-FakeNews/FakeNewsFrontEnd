@@ -1,0 +1,10 @@
+<h1 mat-dialog-title>Infos</h1>
+
+<div class="user">
+  <div *ngFor="let new of news" class="new">
+    {{ new.text }}
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="true">Fermer</button>
+</div>

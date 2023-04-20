@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 .player-list .selected .player-item {
   border-color: rgb(0, 255, 47);
+  background-color: rgb(0, 255, 47);
 }
 
 html, body { height: 100%; }

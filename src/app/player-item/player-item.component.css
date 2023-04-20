@@ -1,5 +1,6 @@
 *{
     box-sizing: border-box;
+    user-select: none;
 }
 
 .player-item{
@@ -13,7 +14,7 @@
 }
 
 .player-item:hover{
-    border: 2px solid rgb(83, 89, 182);
+    border: 2px solid rgb(0, 255, 47);
 }
 
 .player-item img{

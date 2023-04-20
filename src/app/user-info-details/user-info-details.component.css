@@ -1,0 +1,14 @@
+.user{
+    display: flex;
+    flex-direction: column;
+    height: 78%;
+    width: 100%;
+    justify-content: start;
+    overflow-y: scroll;
+}
+
+.new{
+    height: 40px;
+    width: 100%;
+    background-color: aqua;
+}

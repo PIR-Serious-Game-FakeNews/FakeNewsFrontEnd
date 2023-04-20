@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { MatDialogModule } from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,9 +18,8 @@ import { LocationItemComponent } from './location-item/location-item.component';
 import { ContinentItemComponent } from './continent-item/continent-item.component';
 import { PlayerItemComponent } from './player-item/player-item.component';
 import { NewsModalComponent } from './news-modal/news-modal.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { UserInfoDetailsComponent } from './user-info-details/user-info-details.component';
 
-import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     LocationItemComponent,
     ContinentItemComponent,
     PlayerItemComponent,
-    NewsModalComponent
+    NewsModalComponent,
+    UserInfoDetailsComponent
   ],
   imports: [
     BrowserModule,

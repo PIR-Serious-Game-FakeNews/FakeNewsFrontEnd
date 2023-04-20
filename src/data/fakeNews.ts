@@ -1,4 +1,16 @@
-export let fakeNews = {
+export type CountryData = {
+  id: number;
+  veracity: boolean;
+  point: number;
+  text: string;
+  used: boolean;
+};
+
+export type CountryMap = {
+  [country: string]: CountryData[];
+};
+
+export let fakeNews : CountryMap = {
   USA: [
     {
       id: 1,
