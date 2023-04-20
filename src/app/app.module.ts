@@ -14,7 +14,11 @@ import { ProfileImageSelectorComponent } from './profile-image-selector/profile-
 import { UserItemComponent } from './user-item/user-item.component';
 import { LocationItemComponent } from './location-item/location-item.component';
 import { ContinentItemComponent } from './continent-item/continent-item.component';
-import { PlayerItemComponent } from './player-item/player-item.component';  
+import { PlayerItemComponent } from './player-item/player-item.component';
+import { NewsModalComponent } from './news-modal/news-modal.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -29,12 +33,15 @@ import { PlayerItemComponent } from './player-item/player-item.component';
     UserItemComponent,
     LocationItemComponent,
     ContinentItemComponent,
-    PlayerItemComponent
+    PlayerItemComponent,
+    NewsModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

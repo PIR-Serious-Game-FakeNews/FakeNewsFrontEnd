@@ -1,3 +1,5 @@
+import { fakeNews } from './fakeNews';
+
 export let allUsers: Array<{ username: string; image: string }> = [
   {
     username: 'Marc',
@@ -28,26 +30,25 @@ export let allUsers: Array<{ username: string; image: string }> = [
 export let europeanCountryFlags: Array<{
   countryName: string;
   flagUrl: string;
+ /* news : Array<{id: number,
+    veracity: boolean,
+    point: number,
+    text: string,
+    used: boolean}>*/
 }> = [
-  { countryName: 'France', flagUrl: 'https://flagsapi.com/FR/flat/64.png' },
-  { countryName: 'Albania', flagUrl: 'https://flagsapi.com/AL/flat/64.png' },
+  { countryName: 'France', flagUrl: 'https://flagsapi.com/FR/flat/64.png'},
+  { countryName: 'Albania', flagUrl: 'https://flagsapi.com/AL/flat/64.png'},
   { countryName: 'Andorra', flagUrl: 'https://flagsapi.com/AD/flat/64.png' },
-  { countryName: 'Armenia', flagUrl: 'https://flagsapi.com/AM/flat/64.png' },
-  { countryName: 'Austria', flagUrl: 'https://flagsapi.com/AT/flat/64.png' },
-  { countryName: 'Azerbaijan', flagUrl: 'https://flagsapi.com/AZ/flat/64.png' },
+  { countryName: 'Armenia', flagUrl: 'https://flagsapi.com/AM/flat/64.png'},
+  { countryName: 'Austria', flagUrl: 'https://flagsapi.com/AT/flat/64.png'},
+  { countryName: 'Azerbaijan', flagUrl: 'https://flagsapi.com/AZ/flat/64.png'},
   { countryName: 'Belarus', flagUrl: 'https://flagsapi.com/BY/flat/64.png' },
   { countryName: 'Belgium', flagUrl: 'https://flagsapi.com/BE/flat/64.png' },
-  {
-    countryName: 'Bosnia Herzegovina',
-    flagUrl: 'https://flagsapi.com/BA/flat/64.png',
-  },
+  {countryName: 'Bosnia Herzegovina',flagUrl: 'https://flagsapi.com/BA/flat/64.png',},
   { countryName: 'Bulgaria', flagUrl: 'https://flagsapi.com/BG/flat/64.png' },
   { countryName: 'Croatia', flagUrl: 'https://flagsapi.com/HR/flat/64.png' },
   { countryName: 'Cyprus', flagUrl: 'https://flagsapi.com/CY/flat/64.png' },
-  {
-    countryName: 'Czech Republic',
-    flagUrl: 'https://flagsapi.com/CZ/flat/64.png',
-  },
+  { countryName: 'Czech Republic', flagUrl: 'https://flagsapi.com/CZ/flat/64.png', },
   { countryName: 'Denmark', flagUrl: 'https://flagsapi.com/DK/flat/64.png' },
   { countryName: 'Estonia', flagUrl: 'https://flagsapi.com/EE/flat/64.png' },
   { countryName: 'Finland', flagUrl: 'https://flagsapi.com/FI/flat/64.png' },

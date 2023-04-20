@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { NewsModalComponent } from '../news-modal/news-modal.component';
 
 @Component({
   selector: 'app-location-item',
@@ -6,5 +8,13 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./location-item.component.css']
 })
 export class LocationItemComponent {
+  constructor(public dialog: MatDialog){}
   @Input() location: any;
+
+  openDialog(){
+    this.dialog.open(NewsModalComponent,{
+      width:'500px',
+      height: '700px'
+    })
+  }
 }
