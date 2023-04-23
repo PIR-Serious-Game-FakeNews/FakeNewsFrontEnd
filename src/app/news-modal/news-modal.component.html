@@ -1,7 +1,12 @@
-<div class="news-item">
+<h1  mat-dialog-title>News Modal</h1>
+<mat-dialog-content>
   <app-news-item 
     *ngFor = "let new of news" 
     [new] = "new"
   ></app-news-item>
-</div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button [mat-dialog-close]="true">Fermer</button>
+</mat-dialog-actions>
+
 

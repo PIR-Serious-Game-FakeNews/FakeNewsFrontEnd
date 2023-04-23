@@ -1,0 +1,10 @@
+mat-dialog-content{
+    display: flex;
+    flex-direction: column;
+    justify-content:start;
+    height: 78%;
+    width: 100%;
+    overflow-y: scroll;
+} 
+
+

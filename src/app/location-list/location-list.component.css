@@ -1,6 +1,7 @@
 *{
     box-sizing: border-box;
 }
+
 .main {
   height: 97vh;
   width: 100%;
@@ -49,7 +50,6 @@
 .location.available{
  filter : grayscale(100%);
 }
-
 
 .continent.selected{
   color : blue;

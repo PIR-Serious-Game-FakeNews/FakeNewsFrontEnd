@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { europeanCountryFlags, continents } from '../../data/pageSetup';
 import { MatDialog } from '@angular/material/dialog';
+import { MatBadgeModule } from '@angular/material/badge';
 import { NewsModalComponent } from '../news-modal/news-modal.component';
 import { Globals } from 'src/data/sharedData';
 

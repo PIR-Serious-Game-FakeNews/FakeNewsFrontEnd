@@ -374,6 +374,27 @@ export let africanCountryFlags: Array<{
   { countryName: 'Zimbabwe', flagUrl: 'https://flagsapi.com/ZW/flat/64.png' },
 ];
 
+export let oceaniaCountryFlags: Array<{
+  countryName: string;
+  flagUrl: string;
+}> = [
+  { countryName: "Australia", flagUrl: "https://flagsapi.com/AU/flat/64.png" },
+  { countryName: "Fiji", flagUrl: "https://flagsapi.com/FJ/flat/64.png" },
+  { countryName: "Kiribati", flagUrl: "https://flagsapi.com/KI/flat/64.png" },
+  { countryName: "Marshall Islands", flagUrl: "https://flagsapi.com/MH/flat/64.png" },
+  { countryName: "Micronesia", flagUrl: "https://flagsapi.com/FM/flat/64.png" },
+  { countryName: "Nauru", flagUrl: "https://flagsapi.com/NR/flat/64.png" },
+  { countryName: "New Zealand", flagUrl: "https://flagsapi.com/NZ/flat/64.png" },
+  { countryName: "Palau", flagUrl: "https://flagsapi.com/PW/flat/64.png" },
+  { countryName: "Papua New Guinea", flagUrl: "https://flagsapi.com/PG/flat/64.png" },
+  { countryName: "Samoa", flagUrl: "https://flagsapi.com/WS/flat/64.png" },
+  { countryName: "Solomon Islands", flagUrl: "https://flagsapi.com/SB/flat/64.png" },
+  { countryName: "Tonga", flagUrl: "https://flagsapi.com/TO/flat/64.png" },
+  { countryName: "Tuvalu", flagUrl: "https://flagsapi.com/TV/flat/64.png" },
+  { countryName: "Vanuatu", flagUrl: "https://flagsapi.com/VU/flat/64.png" }
+];
+
+
 export let continents: Array<{
   continentName: string;
   continentCountries: Array<{ countryName: string; flagUrl: string }>;
@@ -382,12 +403,7 @@ export let continents: Array<{
   { continentName: 'Asia', continentCountries: asianCountryFlags },
   { continentName: 'Africa', continentCountries: africanCountryFlags },
   //{continentName : "Antarctica"},
-  {
-    continentName: 'North America',
-    continentCountries: northAmericanCountryFlags,
-  },
-  {
-    continentName: 'South America',
-    continentCountries: southAmericanCountryFlags,
-  },
+  {continentName: 'North America',continentCountries: northAmericanCountryFlags },
+  {continentName: 'South America',continentCountries: southAmericanCountryFlags },
+  {continentName: 'Oceania',continentCountries: oceaniaCountryFlags },
 ];

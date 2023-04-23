@@ -1,4 +1,13 @@
-.news-item{
+mat-dialog-content{
+    display: flex;
+    flex-direction: column;
+    justify-content:start;
+    height: 78%;
+    width: 100%;
+    overflow-y: scroll;
+} 
+
+.actions{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -6,13 +15,11 @@
     width: 99%;
     border: 2px solid #b35353;
     border-radius: 5px;
-    
 }
 
-.new{
+.action{
     width: 80%;
 }
-
-.button{
+.actionBtn{
     width: 20%;
 }

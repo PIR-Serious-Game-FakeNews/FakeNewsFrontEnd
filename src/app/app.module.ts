@@ -1,7 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +25,7 @@ import { PlayerItemComponent } from './player-item/player-item.component';
 import { NewsModalComponent } from './news-modal/news-modal.component';
 import { UserInfoDetailsComponent } from './user-info-details/user-info-details.component';
 import { NewsItemComponent } from './news-item/news-item.component';
+import { ActionModalComponent } from './action-modal/action-modal.component';
 
 
 @NgModule({
@@ -38,14 +44,19 @@ import { NewsItemComponent } from './news-item/news-item.component';
     PlayerItemComponent,
     NewsModalComponent,
     UserInfoDetailsComponent,
-    NewsItemComponent
+    NewsItemComponent,
+    ActionModalComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatBadgeModule,
+    MatButtonModule,
+    MatDividerModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,12 @@
+<h1  mat-dialog-title>Actions Possibles</h1>
+<mat-dialog-content>
+    <div class="actions"
+        *ngFor=" let action of actions "
+    >
+        <div class="action">{{action}}</div>
+        <button class="actionBtn" mat-raised-button>Faire</button>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button [mat-dialog-close]="true">Fermer</button>
+</mat-dialog-actions>
