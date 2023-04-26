@@ -7,7 +7,26 @@
 }
 
 .playerList{
+    border : 2px solid black;
+    border-radius: 10px;
+}
+
+.finishBtn{
+    border: none; /* supprime la bordure */
+    color: white; /* couleur du texte */
+    padding: 30px 32px; /* espace intérieur */
+    text-align: center; /* alignement du texte */
+    font-size: 20px; /* taille de police */
+    margin: 6px 2px; /* marge extérieure */
+    cursor: pointer; /* change le curseur au survol */
+    border-radius: 10px;
+}
+
+.playerListAndFinishButton{
     width: 25%;
+    height: 80%;
+    display : flex;
+    flex-direction: column;
 }
 
 .locationList{

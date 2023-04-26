@@ -26,6 +26,7 @@ import { NewsModalComponent } from './news-modal/news-modal.component';
 import { UserInfoDetailsComponent } from './user-info-details/user-info-details.component';
 import { NewsItemComponent } from './news-item/news-item.component';
 import { ActionModalComponent } from './action-modal/action-modal.component';
+import { PublishModalComponent } from './publish-modal/publish-modal.component';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { ActionModalComponent } from './action-modal/action-modal.component';
     UserInfoDetailsComponent,
     NewsItemComponent,
     ActionModalComponent,
+    PublishModalComponent,
   ],
   imports: [
     BrowserModule,

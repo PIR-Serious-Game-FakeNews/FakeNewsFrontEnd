@@ -1,4 +1,7 @@
 <div class="mainPage">
-    <app-player-list class="playerList"></app-player-list>
+    <div class="playerListAndFinishButton">
+        <app-player-list class="playerList"></app-player-list>
+        <button class="finishBtn" mat-raised-button (click)="openDialog()">Terminer le tour</button>
+    </div>
     <app-location-list class="locationList"></app-location-list>
 </div>
