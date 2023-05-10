@@ -5,6 +5,7 @@ import { allUsers } from "./pageSetup";
 import { simpleActions } from "./simpleActions";
 import { playerRecord , currentPlayer} from "./game";
 import { simpleNewsList } from "./simpleFakeNews";
+import { complexNewsList, complexNewsEnonce } from "./complexFakeNews";
 
 @Injectable()
 export class Globals {
@@ -15,4 +16,6 @@ export class Globals {
   playerRecord = playerRecord;
   currentPlayer = currentPlayer;
   simpleFakeNews = simpleNewsList;
+  complexFakeNews = complexNewsList;
+  complexNewsEnonce = complexNewsEnonce;
 }

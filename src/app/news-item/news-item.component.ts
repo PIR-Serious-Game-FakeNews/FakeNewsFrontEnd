@@ -11,18 +11,27 @@ import { Globals } from 'src/data/sharedData';
   providers: [Globals]
 })
 export class NewsItemComponent {
-  constructor(public dialog: MatDialog){}
+  constructor(public dialog: MatDialog, public globals: Globals){}
   @Input() new : any ;
-
-  openDialog() {
-    const dialogRef = this.dialog.open(ActionModalComponent, {
-      width: "750px",
-      height: "500px"
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+  si : boolean = true;
+  openDialog(ne : string) {
+    if (this.globals.complexNewsEnonce.includes(ne)){
+      this.si = false;
+    }
+      const dialogRef = this.dialog.open(ActionModalComponent, {
+        data: {
+          simple: this.si,
+          news: ne
+        },
+        width: "750px",
+        height: "500px"
+      });
+  
+      dialogRef.afterClosed().subscribe(result => {
+        console.log(`Dialog result: ${result}`);
+      });
+    
+    
   }
 
 }

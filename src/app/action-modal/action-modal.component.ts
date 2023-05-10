@@ -1,4 +1,5 @@
 import { Component, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { Globals } from 'src/data/sharedData';
 
@@ -9,7 +10,20 @@ import { Globals } from 'src/data/sharedData';
   providers: [Globals]
 })
 export class ActionModalComponent {
-  constructor( public globals: Globals) {}
-  actions = this.globals.simpleActions;
+  actions: any[] = [];
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: { simple: boolean , news : string},
+    public globals: Globals
+  ) {
+    if (this.data.simple) {
+      this.actions = this.globals.simpleActions;
+    } else {
+      let c = this.globals.complexFakeNews[this.data.news]
+      for (let i = 0 ; i < c.length ; i++){
+        this.actions.push(c[i].actor);
+      }
+    }
+  }
+  
 }
 

@@ -1,7 +1,11 @@
 <h1  mat-dialog-title>News Modal</h1>
 <mat-dialog-content>
   <app-news-item 
-    *ngFor = "let new of news" 
+    *ngFor = "let new of complexNews" 
+    [new] = "new"
+  ></app-news-item>
+  <app-news-item 
+    *ngFor = "let new of simpleNews" 
     [new] = "new"
   ></app-news-item>
 </mat-dialog-content>

@@ -4,7 +4,8 @@
         *ngFor=" let action of actions "
     >
         <div class="action">{{action}}</div>
-        <button class="actionBtn" mat-raised-button>Faire</button>
+        <button class="actionBtn" mat-raised-button *ngIf="this.data.simple">Faire</button>
+        <button class="actionBtn" mat-raised-button *ngIf="!this.data.simple">Interroger</button>
     </div>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
