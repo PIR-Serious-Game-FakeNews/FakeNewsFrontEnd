@@ -1,5 +1,3 @@
-import { CountryData, CountryMap, fakeNews } from './fakeNews';
-
 export let allUsers: Array<{ username: string; image: string }> = [
   {
     username: 'Marc',
@@ -55,7 +53,6 @@ export let europeanCountryFlags: Array<{
   { countryName: 'Ireland', flagUrl: 'https://flagsapi.com/IE/flat/64.png' },
   { countryName: 'Italy', flagUrl: 'https://flagsapi.com/IT/flat/64.png' },
   { countryName: 'Kazakhstan', flagUrl: 'https://flagsapi.com/KZ/flat/64.png' },
-  { countryName: 'Kosovo', flagUrl: 'https://flagsapi.com/XK/flat/64.png' },
   { countryName: 'Latvia', flagUrl: 'https://flagsapi.com/LV/flat/64.png' },
   {
     countryName: 'Liechtenstein',

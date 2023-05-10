@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-
-import {MatDividerModule} from '@angular/material/divider';
+import { nextPlayer } from 'src/data/game';
 
 
 @Component({
@@ -10,4 +9,12 @@ import {MatDividerModule} from '@angular/material/divider';
 })
 export class PublishModalComponent {
   
+  publishHandle(){
+    console.log("PUBLISH");
+    nextPlayer();
+  }
+  finishHandle(){
+    console.log("FINISH");
+    nextPlayer();
+  }
 }

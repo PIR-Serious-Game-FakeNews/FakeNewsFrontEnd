@@ -8,6 +8,11 @@
     margin-bottom: 10px;
 }
 
+.news{
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
 .actionBtn{
     display: flex;
     justify-content: center;

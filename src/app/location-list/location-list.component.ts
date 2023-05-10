@@ -32,10 +32,10 @@ export class LocationListComponent {
     alert("dbclick on country " + continents[flag_index].continentName);
   }
 
-  openDialog() {
+  openDialog(location : string) {
     const dialogRef = this.dialog.open(NewsModalComponent, {
       data: {
-        name: "France"
+        name: location
       },
       width: "750px",
       height: "500px"

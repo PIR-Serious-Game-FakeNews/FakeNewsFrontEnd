@@ -3,7 +3,6 @@
     *ngFor="let player of players"
     [class.selected]="player === selectedPlayer"
     [player]="player"
-    (click)="selectPlayer(player)"
     (dblclick)="openDialog()"
   ></app-player-item>
 </div>
