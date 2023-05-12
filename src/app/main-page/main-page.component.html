@@ -1,5 +1,6 @@
 <div class="mainPage">
     <div class="playerListAndFinishButton">
+        <div class="nbTour">Nombre de tours restants : {{global.nbTour}}</div>
         <app-player-list class="playerList"></app-player-list>
         <button class="finishBtn" mat-raised-button (click)="openDialog()">Terminer le tour</button>
     </div>

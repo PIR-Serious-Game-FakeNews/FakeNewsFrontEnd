@@ -53,16 +53,6 @@ export let playerRecord: Array<player> = [
 ];
 
 export let currentPlayerIndex: number = 0;
-export let currentPlayer: player = playerRecord[currentPlayerIndex];
-
-// export function nextPlayer() {
-//   if (currentPlayerIndex == playerRecord.length - 1) {
-//     currentPlayerIndex = 0;
-//   } else {
-//     currentPlayerIndex++;
-//   }
-//   currentPlayer = playerRecord[currentPlayerIndex];
-// }
 
 // Le pourquoi, le comment
 // Presenter la cible des joueurs
