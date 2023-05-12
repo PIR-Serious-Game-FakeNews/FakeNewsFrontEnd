@@ -11,10 +11,20 @@
     border-radius: 10px;
 }
 
+.nbTour{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding : 5px;
+    border : solid 2px rosybrown;
+    border-radius: 5px;
+    margin: 6px 2px;
+}
+
 .finishBtn{
     border: none; /* supprime la bordure */
     color: white; /* couleur du texte */
-    padding: 30px 32px; /* espace intérieur */
+    padding: 20px 20px; /* espace intérieur */
     text-align: center; /* alignement du texte */
     font-size: 20px; /* taille de police */
     margin: 6px 2px; /* marge extérieure */
