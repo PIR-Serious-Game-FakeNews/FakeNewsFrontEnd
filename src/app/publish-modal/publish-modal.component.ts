@@ -1,20 +1,24 @@
 import { Component } from '@angular/core';
-import { nextPlayer } from 'src/data/game';
+import { Globals } from 'src/data/sharedData';
 
 
 @Component({
   selector: 'app-publish-modal',
   templateUrl: './publish-modal.component.html',
-  styleUrls: ['./publish-modal.component.css']
+  styleUrls: ['./publish-modal.component.css'],
+  providers: [Globals]
 })
 export class PublishModalComponent {
+
+  constructor() {}
   
   publishHandle(){
     console.log("PUBLISH");
-    nextPlayer();
+    Globals.nextPlayer();
   }
   finishHandle(){
     console.log("FINISH");
-    nextPlayer();
+    Globals.nextPlayer();
+    console.log(Globals.currentPlayer)
   }
 }

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, SimpleChanges } from '@angular/core';
 import { allUsers } from 'src/data/pageSetup';
 import { Globals } from 'src/data/sharedData';
 import { MatDialog } from "@angular/material/dialog";
@@ -11,17 +11,21 @@ import { UserInfoDetailsComponent } from '../user-info-details/user-info-details
 
 })
 export class PlayerListComponent {
-  constructor(public globals: Globals, private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog) {}
   players  = allUsers;
-  selectedPlayer = this.players[0];
-
+  
+  get selectedPlayer() {
+    console.log(Globals.currentPlayer)
+    return Globals.currentPlayer;
+  }
+  
   @Output() selected = new EventEmitter<any>();
 
-  selectPlayer(player:any) {
-    this.selectedPlayer = player;
-        console.log(this.globals.selectedActualPlayer);
-    this.globals.selectedActualPlayer = player;
-  }
+  // selectPlayer(player:any) {
+  //   this.selectedPlayer = player;
+  //       console.log(Globals.selectedActualPlayer);
+  //   Globals.selectedActualPlayer = player;
+  // }
 
   openDialog() {
     const dialogRef = this.dialog.open(UserInfoDetailsComponent, {

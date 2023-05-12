@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { allUsers } from '../../data/pageSetup';
-import { player, playerRecord} from 'src/data/game';
+import { player} from 'src/data/game';
 import { Router } from '@angular/router';
 import { Globals } from 'src/data/sharedData';
 import { generateSimpleNews, simpleNewsList } from 'src/data/simpleFakeNews';
@@ -12,7 +12,7 @@ import { generateSimpleNews, simpleNewsList } from 'src/data/simpleFakeNews';
   providers: [Globals]
 })
 export class PlayerSetupPageComponent {
-  constructor(private router: Router, public globals: Globals) { }
+  constructor(private router: Router) { }
   allUsers = allUsers;
 
   handleAddUser(formData: any) {
@@ -30,8 +30,7 @@ export class PlayerSetupPageComponent {
   }
 
   start(){
-    this.router.navigate(['/main-page'])
-
+    
     for ( let i = 0 ; i < allUsers.length ; i++){
       let gamePlayer : player = {
         username : allUsers[i].username,
@@ -39,16 +38,19 @@ export class PlayerSetupPageComponent {
         newsProcessing : "" ,
         newsProcessingScore : 0 ,
         newsProcessed : []
-
       }
-      playerRecord.push(gamePlayer);
+      if(i == 0) Globals.currentPlayer = gamePlayer;
+
+      Globals.playerRecord.push(gamePlayer);
     }
+
     for(let i = 0 ; i < 5 ; i++){
       generateSimpleNews("France");
     }
     for(let i = 0 ; i < simpleNewsList["France"].length ; i++){
       console.log(simpleNewsList["France"][i]);
     }
-
+    
+    this.router.navigate(['/main-page'])
   }
 }

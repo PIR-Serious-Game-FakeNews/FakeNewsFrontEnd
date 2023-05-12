@@ -9,6 +9,6 @@ import { Globals } from 'src/data/sharedData';
   providers: [Globals]
 })
 export class UserInfoDetailsComponent {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: {name : string}, public globals: Globals) {}
-  news = this.globals.fakeNews[this.data.name];  
+  constructor(@Inject(MAT_DIALOG_DATA) public data: {name : string}) {}
+  news = Globals.fakeNews[this.data.name];  
 }

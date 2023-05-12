@@ -1,7 +1,7 @@
 <div class="player-list">
   <app-player-item
     *ngFor="let player of players"
-    [class.selected]="player === selectedPlayer"
+    [class.selected]="player.username === selectedPlayer.username"
     [player]="player"
     (dblclick)="openDialog()"
   ></app-player-item>

@@ -11,11 +11,11 @@ import { Globals } from 'src/data/sharedData';
   providers: [Globals]
 })
 export class NewsItemComponent {
-  constructor(public dialog: MatDialog, public globals: Globals){}
+  constructor(public dialog: MatDialog){}
   @Input() new : any ;
   si : boolean = true;
   openDialog(ne : string) {
-    if (this.globals.complexNewsEnonce.includes(ne)){
+    if (Globals.complexNewsEnonce.includes(ne)){
       this.si = false;
     }
       const dialogRef = this.dialog.open(ActionModalComponent, {

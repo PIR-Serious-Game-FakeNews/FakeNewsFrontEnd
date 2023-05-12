@@ -12,13 +12,12 @@ import { Globals } from 'src/data/sharedData';
 export class ActionModalComponent {
   actions: any[] = [];
   constructor(
-    @Inject(MAT_DIALOG_DATA) public data: { simple: boolean , news : string},
-    public globals: Globals
+    @Inject(MAT_DIALOG_DATA) public data: { simple: boolean , news : string}
   ) {
     if (this.data.simple) {
-      this.actions = this.globals.simpleActions;
+      this.actions = Globals.simpleActions;
     } else {
-      let c = this.globals.complexFakeNews[this.data.news]
+      let c = Globals.complexFakeNews[this.data.news]
       for (let i = 0 ; i < c.length ; i++){
         this.actions.push(c[i].actor);
       }
