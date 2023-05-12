@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { allUsers } from '../../data/pageSetup';
 import { player} from 'src/data/game';
 import { Router } from '@angular/router';
 import { Globals } from 'src/data/sharedData';
@@ -13,27 +12,27 @@ import { generateSimpleNews, simpleNewsList } from 'src/data/simpleFakeNews';
 })
 export class PlayerSetupPageComponent {
   constructor(private router: Router) { }
-  allUsers = allUsers;
+  allUsers = Globals.allUsers;
 
   handleAddUser(formData: any) {
-    this.allUsers.push(formData);
-    console.log(this.allUsers);
+    Globals.allUsers.push(formData);
+    console.log(Globals.allUsers);
   }
 
   handleDeleteUser(user: { username: string; image: string }) {
-    const index = this.allUsers.findIndex(
+    const index = Globals.allUsers.findIndex(
       (u) => u.username === user.username && u.image === user.image
     );
     if (index !== -1) {
-      this.allUsers.splice(index, 1);
+      Globals.allUsers.splice(index, 1);
     }
   }
 
   start(){
     
-    for ( let i = 0 ; i < allUsers.length ; i++){
+    for ( let i = 0 ; i < Globals.allUsers.length ; i++){
       let gamePlayer : player = {
-        username : allUsers[i].username,
+        username : Globals.allUsers[i].username,
         credibility : 0 ,
         newsProcessing : [] ,
         // newsProcessingScore : 0 ,
@@ -44,13 +43,9 @@ export class PlayerSetupPageComponent {
       Globals.playerRecord.push(gamePlayer);
     }
 
-    for(let i = 0 ; i < 5 ; i++){
+    for(let i = 0 ; i < Globals.allUsers.length-2 ; i++){
       generateSimpleNews("France");
     }
-    for(let i = 0 ; i < simpleNewsList["France"].length ; i++){
-      console.log(simpleNewsList["France"][i]);
-    }
-    
     this.router.navigate(['/main-page'])
   }
 }

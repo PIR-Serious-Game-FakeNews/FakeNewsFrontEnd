@@ -28,9 +28,6 @@ export class LocationListComponent {
     this.selectedContinent = continent;
   }
 
-  dblSelectContinent(flag_index: number) {
-    alert("dbclick on country " + continents[flag_index].continentName);
-  }
 
   openDialog(location : string) {
     const dialogRef = this.dialog.open(NewsModalComponent, {

@@ -4,9 +4,9 @@ import { fakeNews } from "./fakeNews";
 import { allUsers } from "./pageSetup";
 import { simpleActions } from "./simpleActions";
 import { playerRecord , currentPlayerIndex, currentPlayer} from "./game";
-import { simpleNewsList } from "./simpleFakeNews";
+import { generateAllSimpleNews, generateSimpleNews, simpleNewsList } from "./simpleFakeNews";
 import { complexNewsList, complexNewsEnonce } from "./complexFakeNews";
-import { Subject } from "rxjs";
+
 
 @Injectable()
 export class Globals {
@@ -21,20 +21,27 @@ export class Globals {
   static complexFakeNews = complexNewsList;
   static complexNewsEnonce = complexNewsEnonce;
   static nbTour = 10;
-  static nbTourSubject = new Subject<number>();
+
+  static nextPlay(){
+    Globals.currentPlayerIndex = 0;
+    Globals.nbTour--;
+    generateAllSimpleNews();
+
+
+  }
+  
   static nextPlayer() {
     if (Globals.currentPlayerIndex == Globals.playerRecord.length - 1) {
-      Globals.currentPlayerIndex = 0;
-      Globals.nbTour--;
+      Globals.nextPlay();
       if (this.nbTour == 0) {
-        console.log("Fin de jeu");
+        
       }
     } else {
       Globals.currentPlayerIndex++;
-      
     }
     Globals.currentPlayer = Globals.playerRecord[Globals.currentPlayerIndex];
   }
- 
+
+  
 
 }
