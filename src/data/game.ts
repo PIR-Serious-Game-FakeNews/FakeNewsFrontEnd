@@ -53,7 +53,7 @@ export let playerRecord: Array<player> = [
 ];
 
 export let currentPlayerIndex: number = 0;
-
+export let currentPlayer: player = playerRecord[currentPlayerIndex];
 // Le pourquoi, le comment
 // Presenter la cible des joueurs
 // Partie Technique : Comment le code est organisé
