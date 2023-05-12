@@ -1,8 +1,30 @@
 <h1 mat-dialog-title>Infos</h1>
 
 <div class="user">
-  <div *ngFor="let new of news" class="new">
-    {{ new.text }}
+  <div *ngFor="let news of newsDoing">
+    <div class="enCours" *ngIf="news.new">
+      <div>{{ news.new }}</div>
+      <mat-progress-bar
+        mode="determinate"
+        value="{{ news.score }}"
+        color="primary"
+        class="progressBar"
+      ></mat-progress-bar>
+      <div class="actions">
+        <button mat-raised-button (click)="traiter(news)" mat-dialog-close>
+          Traiter la news
+        </button>
+        <button mat-raised-button (click)="publier(news)" mat-dialog-close>
+          Publier la news
+        </button>
+        <button mat-raised-button (click)="terminer(news)" mat-dialog-close>
+          Terminer la news
+        </button>
+      </div>
+    </div>
+  </div>
+  <div *ngFor="let new of newsDone" class="new">
+    {{ new.new }} <span class="gain"> {{ new.credit }}% </span>
   </div>
 </div>
 <div mat-dialog-actions>

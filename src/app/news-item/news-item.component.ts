@@ -13,14 +13,10 @@ import { Globals } from 'src/data/sharedData';
 export class NewsItemComponent {
   constructor(public dialog: MatDialog){}
   @Input() new : any ;
-  si : boolean = true;
   openDialog(ne : string) {
-    if (Globals.complexNewsEnonce.includes(ne)){
-      this.si = false;
-    }
       const dialogRef = this.dialog.open(ActionModalComponent, {
         data: {
-          simple: this.si,
+          simple: !Globals.complexNewsEnonce.includes(ne),
           news: ne
         },
         width: "750px",

@@ -11,9 +11,17 @@ import { Globals } from 'src/data/sharedData';
 export class PublishModalComponent {
 
   constructor() {}
+
+  get news(){
+    return Globals.currentPlayer.newsProcessing
+  }
   
   publishHandle(){
     console.log("PUBLISH");
+    Globals.currentPlayer.newsProcessing.forEach(element => {
+      Globals.currentPlayer.newsProcessed.push({new: element.new, credit: element.score})
+    });
+    Globals.currentPlayer.newsProcessing = [];
     Globals.nextPlayer();
   }
   finishHandle(){

@@ -30,7 +30,6 @@ export class PlayerListComponent {
   openDialog() {
     const dialogRef = this.dialog.open(UserInfoDetailsComponent, {
       data: {
-        name: "France"
       },
       width: "750px",
       height: "500px"

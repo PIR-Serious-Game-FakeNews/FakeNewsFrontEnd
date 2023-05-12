@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import { fakeNews } from "./fakeNews";
 import { allUsers } from "./pageSetup";
 import { simpleActions } from "./simpleActions";
-import { playerRecord , currentPlayerIndex, player} from "./game";
+import { playerRecord , currentPlayerIndex, currentPlayer} from "./game";
 import { simpleNewsList } from "./simpleFakeNews";
 import { complexNewsList, complexNewsEnonce } from "./complexFakeNews";
 
@@ -13,7 +13,7 @@ export class Globals {
   static fakeNews = fakeNews;
   static allUsers = allUsers;
   static currentPlayerIndex = currentPlayerIndex;
-  static currentPlayer : player;
+  static currentPlayer = currentPlayer;
   static playerRecord = playerRecord;
   static simpleActions = simpleActions;
   static simpleFakeNews = simpleNewsList;

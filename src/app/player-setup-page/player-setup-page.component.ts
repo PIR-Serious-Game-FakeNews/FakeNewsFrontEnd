@@ -35,8 +35,8 @@ export class PlayerSetupPageComponent {
       let gamePlayer : player = {
         username : allUsers[i].username,
         credibility : 0 ,
-        newsProcessing : "" ,
-        newsProcessingScore : 0 ,
+        newsProcessing : [] ,
+        // newsProcessingScore : 0 ,
         newsProcessed : []
       }
       if(i == 0) Globals.currentPlayer = gamePlayer;

@@ -16,7 +16,7 @@ export class MainPageComponent {
         name: "France"
       },
       width: "400px",
-      height: "190px"
+      height: "max-content"
     });
   }
 

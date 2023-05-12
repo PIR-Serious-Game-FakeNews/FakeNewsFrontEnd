@@ -49,3 +49,13 @@
     justify-content: center;
     align-items: center;
 }
+
+.credText{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+mat-progress-bar{
+    height: 15px;
+    border-radius: 10px;
+}

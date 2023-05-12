@@ -7,6 +7,8 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -58,7 +60,8 @@ import { PublishModalComponent } from './publish-modal/publish-modal.component';
     MatBadgeModule,
     MatButtonModule,
     MatDividerModule,
-    MatListModule
+    MatListModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

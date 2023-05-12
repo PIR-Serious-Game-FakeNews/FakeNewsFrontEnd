@@ -1,15 +1,31 @@
 <mat-dialog-content>
-    <div class="container">
-        <div class="text-title">Voulez vous publiez la news en cours de traitement ou juste terminer votre tour?</div>
-        <mat-divider></mat-divider>
-        <div class="news">
-            <div> News en cours de traitement </div>
-            <div> Jauge ici </div>
-        </div>
-        <mat-divider></mat-divider>
-        <div class="actionBtn">
-            <button mat-raised-button (click)="publishHandle()" mat-dialog-close>Publier la news</button>
-            <button mat-raised-button (click)="finishHandle()" mat-dialog-close>Terminer le tour</button>
-        </div>
+  <div class="container">
+    <div class="text-title">
+      Voulez vous publiez la news en cours de traitement ou juste terminer votre
+      tour?
     </div>
+    <mat-divider></mat-divider>
+    <div class="news">
+      <div>News en cours de traitement</div>
+      <div *ngFor="let new of news">
+        <div>{{ new.new }}</div>
+        <mat-progress-bar
+          *ngIf="new.new"
+          mode="determinate"
+          value="{{ new.score }}"
+          color="primary"
+          class="progressBar"
+        ></mat-progress-bar>
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+    <div class="actionBtn">
+      <button mat-raised-button (click)="publishHandle()" mat-dialog-close>
+        Publier les news
+      </button>
+      <button mat-raised-button (click)="finishHandle()" mat-dialog-close>
+        Terminer le tour
+      </button>
+    </div>
+  </div>
 </mat-dialog-content>
