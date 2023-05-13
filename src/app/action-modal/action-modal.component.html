@@ -1,13 +1,29 @@
-<h1  mat-dialog-title>Actions Possibles</h1>
+<h1 mat-dialog-title>Actions Possibles</h1>
+<mat-divider></mat-divider>
 <mat-dialog-content>
-    <div class="actions"
-        *ngFor=" let action of actions "
-    >
-        <div class="action">{{action}}</div>
-        <button class="actionBtn" mat-raised-button *ngIf="this.data.simple">Faire</button>
-        <button class="actionBtn" mat-raised-button *ngIf="!this.data.simple">Interroger</button>
+  <div class="actions" *ngFor="let action of actions">
+    <div class="desc">{{ action.actor }}</div>
+    <div class="action">
+      <span title="Coût">{{ action.cout }}</span>
+      <button
+        class="actionBtn"
+        mat-raised-button
+        *ngIf="this.data.simple"
+        (click)="faireAction(action)"
+      >
+        Faire
+      </button>
+      <button
+        class="actionBtn"
+        mat-raised-button
+        *ngIf="!this.data.simple"
+        (click)="faireInterrogation(action)"
+      >
+        Interroger
+      </button>
     </div>
+  </div>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-    <button mat-button [mat-dialog-close]="true">Fermer</button>
+  <button mat-raised-button [mat-dialog-close]="true">Fermer</button>
 </mat-dialog-actions>

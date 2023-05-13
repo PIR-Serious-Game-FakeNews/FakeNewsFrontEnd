@@ -1,7 +1,4 @@
 mat-dialog-content{
-    display: flex;
-    flex-direction: column;
-    justify-content:start;
     height: 78%;
     width: 100%;
     overflow-y: scroll;
@@ -10,17 +7,28 @@ mat-dialog-content{
 .actions{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+    padding: 5px 10px;
     height: 40px;
     width: 99%;
     border: 2px solid #b35353;
     border-radius: 5px;
+    margin: 5px 0px;
 }
 
 .action{
-    width: 80%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 20px;
 }
 
+.action span{
+    font-size: 20px;
+    font-weight: bold;
+    cursor: help;
+}
 .actionBtn{
-    width: 20%;
+    
 }

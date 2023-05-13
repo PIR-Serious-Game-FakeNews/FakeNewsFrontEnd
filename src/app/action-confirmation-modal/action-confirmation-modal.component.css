@@ -1,0 +1,13 @@
+.texte{
+    margin-top: 20px;
+    color: gray;
+    font-size: smaller;
+    text-align: center;
+}
+
+.action{
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
+}

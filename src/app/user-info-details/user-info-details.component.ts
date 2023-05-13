@@ -38,10 +38,14 @@ export class UserInfoDetailsComponent {
 
   publier(news: { new: string; score: number }) {
     Globals.currentPlayer.newsProcessed.push({new: news.new, credit: news.score})
+    Globals.currentPlayer.credibility += Globals.calculateCredibility(Globals.getType(news.new), news.score, (Math.random() > 0.5))
+    Globals.currentPlayer.credibility = (Globals.currentPlayer.credibility < 0) ? 0 : Globals.currentPlayer.credibility;
     Globals.currentPlayer.newsProcessing = Globals.currentPlayer.newsProcessing.filter((value, index) => value.new != news.new);
   }
 
   terminer(news: { new: string; score: number }) {
+    console.log(Globals.currentPlayer.newsProcessing)
+    console.log(Globals.currentPlayer.newsProcessed)
     Globals.currentPlayer.newsProcessing = Globals.currentPlayer.newsProcessing.filter((value, index) => value.new != news.new);
   }
 }

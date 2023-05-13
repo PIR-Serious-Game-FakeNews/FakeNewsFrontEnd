@@ -1,18 +1,13 @@
 .news-item{
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
     height: 40px;
     width: 99%;
     border: 2px solid #b35353;
     border-radius: 5px;
+    margin: 5px 0px;
 }
 
-.new{
-    width: 80%;
-}
-
-.button{
-    width: 20%;
-}

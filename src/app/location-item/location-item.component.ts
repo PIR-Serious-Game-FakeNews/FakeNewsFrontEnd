@@ -10,6 +10,9 @@ import { Globals } from 'src/data/sharedData';
 })
 export class LocationItemComponent {
   @Input() location: { countryName: string; flagUrl: string; } = {countryName : "", flagUrl : ""};
-  globals = Globals;
+
+  get numberOfFakeNews(){
+    return Globals.simpleFakeNews[this.location.countryName].length + Globals.complexNewsEnonce.length
+  }
 
 }
