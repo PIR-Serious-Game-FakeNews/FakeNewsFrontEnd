@@ -23,7 +23,7 @@
         [location]="location"
         class="location"
         [class.selected]="location === selectedLocation"
-        [class.available]="location.countryName != 'France'"
+        [class.unavailable]="globals.currentPlayer.credibility < globals.unlockLevel[location.countryName]"
         (click)="selectLocation(location)"
         (dblclick)="openDialog(location.countryName)"
       > 

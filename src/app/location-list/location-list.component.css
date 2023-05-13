@@ -47,7 +47,7 @@
   border-color: #000000;
 }
 
-.location.available{
+.location.unavailable{
  filter : grayscale(100%);
 }
 

@@ -13,6 +13,7 @@ import { Globals } from 'src/data/sharedData';
 })
 export class LocationListComponent {
   constructor(public dialog: MatDialog){}
+  globals = Globals;
 
   europeanCountryFlags = europeanCountryFlags;
   continents = continents;
@@ -30,17 +31,20 @@ export class LocationListComponent {
 
 
   openDialog(location : string) {
-    const dialogRef = this.dialog.open(NewsModalComponent, {
-      data: {
-        name: location
-      },
-      width: "750px",
-      height: "500px"
-    });
+    if(Globals.currentPlayer.credibility > 2){
+      const dialogRef = this.dialog.open(NewsModalComponent, {
+        data: {
+          name: location
+        },
+        width: "750px",
+        height: "500px"
+      });
 
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+      dialogRef.afterClosed().subscribe(result => {
+        console.log(`Dialog result: ${result}`);
+      });
+    }
+  
   }
 
 }

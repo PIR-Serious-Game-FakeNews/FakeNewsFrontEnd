@@ -3,7 +3,7 @@ import { Injectable } from "@angular/core";
 import { fakeNews } from "./fakeNews";
 import { allUsers } from "./pageSetup";
 import { simpleActions } from "./simpleActions";
-import { playerRecord , currentPlayerIndex, currentPlayer} from "./game";
+import { playerRecord, unlockLevel } from "./game";
 import { generateAllSimpleNews, generateSimpleNews, simpleNewsList } from "./simpleFakeNews";
 import { complexNewsList, complexNewsEnonce } from "./complexFakeNews";
 
@@ -13,21 +13,20 @@ export class Globals {
   static selectedActualPlayer : any;
   static fakeNews = fakeNews;
   static allUsers = allUsers;
-  static currentPlayerIndex = currentPlayerIndex;
-  static currentPlayer = currentPlayer;
+  static currentPlayerIndex = 0;
+  static currentPlayer = playerRecord[Globals.currentPlayerIndex];
   static playerRecord = playerRecord;
   static simpleActions = simpleActions;
   static simpleFakeNews = simpleNewsList;
   static complexFakeNews = complexNewsList;
   static complexNewsEnonce = complexNewsEnonce;
   static nbTour = 10;
+  static unlockLevel = unlockLevel;
 
   static nextPlay(){
     Globals.currentPlayerIndex = 0;
     Globals.nbTour--;
     generateAllSimpleNews();
-
-
   }
   
   static nextPlayer() {
