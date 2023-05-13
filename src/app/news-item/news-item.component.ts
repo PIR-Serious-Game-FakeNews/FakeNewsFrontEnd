@@ -20,11 +20,11 @@ export class NewsItemComponent {
           news: ne
         },
         width: "750px",
-        height: "500px"
+        height: "max-content"
       });
   
       dialogRef.afterClosed().subscribe(result => {
-        console.log(`Dialog result: ${result}`);
+        // console.log(`Dialog result: ${result}`);
       });
     
     

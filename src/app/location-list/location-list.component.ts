@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatBadgeModule } from '@angular/material/badge';
 import { NewsModalComponent } from '../news-modal/news-modal.component';
 import { Globals } from 'src/data/sharedData';
+import { NotificationModalComponent } from '../notification-modal/notification-modal.component';
 
 @Component({
   selector: 'app-location-list',
@@ -41,10 +42,20 @@ export class LocationListComponent {
       });
 
       dialogRef.afterClosed().subscribe(result => {
-        console.log(`Dialog result: ${result}`);
+        // console.log(`Dialog result: ${result}`);
       });
     }else{
-      alert("Pays pas encore débloqué");
+      const dialogRef = this.dialog.open(NotificationModalComponent, {
+        data: {
+          message: "Pays pas encore débloqué"
+        },
+        width: "750px",
+        height: "max-content"
+      });
+
+      dialogRef.afterClosed().subscribe(result => {
+        // console.log(`Dialog result: ${result}`);
+      });
     }
   
   }

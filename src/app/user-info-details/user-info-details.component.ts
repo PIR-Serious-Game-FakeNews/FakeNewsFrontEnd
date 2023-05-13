@@ -14,11 +14,9 @@ export class UserInfoDetailsComponent {
     @Inject(MAT_DIALOG_DATA) public data: {},
     public dialog: MatDialog
   ) {}
-  get newsDone() {
-    return Globals.currentPlayer.newsProcessed;
-  }
-  get newsDoing() {
-    return Globals.currentPlayer.newsProcessing;
+
+  get user() {
+    return Globals.currentPlayer;
   }
 
   traiter(news: { new: string; score: number }) {
@@ -28,11 +26,11 @@ export class UserInfoDetailsComponent {
         news: news.new,
       },
       width: '750px',
-      height: '500px',
+      height: 'max-content',
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
+      // console.log(`Dialog result: ${result}`);
     });
   }
 

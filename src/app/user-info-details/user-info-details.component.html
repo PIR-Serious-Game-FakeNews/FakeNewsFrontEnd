@@ -1,8 +1,8 @@
-<h1 mat-dialog-title>Infos</h1>
+<h1 mat-dialog-title>Infos de {{user.username}}</h1>
 <mat-divider></mat-divider>
 <div class="user">
   <div class="title">News en cours de traitement</div>
-  <div *ngFor="let news of newsDoing">
+  <div *ngFor="let news of user.newsProcessing">
     <div class="enCours" *ngIf="news.new">
       <div class="newNew">{{ news.new }}</div>
       <mat-progress-bar
@@ -25,7 +25,7 @@
     </div>
   </div>
   <div class="title">News déjà traitées</div>
-  <div *ngFor="let new of newsDone" class="new">
+  <div *ngFor="let new of user.newsProcessed" class="new">
     <span class="oldNew">{{ new.new }}</span> <span class="gain" title="Véracité finale"> {{ new.credit }}% </span>
   </div>
 </div>

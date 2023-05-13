@@ -30,6 +30,7 @@ import { NewsItemComponent } from './news-item/news-item.component';
 import { ActionModalComponent } from './action-modal/action-modal.component';
 import { PublishModalComponent } from './publish-modal/publish-modal.component';
 import { ActionConfirmationModalComponent } from './action-confirmation-modal/action-confirmation-modal.component';
+import { NotificationModalComponent } from './notification-modal/notification-modal.component';
 
 
 @NgModule({
@@ -52,6 +53,7 @@ import { ActionConfirmationModalComponent } from './action-confirmation-modal/ac
     ActionModalComponent,
     PublishModalComponent,
     ActionConfirmationModalComponent,
+    NotificationModalComponent,
   ],
   imports: [
     BrowserModule,

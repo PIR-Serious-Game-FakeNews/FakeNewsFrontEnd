@@ -10,6 +10,7 @@
         mat-raised-button
         *ngIf="this.data.simple"
         (click)="faireAction(action)"
+        mat-dialog-close
       >
         Faire
       </button>
@@ -18,6 +19,7 @@
         mat-raised-button
         *ngIf="!this.data.simple"
         (click)="faireInterrogation(action)"
+        mat-dialog-close
       >
         Interroger
       </button>

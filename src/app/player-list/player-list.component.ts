@@ -32,11 +32,11 @@ export class PlayerListComponent {
       data: {
       },
       width: "750px",
-      height: "500px"
+      height: "max-content"
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+      // console.log(`Dialog result: ${result}`);
     });
   }
 }
