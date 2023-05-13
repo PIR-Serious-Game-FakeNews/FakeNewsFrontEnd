@@ -6,7 +6,7 @@
       class="listContinent"
     >
       
-     <app-continent-item matBadge="4" matBadgeOverlap="false"
+     <app-continent-item 
         *ngFor="let continent of continents; let i = index"
         [continent]="continent"
         class="continent"
@@ -18,7 +18,7 @@
     <ul
       class="listLocation"
     > 
-     <app-location-item
+     <app-location-item 
         *ngFor="let location of selectedContinent.continentCountries; let i = index"
         [location]="location"
         class="location"

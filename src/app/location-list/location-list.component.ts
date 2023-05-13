@@ -31,7 +31,7 @@ export class LocationListComponent {
 
 
   openDialog(location : string) {
-    if(Globals.currentPlayer.credibility > 2){
+    if(Globals.currentPlayer.credibility >= Globals.unlockLevel[location]){
       const dialogRef = this.dialog.open(NewsModalComponent, {
         data: {
           name: location
@@ -43,6 +43,8 @@ export class LocationListComponent {
       dialogRef.afterClosed().subscribe(result => {
         console.log(`Dialog result: ${result}`);
       });
+    }else{
+      alert("Pays pas encore débloqué");
     }
   
   }
