@@ -1,13 +1,25 @@
-.news-item{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px 10px;
-    height: 40px;
-    width: 99%;
-    border: 2px solid #b35353;
-    border-radius: 5px;
-    margin: 5px 0px;
+.news-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  height: 40px;
+  width: 99%;
+  border: 2px solid #b35353;
+  border-radius: 5px;
+  margin: 5px 0px;
 }
 
+.news-item button {
+  width: 50px;
+  margin-left: 15px;
+}
+
+.green-background {
+  background-color: rgb(0, 255, 47);
+}
+
+.dark-background {
+  background-color: darkgrey;
+}

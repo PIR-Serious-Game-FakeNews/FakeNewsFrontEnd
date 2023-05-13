@@ -4,23 +4,38 @@
   background-color: rgb(0, 255, 47);
 }
 
-.player-item .mdc-linear-progress__bar-inner{
+.player-item .mdc-linear-progress__bar-inner {
   height: 15px;
   border: 0;
   background-color: #6200ee;
 }
 
-.news .mdc-linear-progress__bar-inner{
+.news .mdc-linear-progress__bar-inner {
   height: 15px;
   border: 0;
   background-color: #00ee2c;
 }
 
-.enCours .mdc-linear-progress__bar-inner{
+.enCours .mdc-linear-progress__bar-inner {
   height: 15px;
   border: 0;
   background-color: #00ee2c;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: 'Special Elite', cursive;
+  background: linear-gradient(to bottom, #fff, #7d7b7b);
+}
+
+*{
+  font-family: 'Special Elite', cursive;
+}
+
+button *{
+  font-family: 'Electrolize', sans-serif;
+}

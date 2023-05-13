@@ -1,7 +1,7 @@
 <h1 mat-dialog-title>Actions Possibles</h1>
 <mat-divider></mat-divider>
 <mat-dialog-content>
-  <div class="actions" *ngFor="let action of actions">
+  <div class="actions" *ngFor="let action of actions" [ngClass]="{ 'dark-background': isActionDone(action) }">
     <div class="desc">{{ action.actor }}</div>
     <div class="action">
       <span title="Coût">{{ action.cout }}</span>
@@ -11,6 +11,7 @@
         *ngIf="this.data.simple"
         (click)="faireAction(action)"
         mat-dialog-close
+        [disabled]="isActionDone(action)"
       >
         Faire
       </button>
@@ -20,6 +21,7 @@
         *ngIf="!this.data.simple"
         (click)="faireInterrogation(action)"
         mat-dialog-close
+        [disabled]="isActionDone(action)"
       >
         Interroger
       </button>

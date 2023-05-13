@@ -24,6 +24,7 @@ export class ActionModalComponent {
       Globals.currentPlayer.newsProcessing.push({
         new: this.data.news,
         score: 50,
+        actions: []
       });
     }
     if (this.data.simple) {
@@ -34,6 +35,10 @@ export class ActionModalComponent {
         this.actions.push(c[i]);
       }
     }
+  }
+
+  isActionDone(action: any): boolean {
+    return Globals.currentPlayer.newsProcessing.some((value, index) => value.actions.includes(action.actor));
   }
 
   faireAction(simpleActions: {
@@ -47,6 +52,7 @@ export class ActionModalComponent {
           return {
             new: value.new,
             score: simpleActions.pourcentage + value.score,
+            actions: [...value.actions, simpleActions.actor]
           };
         else return value;
       });
@@ -77,6 +83,7 @@ export class ActionModalComponent {
           return {
             new: value.new,
             score: complexActions.pourcentage + value.score,
+            actions: [...value.actions, complexActions.actor]
           };
         else return value;
       });

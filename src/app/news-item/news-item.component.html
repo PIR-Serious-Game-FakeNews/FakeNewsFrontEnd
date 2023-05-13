@@ -1,6 +1,5 @@
-<div class="news-item">
-    <div class="new">
-        {{new}}
-    </div>
-    <button mat-raised-button (click)="openDialog(new)" mat-dialog-close>Traiter</button>
-</div>
+<div class="news-item" [ngClass]="{ 'green-background': isInNewsProcessing(), 'dark-background': isInNewsProcessed() }">
+    <div class="new">{{ new }}</div>
+    <button mat-raised-button [disabled]="isInNewsProcessed()" (click)="openDialog(new)" mat-dialog-close>Traiter</button>
+  </div>
+  

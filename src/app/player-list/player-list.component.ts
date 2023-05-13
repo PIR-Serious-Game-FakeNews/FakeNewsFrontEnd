@@ -12,7 +12,17 @@ import { UserInfoDetailsComponent } from '../user-info-details/user-info-details
 })
 export class PlayerListComponent {
   constructor(private dialog: MatDialog) {}
-  players  = allUsers;
+  get players(){
+    allUsers.sort((userA, userB) => {
+      const playerA = Globals.playerRecord.find(player => player.username === userA.username);
+      const playerB = Globals.playerRecord.find(player => player.username === userB.username);
+      if (playerA && playerB) {
+        return playerB.credibility - playerA.credibility; // Descending order
+      }
+      return 0;
+    });
+    return allUsers;
+  };
   
   get selectedPlayer() {
     console.log(Globals.currentPlayer)
@@ -32,7 +42,7 @@ export class PlayerListComponent {
       data: {
       },
       width: "750px",
-      height: "max-content"
+      height: "500px"
     });
 
     dialogRef.afterClosed().subscribe(result => {

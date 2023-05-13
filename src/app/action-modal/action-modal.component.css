@@ -1,34 +1,35 @@
-mat-dialog-content{
-    height: 78%;
-    width: 100%;
-    overflow-y: scroll;
-} 
-
-.actions{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px 10px;
-    height: 40px;
-    width: 99%;
-    border: 2px solid #b35353;
-    border-radius: 5px;
-    margin: 5px 0px;
+mat-dialog-content {
+  height: 78%;
+  width: 100%;
+  overflow-y: scroll;
 }
 
-.action{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-left: 20px;
+.actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  height: 40px;
+  width: 99%;
+  border: 2px solid #b35353;
+  border-radius: 5px;
+  margin: 5px 0px;
 }
 
-.action span{
-    font-size: 20px;
-    font-weight: bold;
-    cursor: help;
+.action {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 20px;
 }
-.actionBtn{
-    
+
+.action span {
+  font-size: 20px;
+  font-weight: bold;
+  cursor: help;
+}
+
+.dark-background {
+  background-color: darkgrey;
 }
