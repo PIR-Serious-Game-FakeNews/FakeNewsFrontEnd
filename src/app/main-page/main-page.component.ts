@@ -2,6 +2,7 @@ import { Component, HostListener } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { PublishModalComponent } from '../publish-modal/publish-modal.component';
 import { Globals } from 'src/data/sharedData';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-page',
@@ -11,18 +12,19 @@ import { Globals } from 'src/data/sharedData';
 })
 export class MainPageComponent {
   
-  constructor(public dialog: MatDialog){}
+  constructor(public dialog: MatDialog, private router: Router){}
   global = Globals;
 
   @HostListener('window:beforeunload', ['$event'])
   onBeforeUnload(event: Event) {
-    // Annuler l'événement par défaut
     event.preventDefault();
-    // Définir le message de confirmation à afficher
-    (event as any).returnValue = 'Voulez-vous vraiment recharger la page? Les données du jeu en cours seront définitivement perdues.'; // Pour éviter d'afficher le message par défaut du navigateur
-
-    // Afficher votre message personnalisé
-    // window.alert('Voulez-vous vraiment recharger la page? Les données du jeu en cours seront définitivement perdues.');
+    localStorage.setItem("players", JSON.stringify(Globals.playerRecord))
+  }
+  
+  @HostListener('window:unload', ['$event'])
+  onUnload(event: Event) {
+    Globals.playerRecord = JSON.parse(localStorage.getItem("players")!);
+    Globals.currentPlayer = Globals.playerRecord[0];
   }
 
   openDialog() {

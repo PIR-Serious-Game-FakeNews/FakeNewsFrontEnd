@@ -2,7 +2,7 @@
 export type player = {
   username: string;
   credibility: number;
-  newsProcessing: Array<{ new: string; score: number, actions: string[] }>;
+  newsProcessing: Array<{ new: string; score: number, actions: string[], sens: number }>;
   newsProcessed: Array<{ new: string; credit: number }>;
 };
 

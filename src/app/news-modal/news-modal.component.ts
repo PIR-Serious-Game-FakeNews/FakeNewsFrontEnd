@@ -13,5 +13,5 @@ import { Globals } from 'src/data/sharedData';
 export class NewsModalComponent {
   constructor(@Inject(MAT_DIALOG_DATA) public data: {name : string}) {}
   simpleNews = Globals.simpleFakeNews[this.data.name];  
-  complexNews = Globals.complexNewsEnonce;
+  complexNews = Globals.complexFakeNews[this.data.name];
 }

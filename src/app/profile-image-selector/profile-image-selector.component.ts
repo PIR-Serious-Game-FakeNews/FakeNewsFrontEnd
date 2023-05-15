@@ -45,7 +45,7 @@ export class ProfileImageSelectorComponent {
     "https://api.dicebear.com/5.x/open-peeps/svg?seed=Mittens",
     "https://api.dicebear.com/5.x/open-peeps/svg?seed=Gracie",
   ];
-  selectedImage: string = this.images[0];
+  selectedImage: string = "";
 
   @Output() selected = new EventEmitter<string>();
 

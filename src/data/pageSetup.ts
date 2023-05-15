@@ -1,28 +1,28 @@
 export let allUsers: Array<{ username: string; image: string }> = [
-  {
-    username: 'Marc',
-    image: 'https://api.dicebear.com/5.x/open-peeps/svg?seed=Mimi',
-  },
-  {
-    username: 'Mady',
-    image: 'https://api.dicebear.com/5.x/open-peeps/svg?seed=Baby',
-  },
-  {
-    username: 'Brandon',
-    image: 'https://api.dicebear.com/5.x/open-peeps/svg?seed=Bandit',
-  },
-  {
-    username: 'Pascal',
-    image: 'https://api.dicebear.com/5.x/open-peeps/svg?seed=Jack',
-  },
-  {
-    username: 'Yohan',
-    image: 'https://api.dicebear.com/5.x/adventurer/svg?seed=Annie',
-  },
-  {
-    username: 'Clément',
-    image: 'https://api.dicebear.com/5.x/adventurer/svg?seed=Mittens',
-  },
+  // {
+  //   username: 'Marc',
+  //   image: 'https://api.dicebear.com/5.x/open-peeps/svg?seed=Mimi',
+  // },
+  // {
+  //   username: 'Mady',
+  //   image: 'https://api.dicebear.com/5.x/open-peeps/svg?seed=Baby',
+  // },
+  // {
+  //   username: 'Brandon',
+  //   image: 'https://api.dicebear.com/5.x/open-peeps/svg?seed=Bandit',
+  // },
+  // {
+  //   username: 'Pascal',
+  //   image: 'https://api.dicebear.com/5.x/open-peeps/svg?seed=Jack',
+  // },
+  // {
+  //   username: 'Yohan',
+  //   image: 'https://api.dicebear.com/5.x/adventurer/svg?seed=Annie',
+  // },
+  // {
+  //   username: 'Clément',
+  //   image: 'https://api.dicebear.com/5.x/adventurer/svg?seed=Mittens',
+  // },
 ];
 
 export let europeanCountryFlags: Array<{
@@ -50,7 +50,7 @@ export let europeanCountryFlags: Array<{
   { countryName: 'Slovaquie', flagUrl: 'https://flagsapi.com/SK/flat/64.png' },
   { countryName: 'Serbie', flagUrl: 'https://flagsapi.com/RS/flat/64.png' },
   { countryName: 'Islande', flagUrl: 'https://flagsapi.com/IS/flat/64.png' },
-  { countryName: 'Groenland', flagUrl: 'URL du drapeau pour le Groenland' },
+  { countryName: 'Groenland', flagUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_Greenland.svg' },
 ];
 
 
@@ -69,9 +69,9 @@ export let asianCountryFlags: Array<{
   { countryName: 'Indonésie', flagUrl: 'https://flagsapi.com/ID/flat/64.png' },
   { countryName: 'Afghanistan', flagUrl: 'https://flagsapi.com/AF/flat/64.png' },
   { countryName: 'Chine', flagUrl: 'https://flagsapi.com/CN/flat/64.png' },
-  { countryName: 'Hong Kong', flagUrl: 'URL du drapeau pour Hong Kong' },
+  { countryName: 'Hong Kong', flagUrl: 'https://flagsapi.com/HK/flat/64.png' },
   { countryName: 'Israël', flagUrl: 'https://flagsapi.com/IL/flat/64.png' },
-  { countryName: 'Emirats Arabes Unis', flagUrl: 'URL du drapeau pour les Emirats Arabes Unis' },
+  { countryName: 'Emirats Arabes Unis', flagUrl: 'https://flagsapi.com/AE/flat/64.png' },
 ];
 
 
@@ -81,7 +81,7 @@ export let americanCountryFlags: Array<{
 }> = [
   { countryName: 'Canada', flagUrl: 'https://flagsapi.com/CA/flat/64.png' },
   {
-    countryName: 'États-Unis',
+    countryName: 'Etats-Unis',
     flagUrl: 'https://flagsapi.com/US/flat/64.png',
   },
   { countryName: 'Mexique', flagUrl: 'https://flagsapi.com/MX/flat/64.png' },
@@ -91,8 +91,8 @@ export let americanCountryFlags: Array<{
   { countryName: 'Pérou', flagUrl: 'https://flagsapi.com/PE/flat/64.png' },
   { countryName: 'Brésil', flagUrl: 'https://flagsapi.com/BR/flat/64.png' },
   {
-    countryName: 'Guyane française',
-    flagUrl: 'https://flagsapi.com/GF/flat/64.png',
+    countryName: 'Guyane Française',
+    flagUrl: 'https://flagsapi.com/GY/flat/64.png',
   },
   { countryName: 'Bolivie', flagUrl: 'https://flagsapi.com/BO/flat/64.png' },
   { countryName: 'Argentine', flagUrl: 'https://flagsapi.com/AR/flat/64.png' },
@@ -106,8 +106,8 @@ export let africanCountryFlags: Array<{ countryName: string; flagUrl: string }> 
   { countryName: 'Angola', flagUrl: 'https://flagsapi.com/AO/flat/64.png' },
   { countryName: 'Cameroun', flagUrl: 'https://flagsapi.com/CM/flat/64.png' },
   { countryName: 'Côte d\'Ivoire', flagUrl: 'https://flagsapi.com/CI/flat/64.png' },
-  { countryName: 'Égypte', flagUrl: 'https://flagsapi.com/EG/flat/64.png' },
-  { countryName: 'Éthiopie', flagUrl: 'https://flagsapi.com/ET/flat/64.png' },
+  { countryName: 'Egypte', flagUrl: 'https://flagsapi.com/EG/flat/64.png' },
+  { countryName: 'Ethiopie', flagUrl: 'https://flagsapi.com/ET/flat/64.png' },
   { countryName: 'Kenya', flagUrl: 'https://flagsapi.com/KE/flat/64.png' },
   { countryName: 'Mali', flagUrl: 'https://flagsapi.com/ML/flat/64.png' },
   { countryName: 'Maroc', flagUrl: 'https://flagsapi.com/MA/flat/64.png' },
@@ -137,7 +137,7 @@ export let continents: Array<{
   continentName: string;
   continentCountries: Array<{ countryName: string; flagUrl: string }>;
 }> = [
-  { continentName: 'Europe', continentCountries: europeanCountryFlags },
+  { continentName: 'Europa', continentCountries: europeanCountryFlags },
   { continentName: 'Asia', continentCountries: asianCountryFlags },
   { continentName: 'Africa', continentCountries: africanCountryFlags },
   //{continentName : "Antarctica"},

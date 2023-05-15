@@ -137,7 +137,7 @@ export function generateAllSimpleNews() {
   const locations = Object.keys(simpleNewsList);
   for (let i = 0; i < 3; i++) {
     for (const location of locations) {
-      // if(Math.random() > 0.3){
+      if (Math.random() > 0.5) {
         let sn: string;
         do {
           const s = selectRandomElement(subject);
@@ -145,7 +145,7 @@ export function generateAllSimpleNews() {
           sn = s + ' ' + v + '.';
         } while (simpleNewsList[location].includes(sn));
         simpleNewsList[location].push(sn);
-      // }
+      }
     }
   }
 }

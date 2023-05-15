@@ -5,10 +5,10 @@
   align-items: center;
   padding: 5px 10px;
   height: 40px;
-  width: 99%;
+  width: 98%;
   border: 2px solid #b35353;
   border-radius: 5px;
-  margin: 5px 0px;
+  margin: 5px auto;
 }
 
 .news-item button {

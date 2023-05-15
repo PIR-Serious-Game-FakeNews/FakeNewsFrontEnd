@@ -36,14 +36,20 @@ export class UserInfoDetailsComponent {
 
   publier(news: { new: string; score: number }) {
     Globals.currentPlayer.newsProcessed.push({new: news.new, credit: news.score})
-    Globals.currentPlayer.credibility += Globals.calculateCredibility(Globals.getType(news.new), news.score, (Math.random() > 0.5))
+    const creditToAdd = Globals.calculateCredibility(Globals.getType(news.new), news.score,  Globals.getComplexVeracity(news.new));
+    Globals.currentPlayer.credibility += (Globals.allNewsProcessed.includes(news.new) ? creditToAdd / 2 : creditToAdd)
     Globals.currentPlayer.credibility = (Globals.currentPlayer.credibility < 0) ? 0 : Globals.currentPlayer.credibility;
     Globals.currentPlayer.newsProcessing = Globals.currentPlayer.newsProcessing.filter((value, index) => value.new != news.new);
+    Globals.allNewsProcessed.push(news.new);
+    console.log(creditToAdd)
   }
 
   terminer(news: { new: string; score: number }) {
-    console.log(Globals.currentPlayer.newsProcessing)
-    console.log(Globals.currentPlayer.newsProcessed)
+    Globals.currentPlayer.newsProcessed.push({new: news.new, credit: news.score})
+    const creditToAdd = Globals.calculateCredibilityFalse(Globals.getType(news.new), news.score,  Globals.getComplexVeracity(news.new));
+    Globals.currentPlayer.credibility += creditToAdd
+    Globals.currentPlayer.credibility = (Globals.currentPlayer.credibility < 0) ? 0 : Globals.currentPlayer.credibility;
     Globals.currentPlayer.newsProcessing = Globals.currentPlayer.newsProcessing.filter((value, index) => value.new != news.new);
+    console.log(creditToAdd)
   }
 }

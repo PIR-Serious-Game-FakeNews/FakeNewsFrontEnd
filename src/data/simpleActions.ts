@@ -3,7 +3,7 @@ export let simpleActions: Array<{
   pourcentage: number;
   cout: number;
 }> = [
-  { actor: 'Interroger la personne concernée', pourcentage: 10, cout: 1 },
-  { actor: 'Vérifier les sources', pourcentage: -5, cout: 3 },
-  { actor: 'Parler à un professionel', pourcentage: +20, cout: 2 },
+  { actor: 'Interroger la personne concernée', pourcentage: +8, cout: 1 },
+  { actor: 'Interroger un expert dans le domaine', pourcentage: +17, cout: 3 },
+  { actor: 'Se renseigner sur la source', pourcentage: +25, cout: 4 },
 ];

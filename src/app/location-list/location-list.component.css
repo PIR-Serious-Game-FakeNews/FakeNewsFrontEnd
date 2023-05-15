@@ -29,7 +29,7 @@
 .listContinent {
   min-height: 20%;
   display: flex;
-  flex: 1;
+  /* flex: 1; */
   padding: 5px;
   gap: 20px;
   align-items: center;

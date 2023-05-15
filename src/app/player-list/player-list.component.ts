@@ -25,7 +25,6 @@ export class PlayerListComponent {
   };
   
   get selectedPlayer() {
-    console.log(Globals.currentPlayer)
     return Globals.currentPlayer;
   }
   

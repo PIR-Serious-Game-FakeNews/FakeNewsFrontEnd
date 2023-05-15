@@ -20,7 +20,10 @@ export class PublishModalComponent {
     console.log("PUBLISH");
     Globals.currentPlayer.newsProcessing.forEach(element => {
       Globals.currentPlayer.newsProcessed.push({new: element.new, credit: element.score})
-      Globals.currentPlayer.credibility += Globals.calculateCredibility(Globals.getType(element.new), element.score, (Math.random() > 0.5))
+      const creditToAdd = Globals.calculateCredibility(Globals.getType(element.new), element.score,  Globals.getComplexVeracity(element.new));
+      Globals.currentPlayer.credibility += (Globals.allNewsProcessed.includes(element.new) ? creditToAdd / 2 : creditToAdd)
+      Globals.allNewsProcessed.push(element.new)
+      console.log(creditToAdd)
     });
     Globals.currentPlayer.credibility = (Globals.currentPlayer.credibility < 0) ? 0 : Globals.currentPlayer.credibility;
     Globals.currentPlayer.newsProcessing = [];

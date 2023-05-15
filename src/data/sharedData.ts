@@ -4,8 +4,9 @@ import { fakeNews } from "./fakeNews";
 import { allUsers } from "./pageSetup";
 import { simpleActions } from "./simpleActions";
 import { player, playerRecord, unlockLevel } from "./game";
-import { generateAllSimpleNews, generateSimpleNews, simpleNewsList } from "./simpleFakeNews";
-import { complexNewsList, complexNewsEnonce } from "./complexFakeNews";
+import { generateAllSimpleNews, simpleNewsList } from "./simpleFakeNews";
+import { complexNewsList, complexNewsEnonce, complexNews, generateAllComplexNews } from "./complexFakeNews";
+import { Router } from "@angular/router";
 
 
 @Injectable()
@@ -20,20 +21,23 @@ export class Globals {
   static simpleFakeNews = simpleNewsList;
   static complexFakeNews = complexNewsList;
   static complexNewsEnonce = complexNewsEnonce;
+  static allNewsProcessed : string[] = [];
   static nbTour = 10;
+  static router: Router;
   static unlockLevel = unlockLevel;
 
   static nextPlay(){
     Globals.currentPlayerIndex = 0;
     Globals.nbTour--;
     generateAllSimpleNews();
+    generateAllComplexNews();
   }
   
   static nextPlayer() {
     if (Globals.currentPlayerIndex == Globals.playerRecord.length - 1) {
       Globals.nextPlay();
-      if (this.nbTour == 0) {
-        
+      if (this.nbTour == -1) {
+        this.router.navigate(["player-setup-page"]);
       }
     } else {
       Globals.currentPlayerIndex++;
@@ -43,12 +47,23 @@ export class Globals {
 
   static calculateCredibility(type: number, percentage: number, veracity?:boolean) {
     if (type == 1) {
-      let trueOrFalse : boolean = Math.random() < percentage;
-      if(trueOrFalse) return Math.round(percentage/10)
-      else return -Math.round(percentage/5)
-    } else {
-      if(veracity) return Math.round(percentage/10)
+      let trueOrFalse : boolean = (Math.random()*100) < percentage;
+      if(trueOrFalse) return Math.round(percentage/5)
       else return -Math.round(percentage/10)
+    } else {
+      if(veracity) return Math.round(percentage/5)
+      else return -Math.round(percentage/10)
+    }
+  }
+
+  static calculateCredibilityFalse(type: number, percentage: number, veracity?:boolean) {
+    if (type == 1) {
+      let trueOrFalse : boolean = (Math.random()*100) < percentage;
+      if(trueOrFalse) return -Math.round(percentage/5)
+      else return Math.round((100 - percentage)/10)
+    } else {
+      if(veracity) return -Math.round(percentage/5)
+      else return Math.round((100 - percentage)/10)
     }
   }
 
@@ -58,6 +73,14 @@ export class Globals {
     } else {
       return 1
     }
+  }
+
+  static getComplexVeracity(news: string){
+    let tab = complexNews[news];
+    if(tab){
+      return tab.reduce((acc, currentValue) => acc + currentValue.pourcentage, 0) > 0
+    }
+    return false;
   }
   
 

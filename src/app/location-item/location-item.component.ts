@@ -12,7 +12,7 @@ export class LocationItemComponent {
   @Input() location: { countryName: string; flagUrl: string; } = {countryName : "", flagUrl : ""};
 
   get numberOfFakeNews(){
-    return Globals.simpleFakeNews[this.location.countryName].length + Globals.complexNewsEnonce.length
+    return Globals.simpleFakeNews[this.location.countryName].length + Globals.complexFakeNews[this.location.countryName].length
   }
 
 }
