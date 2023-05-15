@@ -25,7 +25,7 @@
         [class.selected]="location === selectedLocation"
         [class.unavailable]="globals.currentPlayer.credibility < globals.unlockLevel[location.countryName]"
         (click)="selectLocation(location)"
-        (dblclick)="openDialog(location.countryName)"
+        (click)="openDialog(location.countryName)"
       > 
      </app-location-item>
     </ul>
