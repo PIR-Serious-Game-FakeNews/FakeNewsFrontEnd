@@ -19,3 +19,12 @@ button {
   padding: 20px 40px;
   min-width: 100px;
 }
+
+@media screen and (max-width: 500px) {
+  .start-page span{
+  font-size: x-large;
+  font-family: 'Press Start 2P', cursive;
+}
+}
+
+
