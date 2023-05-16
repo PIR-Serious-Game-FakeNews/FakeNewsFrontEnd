@@ -1,23 +1,49 @@
 * {
-    box-sizing: border-box;
-  }
+  box-sizing: border-box;
+}
 
 img {
-    height:150px;
-    width: 150px;
-  }
-  
+  height: 150px;
+  width: 150px;
+}
+
 .location {
   padding: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    justify-content: center;
-    cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  cursor: pointer;
 }
-  
+
 .location div {
-    text-align: center;
+  text-align: center;
+  font-size: 15px;
 }
 
+@media screen and (max-width: 1150px) {
+  img {
+    height: 100px;
+    width: 100px;
+  }
 
+  .location {
+    padding: 5px;
+  }
+
+  .location div{
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  img {
+    height: 50px;
+    width: 50px;
+  }
+
+  .location {
+    padding: 5px;
+    gap: 5px;
+  }
+}

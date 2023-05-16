@@ -31,6 +31,7 @@ import { ActionModalComponent } from './action-modal/action-modal.component';
 import { PublishModalComponent } from './publish-modal/publish-modal.component';
 import { ActionConfirmationModalComponent } from './action-confirmation-modal/action-confirmation-modal.component';
 import { NotificationModalComponent } from './notification-modal/notification-modal.component';
+import { FinalPageComponent } from './final-page/final-page.component';
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import { NotificationModalComponent } from './notification-modal/notification-mo
     PublishModalComponent,
     ActionConfirmationModalComponent,
     NotificationModalComponent,
+    FinalPageComponent,
   ],
   imports: [
     BrowserModule,

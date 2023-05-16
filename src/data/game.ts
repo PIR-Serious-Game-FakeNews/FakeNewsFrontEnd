@@ -8,42 +8,50 @@ export type player = {
 
 export let playerRecord: Array<player> = [
   {
-    "username": "Marc",
-    "credibility": 0,
-    "newsProcessing": [],
-    "newsProcessed": []
-  },
-  {
-    "username": "Mady",
-    "credibility": 0,
-    "newsProcessing": [],
-    "newsProcessed": []
-  },
-  {
     "username": "Brandon",
-    "credibility": 0,
+    "credibility": 17,
     "newsProcessing": [],
-    "newsProcessed": []
-  },
-  {
-    "username": "Pascal",
-    "credibility": 0,
-    "newsProcessing": [],
-    "newsProcessed": []
-  },
-  {
-    "username": "Yohan",
-    "credibility": 0,
-    "newsProcessing": [],
-    "newsProcessed": []
+    "newsProcessed": [
+      {
+        "new": "<b>[Rennes] </b>Les autorités ont découvert un réseau de trafiquants d’animaux exotiques dans la région.",
+        "credit": 83
+      }
+    ]
   },
   {
     "username": "Clément",
-    "credibility": 0,
+    "credibility": 15,
     "newsProcessing": [],
-    "newsProcessed": []
+    "newsProcessed": [
+      {
+        "new": "<b>[Nantes]</b> Le Gouvernement pense que le réchauffement climatique et un complot visant à réduire la productivité.",
+        "credit": 75
+      }
+    ]
+  },
+  {
+    "username": "Pascal",
+    "credibility": 6.5,
+    "newsProcessing": [],
+    "newsProcessed": [
+      {
+        "new": "<b>[Rennes] </b>Les autorités ont découvert un réseau de trafiquants d’animaux exotiques dans la région.",
+        "credit": 65
+      }
+    ]
+  },
+  {
+    "username": "Yohan",
+    "credibility": 5.5,
+    "newsProcessing": [],
+    "newsProcessed": [
+      {
+        "new": "<b>[Rennes] </b>Les autorités ont découvert un réseau de trafiquants d’animaux exotiques dans la région.",
+        "credit": 55
+      }
+    ]
   }
-];
+]
 
 export let currentPlayerIndex: number = 0;
 export let currentPlayer: player = playerRecord[currentPlayerIndex];

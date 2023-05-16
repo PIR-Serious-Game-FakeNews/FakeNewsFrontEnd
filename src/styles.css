@@ -39,3 +39,7 @@ body {
 button *{
   font-family: 'Electrolize', sans-serif;
 }
+
+b{
+  font-size: large;
+}

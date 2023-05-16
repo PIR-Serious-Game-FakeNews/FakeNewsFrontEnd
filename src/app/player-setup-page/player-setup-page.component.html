@@ -1,15 +1,25 @@
-<main
-  class="main"
->
+<main class="main">
   <div class="container">
-    <app-add-user (onSubmit)="handleAddUser($event)"></app-add-user>
-    <ul
-      class="listUsers"
-    >
+    <div>
+      <app-add-user (onSubmit)="handleAddUser($event)"></app-add-user>
+      <div class="containerTour">
+        <label for="tour">Nombre de tours dans le jeu:</label>
+        <input
+          type="number"
+          name="tour"
+          id="tour"
+          [(ngModel)]="tour"
+          required
+          class="tour"
+          min="0"
+          oninput="this.value = Math.abs(this.value)"
+        />
+      </div>
+    </div>
+    <ul class="listUsers">
       <app-user-item
         *ngFor="let user of allUsers; let i = index"
         [user]="user"
-        
         (onDelete)="handleDeleteUser($event)"
       ></app-user-item>
     </ul>

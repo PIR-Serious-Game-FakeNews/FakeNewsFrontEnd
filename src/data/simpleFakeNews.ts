@@ -12,6 +12,26 @@ let subject: Array<string> = [
   "Le directeur d'un syndicat ouvrier majeur",
   'Le chercheur de renommée mondiale',
   "L'activiste",
+  'La célébrité du moment',
+  "L'influenceur très suivi",
+  "Le leader d'une organisation extrémiste",
+  "Le célèbre entrepreneur",
+  "Le sportif de renommée mondiale",
+  "Le chanteur populaire",
+  "Le responsable d'une ONG controversée",
+  "Le dirigeant syndical",
+  "Le scientifique de renom",
+  "L'économiste renommé",
+  "Le directeur d'un institut de recherche",
+  "Le célèbre acteur",
+  "Le chef de file des défenseurs de l'environnement",
+  "Le représentant politique controversé",
+  "Le militant des droits humains",
+  "L'écrivain célèbre",
+  "Le célèbre artiste engagé",
+  "L'expert en technologie",
+  "L'expert en sécurité nationale",
+  "Le célèbre avocat",
 ];
 
 let verb: Array<string> = [
@@ -40,6 +60,26 @@ let verb: Array<string> = [
   "défend les droits de l'homme en protégeant les libertés civiles et en luttant contre les discriminations",
   'investit dans la recherche scientifique pour réduire la dépendance aux énergies fossiles',
   'soutient les initiatives culturelles et artistiques pour préserver le patrimoine culturel',
+  "a été surpris en train de tricher lors d'une élection",
+  "a été condamné pour fraude financière",
+  "a été impliqué dans un scandale de corruption",
+  "a été critiqué pour son manque de transparence",
+  "a été accusé de manipulation des médias",
+  "a lancé une campagne de désinformation",
+  "a été récompensé pour ses actions humanitaires",
+  "a été impliqué dans un conflit d'intérêts",
+  "a été victime d'un complot politique",
+  "a été appelé à démissionner suite à des allégations de mauvaise conduite",
+  "a été élu personnalité de l'année",
+  "a été impliqué dans un différend territorial",
+  "a promis de lutter contre la pauvreté et l'exclusion sociale",
+  "a été critiqué pour son manque de soutien aux travailleurs",
+  "a été accusé de négligence dans la gestion d'une crise",
+  "a été confronté à des manifestations massives de la population",
+  "a été impliqué dans une affaire d'espionnage",
+  "a été félicité pour ses efforts en matière d'éducation",
+  "a été impliqué dans un scandale sexuel",
+  "a été soutenu par une grande partie de la population dans une réforme controversée",
 ];
 
 export type NewsMap = {
@@ -118,33 +158,84 @@ export let simpleNewsList: NewsMap = {
   Fidji: [],
 };
 
+let franceTowns = [
+  'Paris',
+  'Lille',
+  'Amiens',
+  'Rouen',
+  'Caen',
+  'Reims',
+  'Strasbourg',
+  'Brest',
+  'Rennes',
+  'Orléans',
+  'Dijon',
+  'Nantes',
+  'Limoges',
+  'Clermont-Ferrand',
+  'Lyon',
+  'Bordeaux',
+  'Bayonne',
+  'Toulouse',
+  'Montpellier',
+  'Marseille',
+  'Nice',
+  'Le Mans',
+];
+
 function selectRandomElement(arr: any[]): any {
   const randomIndex = Math.floor(Math.random() * arr.length);
   return arr[randomIndex];
 }
 
 export function generateSimpleNews(location: string) {
-  let sn: string;
-  do {
-    let s = selectRandomElement(subject);
-    let v = selectRandomElement(verb);
-    sn = s + ' ' + v + '.';
-  } while (simpleNewsList[location].includes(sn));
-  simpleNewsList[location].push(sn);
+  if (location == 'France') {
+    let sn: string;
+    do {
+      let town = selectRandomElement(franceTowns);
+      let s = selectRandomElement(subject);
+      let v = selectRandomElement(verb);
+      sn = '<b>[' + town + ']</b> ' + s + ' ' + v + '.';
+    } while (simpleNewsList[location].includes(sn));
+    simpleNewsList[location].push(sn);
+  } else {
+    let sn: string;
+    do {
+      let s = selectRandomElement(subject);
+      let v = selectRandomElement(verb);
+      sn = s + ' ' + v + '.';
+    } while (simpleNewsList[location].includes(sn));
+    simpleNewsList[location].push(sn);
+  }
 }
 
 export function generateAllSimpleNews() {
   const locations = Object.keys(simpleNewsList);
   for (let i = 0; i < 3; i++) {
     for (const location of locations) {
-      if (Math.random() > 0.5) {
-        let sn: string;
-        do {
-          const s = selectRandomElement(subject);
-          const v = selectRandomElement(verb);
-          sn = s + ' ' + v + '.';
-        } while (simpleNewsList[location].includes(sn));
-        simpleNewsList[location].push(sn);
+      if (location == 'France') {
+        for (let index = 0; index < 3; index++) {
+          if (Math.random() > 0.5) {
+            let sn: string;
+            do {
+              let town = selectRandomElement(franceTowns);
+              let s = selectRandomElement(subject);
+              let v = selectRandomElement(verb);
+              sn = '<b>[' + town + ']</b> ' + s + ' ' + v + '.';
+            } while (simpleNewsList[location].includes(sn));
+            simpleNewsList[location].push(sn);
+          }
+        }
+      } else {
+        if (Math.random() > 0.5) {
+          let sn: string;
+          do {
+            const s = selectRandomElement(subject);
+            const v = selectRandomElement(verb);
+            sn = s + ' ' + v + '.';
+          } while (simpleNewsList[location].includes(sn));
+          simpleNewsList[location].push(sn);
+        }
       }
     }
   }

@@ -23,6 +23,7 @@ export let allUsers: Array<{ username: string; image: string }> = [
   //   username: 'Clément',
   //   image: 'https://api.dicebear.com/5.x/adventurer/svg?seed=Mittens',
   // },
+  
 ];
 
 export let europeanCountryFlags: Array<{
@@ -137,10 +138,10 @@ export let continents: Array<{
   continentName: string;
   continentCountries: Array<{ countryName: string; flagUrl: string }>;
 }> = [
-  { continentName: 'Europa', continentCountries: europeanCountryFlags },
-  { continentName: 'Asia', continentCountries: asianCountryFlags },
-  { continentName: 'Africa', continentCountries: africanCountryFlags },
+  { continentName: 'Europe', continentCountries: europeanCountryFlags },
+  { continentName: 'Asie', continentCountries: asianCountryFlags },
+  { continentName: 'Afrique', continentCountries: africanCountryFlags },
   //{continentName : "Antarctica"},
-  {continentName: 'America',continentCountries: americanCountryFlags},
-  {continentName: 'Oceania',continentCountries: oceaniaCountryFlags },
+  {continentName: 'Amérique',continentCountries: americanCountryFlags},
+  {continentName: 'Océanie',continentCountries: oceaniaCountryFlags },
 ];

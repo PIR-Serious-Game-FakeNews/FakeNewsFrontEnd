@@ -4,7 +4,7 @@
   <div class="title">News en cours de traitement</div>
   <div *ngFor="let news of user.newsProcessing">
     <div class="enCours" *ngIf="news.new">
-      <div class="newNew">{{ news.new }}</div>
+      <div class="newNew" [innerHTML]="news.new"></div>
       <mat-progress-bar
         mode="determinate"
         value="{{ news.score }}"
@@ -26,7 +26,7 @@
   </div>
   <div class="title">News déjà traitées</div>
   <div *ngFor="let new of user.newsProcessed" class="new">
-    <span class="oldNew">{{ new.new }}</span> <span class="gain" title="Véracité finale"> {{ new.credit }}% </span>
+    <span class="oldNew" [innerHTML]="new.new"></span> <span class="gain" title="Véracité finale"> {{ new.credit }}% </span>
   </div>
 </div>
 <div mat-dialog-actions>

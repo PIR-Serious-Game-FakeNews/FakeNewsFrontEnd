@@ -16,3 +16,25 @@
   font-weight: bold;
   font-size: 30px;
 }
+
+@media screen and (max-width: 1150px) {
+  .continent {
+    margin: 5px;
+  }
+
+  .continent div{
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .continent {
+    padding: 5px;
+    margin: 0px;
+    gap: 0px;
+  }
+
+  .continent div{
+    font-size: 12px;
+  }
+}

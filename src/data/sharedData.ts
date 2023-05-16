@@ -15,14 +15,14 @@ export class Globals {
   static fakeNews = fakeNews;
   static allUsers = allUsers;
   static currentPlayerIndex = 0;
-  static currentPlayer : player;
-  static playerRecord : player[] = [];
+  static playerRecord : player[] = [] // = playerRecord;
+  static currentPlayer : player // = Globals.playerRecord[0];
   static simpleActions = simpleActions;
   static simpleFakeNews = simpleNewsList;
   static complexFakeNews = complexNewsList;
   static complexNewsEnonce = complexNewsEnonce;
   static allNewsProcessed : string[] = [];
-  static nbTour = 10;
+  static nbTour : number;
   static router: Router;
   static unlockLevel = unlockLevel;
 
@@ -37,7 +37,7 @@ export class Globals {
     if (Globals.currentPlayerIndex == Globals.playerRecord.length - 1) {
       Globals.nextPlay();
       if (this.nbTour == -1) {
-        this.router.navigate(["player-setup-page"]);
+        this.router.navigate(["final-page"]) //.then(() => window.location.reload());
       }
     } else {
       Globals.currentPlayerIndex++;

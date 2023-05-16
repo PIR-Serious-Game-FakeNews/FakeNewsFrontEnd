@@ -1,0 +1,35 @@
+<div class="main">
+    <button class="restart-button" mat-raised-button (click)="restart()">Revenir à la page initiale</button>
+    <h1 class="title title-podium">Podium</h1>
+    
+        <div class="podium" >
+        <img class="podium-image" src="../../assets/podium.png" alt="Podium"/>
+        <img class="crown" src="../../assets/crown.png" alt="crown">
+        <div class="joueur first-place">
+            <img class="joueur-image" src="{{podium[0].image}}" alt="{{podium[0].image}}">
+        </div>
+        <div class="first-name joueur-name" style="z-index: 12;">{{ podium[0].username }}</div>
+        <div class="joueur second-place">
+            <img class="joueur-image" src="{{podium[1].image}}" alt="{{podium[1].image}}">
+            <div class="joueur-name" > {{ podium[1].username }}</div>
+        </div>
+        <div class="joueur third-place">
+            <img class="joueur-image" src="{{podium[2].image}}" alt="{{podium[2].image}}">
+            <div class="joueur-name" >{{ podium[2].username }}</div>
+        </div>
+    </div> 
+    <div class="classement-container">
+        <h2>Classement</h2>
+        <div class="classement title">
+            <span>Rang</span>
+            <span>Pseudo</span>
+            <span>Crédibilité</span>
+        </div>
+        <div *ngFor="let player of podium; index as rang" class="classement player-classement">
+            <span>{{ rang + 1 }}</span>
+            <span>{{ player.username }}</span>
+            <span>{{ this.score[rang] }}</span>
+        </div>
+    </div>
+</div>
+

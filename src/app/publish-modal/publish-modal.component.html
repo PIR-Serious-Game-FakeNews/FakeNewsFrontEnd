@@ -8,7 +8,7 @@
     <div class="news">
       <div class="title">News en cours de traitement</div>
       <div *ngFor="let new of news">
-        <div>{{ new.new }}</div>
+        <div [innerHTML]="new.new"></div>
         <mat-progress-bar
           *ngIf="new.new"
           mode="determinate"

@@ -16,9 +16,10 @@ import { NotificationModalComponent } from '../notification-modal/notification-m
 export class PlayerSetupPageComponent {
   constructor(private router: Router, public dialog: MatDialog) {}
   allUsers = Globals.allUsers;
+  tour: number = 15;
 
   handleAddUser(formData: any) {
-    if (!formData.username || !formData.image) {
+    if (!formData.username.trim() || !formData.image) {
       const dialogRef = this.dialog.open(NotificationModalComponent, {
         data: {
           message:
@@ -31,7 +32,20 @@ export class PlayerSetupPageComponent {
       dialogRef.afterClosed().subscribe((result) => {
         // console.log(`Dialog result: ${result}`);
       });
-    } else {
+    } else if(Globals.allUsers.some((value, index) => value.username == formData.username.trim())){
+      const dialogRef = this.dialog.open(NotificationModalComponent, {
+        data: {
+          message:
+            'Le nom entré est déjà utilisé.',
+        },
+        width: '750px',
+        height: 'max-content',
+      });
+
+      dialogRef.afterClosed().subscribe((result) => {
+        // console.log(`Dialog result: ${result}`);
+      });
+    } else{
       Globals.allUsers.push(formData);
       console.log(Globals.allUsers);
     }
@@ -78,6 +92,7 @@ export class PlayerSetupPageComponent {
       }
       if (Math.random() > 0.7) generateComplexNews('France');
       Globals.router = this.router;
+      Globals.nbTour = this.tour - 1;
       this.router.navigate(['/main-page']);
     }
   }

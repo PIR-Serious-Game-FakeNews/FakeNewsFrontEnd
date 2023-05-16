@@ -21,3 +21,16 @@ img {
   border-radius: 4px;
   padding: 5px 10px;
 }
+
+@media screen and (max-width: 425px) {
+  img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+
+  .user {
+    margin: 10px;
+    align-items: center;
+  }
+}

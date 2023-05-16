@@ -1,0 +1,200 @@
+.main {
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-width: 100vw;
+  height: 98vh;
+  overflow-y: scroll;
+}
+
+.title-podium {
+  margin-top: 200px;
+  z-index: 100;
+}
+
+.podium {
+  position: relative;
+  width: 80%;
+  min-width: 80%;
+  height: 80%;
+  min-height: 80%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.podium-image {
+  position: absolute;
+  bottom: 0;
+  height: 60%;
+  z-index: -1;
+  max-width: 100%;
+}
+
+.crown {
+  width: 200px;
+  height: auto;
+  position: absolute;
+  top: 10;
+  z-index: 10;
+}
+
+.joueur {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+}
+
+.first-place {
+  position: absolute;
+  top: 35px;
+  z-index: 8;
+  background-color: white;
+}
+
+.first-name {
+  position: absolute;
+  top: 132px;
+  z-index: 12;
+}
+
+.second-place {
+  position: absolute;
+  top: 25%;
+  left: 19%;
+  z-index: 6;
+  background-color: rgba(232, 235, 235, 0.808);
+}
+
+.third-place {
+  position: absolute;
+  top: 42%;
+  right: 18%;
+  z-index: 4;
+  background-color: rgba(189, 139, 82, 0.913);
+}
+
+.joueur-image {
+  width: 100px;
+  height: auto;
+}
+
+.joueur-name {
+  margin-top: 10px;
+}
+
+.restart-button {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+.classement-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+.classement-container h2 {
+  text-decoration-line: underline;
+}
+
+.title {
+  text-decoration-line: underline;
+  font-weight: 50px;
+}
+
+.classement {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.classement span {
+  text-align: center;
+  width: 20%;
+}
+
+.player-classement {
+  margin: 10px;
+}
+
+.joueur.second-place .joueur-name, .joueur.third-place .joueur-name {
+    margin-top: 8px;
+    font-size: 10px;
+  }
+
+@media screen and (max-width: 1150px) {
+    .second-place {
+        position: absolute;
+        top: 25%;
+        left: 5%;
+        z-index: 6;
+        background-color: rgba(232, 235, 235, 0.808);
+      }
+      
+      .third-place {
+        position: absolute;
+        top: 42%;
+        right: 5%;
+        z-index: 4;
+        background-color: rgba(189, 139, 82, 0.913);
+      }
+  }
+  
+  @media screen and (max-width: 700px) {
+    .second-place {
+        position: absolute;
+        top: 25%;
+        left: 0%;
+        z-index: 6;
+        background-color: rgba(232, 235, 235, 0.808);
+      }
+      
+      .third-place {
+        position: absolute;
+        top: 42%;
+        right: 0%;
+        z-index: 4;
+        background-color: rgba(189, 139, 82, 0.913);
+      }
+
+      .joueur.second-place .joueur-name, .joueur.third-place .joueur-name {
+        margin-top: 2px;
+      }
+  }
+
+  @media screen and (max-width: 550px) {
+    .second-place {
+        position: absolute;
+        top: 25%;
+        left: -5%;
+        z-index: 6;
+        background-color: rgba(232, 235, 235, 0.808);
+      }
+      
+      .third-place {
+        position: absolute;
+        top: 42%;
+        right: -5%;
+        z-index: 4;
+        background-color: rgba(189, 139, 82, 0.913);
+      }
+
+      .joueur.second-place, .joueur.third-place {
+        width: 100px;
+        height: 100px;
+      }
+
+      .joueur.second-place .joueur-image, .joueur.third-place .joueur-image {
+        width: 55px;
+      }
+  }

@@ -15,29 +15,55 @@ function selectRandomElement(arr: any[]): any {
 }
 
 export function generateComplexNews(location: string) {
-  let sn: string;
-  let i = 0;
-  do {
-    sn = selectRandomElement(complexNewsListInitial[location]);
-    i++;
-  } while (complexNewsList[location].includes(sn) && i < 5);
-  if (sn && !complexNewsList[location].includes(sn))
-    complexNewsList[location].push(sn);
+  if (location == 'France') {
+    let sn: string;
+    let i = 0;
+    do {
+      sn = selectRandomElement(complexNewsListInitial[location]);
+      i++;
+    } while (complexNewsList[location].includes(sn) && i < 5);
+    if (sn && !complexNewsList[location].includes(sn))
+      complexNewsList[location].push(sn);
+  } else {
+    let sn: string;
+    let i = 0;
+    do {
+      sn = selectRandomElement(complexNewsListInitial[location]);
+      i++;
+    } while (complexNewsList[location].includes(sn) && i < 5);
+    if (sn && !complexNewsList[location].includes(sn))
+      complexNewsList[location].push(sn);
+  }
 }
 
 export function generateAllComplexNews() {
   const locations = Object.keys(complexNewsList);
   for (let i = 0; i < 1; i++) {
     for (const location of locations) {
-      if (Math.random() > 0.7) {
-        let sn: string;
-        let i = 0;
-        do {
-          sn = selectRandomElement(complexNewsListInitial[location]);
-          i++;
-        } while (complexNewsList[location].includes(sn) && i < 5);
-        if (sn && !complexNewsList[location].includes(sn))
-          complexNewsList[location].push(sn);
+      if (location == 'France') {
+        for (let index = 0; index < 3; index++) {
+          if (Math.random() > 0.7) {
+            let sn: string;
+            let i = 0;
+            do {
+              sn = selectRandomElement(complexNewsListInitial[location]);
+              i++;
+            } while (complexNewsList[location].includes(sn) && i < 5);
+            if (sn && !complexNewsList[location].includes(sn))
+              complexNewsList[location].push(sn);
+          }
+        }
+      } else {
+        if (Math.random() > 0.7) {
+          let sn: string;
+          let i = 0;
+          do {
+            sn = selectRandomElement(complexNewsListInitial[location]);
+            i++;
+          } while (complexNewsList[location].includes(sn) && i < 5);
+          if (sn && !complexNewsList[location].includes(sn))
+            complexNewsList[location].push(sn);
+        }
       }
     }
   }
@@ -119,9 +145,28 @@ export let complexNewsList: NewsMap = {
 
 export let complexNewsListInitial: NewsMap = {
   France: [
-    'Une équipe de scientifiques affirme avoir découvert un nouveau traitement contre le cancer qui guérit 100% des patients.',
-    'Les autorités ont découvert un réseau de trafiquants d’animaux exotiques dans la région.',
-    'Selon un rapport récent, la consommation de vin rouge français réduit le risque de maladies cardiaques.',
+    '<b>[Paris] </b>Une équipe de scientifiques affirme avoir découvert un nouveau traitement contre le cancer qui guérit 100% des patients.',
+    '<b>[Rennes] </b>Les autorités ont découvert un réseau de trafiquants d’animaux exotiques dans la région.',
+    '<b>[Toulouse] </b>Selon un rapport récent, la consommation de vin rouge français réduit le risque de maladies cardiaques.',
+    "<b>[Lille] </b>Une entreprise locale affirme avoir inventé un moteur qui fonctionne à l'eau et qui réduit de moitié la consommation d'énergie.",
+    "<b>[Amiens] </b>Un artiste local expose des œuvres d'art qui ont été achetées par des collectionneurs internationaux pour des sommes astronomiques.",
+    '<b>[Rouen] </b>Un groupe de chercheurs annonce avoir découvert une nouvelle espèce animale qui pourrait aider à lutter contre le changement climatique.',
+    "<b>[Caen] </b>Des habitants signalent des bruits étranges la nuit provenant d'un parc local, les autorités enquêtent sur la cause.",
+    '<b>[Reims] </b>Une association locale organise un événement pour récolter des fonds pour les sans-abris, de nombreux artistes locaux y participent.',
+    "<b>[Strasbourg] </b>Des témoins signalent des apparitions d'ovnis dans le ciel de la ville, l'armée de l'air française n'a pas commenté l'affaire.",
+    "<b>[Brest] </b>Un groupe d'écologistes organise une manifestation pour dénoncer la pollution marine dans la région.",
+    "<b>[Orléans] </b>Un incendie s'est déclaré dans une usine locale, les pompiers sont sur place pour maîtriser les flammes.",
+    "<b>[Dijon] </b>Des archéologues découvrent des vestiges datant de l'époque romaine dans un parc local.",
+    '<b>[Nantes] </b>Une équipe de chercheurs annonce avoir découvert une nouvelle espèce de plante qui pourrait être utilisée pour produire des médicaments.',
+    '<b>[Limoges] </b>Des habitants signalent des apparitions de fantômes dans un ancien cimetière, une entreprise locale propose des visites guidées pour Halloween.',
+    '<b>[Clermont-Ferrand] </b>Des témoins signalent des phénomènes étranges dans le ciel de la ville, les scientifiques locaux enquêtent sur le phénomène.',
+    '<b>[Lyon] </b>Une entreprise locale annonce avoir créé une nouvelle application mobile pour faciliter la vie des habitants de la ville.',
+    "<b>[Bordeaux] </b>Des habitants signalent des odeurs étranges provenant d'une usine locale, les autorités enquêtent sur la cause.",
+    '<b>[Bayonne] </b>Un groupe de surfeurs locaux organise une compétition pour promouvoir la pratique du surf dans la région.',
+    '<b>[Montpellier] </b>Une équipe de chercheurs annonce avoir découvert un traitement efficace contre une maladie rare.',
+    "<b>[Marseille] </b>Des habitants signalent des nuisances sonores provenant d'un bar local, les autorités ont reçu de nombreuses plaintes.",
+    "<b>[Nice] </b>Un groupe d'artistes locaux organise une exposition pour promouvoir la culture provençale.",
+    "<b>[Le Mans] </b>Le Mans est devenu la première ville en France à établir une colonie sur Mars, marquant ainsi une avancée significative dans l'exploration spatiale.",
   ],
   Angleterre: [
     "Selon une étude récente, l'Angleterre connaît une augmentation du nombre de jeunes entrepreneurs dans le secteur technologique.",
@@ -337,9 +382,28 @@ export let complexNewsListInitial: NewsMap = {
 };
 
 export const complexNewsEnonce: Array<string> = [
-  'Une équipe de scientifiques affirme avoir découvert un nouveau traitement contre le cancer qui guérit 100% des patients.',
-  'Les autorités ont découvert un réseau de trafiquants d’animaux exotiques dans la région.',
-  'Selon un rapport récent, la consommation de vin rouge français réduit le risque de maladies cardiaques.',
+  '<b>[Paris] </b>Une équipe de scientifiques affirme avoir découvert un nouveau traitement contre le cancer qui guérit 100% des patients.',
+  '<b>[Rennes] </b>Les autorités ont découvert un réseau de trafiquants d’animaux exotiques dans la région.',
+  '<b>[Toulouse] </b>Selon un rapport récent, la consommation de vin rouge français réduit le risque de maladies cardiaques.',
+  "<b>[Lille] </b>Une entreprise locale affirme avoir inventé un moteur qui fonctionne à l'eau et qui réduit de moitié la consommation d'énergie.",
+  "<b>[Amiens] </b>Un artiste local expose des œuvres d'art qui ont été achetées par des collectionneurs internationaux pour des sommes astronomiques.",
+  '<b>[Rouen] </b>Un groupe de chercheurs annonce avoir découvert une nouvelle espèce animale qui pourrait aider à lutter contre le changement climatique.',
+  "<b>[Caen] </b>Des habitants signalent des bruits étranges la nuit provenant d'un parc local, les autorités enquêtent sur la cause.",
+  '<b>[Reims] </b>Une association locale organise un événement pour récolter des fonds pour les sans-abris, de nombreux artistes locaux y participent.',
+  "<b>[Strasbourg] </b>Des témoins signalent des apparitions d'ovnis dans le ciel de la ville, l'armée de l'air française n'a pas commenté l'affaire.",
+  "<b>[Brest] </b>Un groupe d'écologistes organise une manifestation pour dénoncer la pollution marine dans la région.",
+  "<b>[Orléans] </b>Un incendie s'est déclaré dans une usine locale, les pompiers sont sur place pour maîtriser les flammes.",
+  "<b>[Dijon] </b>Des archéologues découvrent des vestiges datant de l'époque romaine dans un parc local.",
+  '<b>[Nantes] </b>Une équipe de chercheurs annonce avoir découvert une nouvelle espèce de plante qui pourrait être utilisée pour produire des médicaments.',
+  '<b>[Limoges] </b>Des habitants signalent des apparitions de fantômes dans un ancien cimetière, une entreprise locale propose des visites guidées pour Halloween.',
+  '<b>[Clermont-Ferrand] </b>Des témoins signalent des phénomènes étranges dans le ciel de la ville, les scientifiques locaux enquêtent sur le phénomène.',
+  '<b>[Lyon] </b>Une entreprise locale annonce avoir créé une nouvelle application mobile pour faciliter la vie des habitants de la ville.',
+  "<b>[Bordeaux] </b>Des habitants signalent des odeurs étranges provenant d'une usine locale, les autorités enquêtent sur la cause.",
+  '<b>[Bayonne] </b>Un groupe de surfeurs locaux organise une compétition pour promouvoir la pratique du surf dans la région.',
+  '<b>[Montpellier] </b>Une équipe de chercheurs annonce avoir découvert un traitement efficace contre une maladie rare.',
+  "<b>[Marseille] </b>Des habitants signalent des nuisances sonores provenant d'un bar local, les autorités ont reçu de nombreuses plaintes.",
+  "<b>[Nice] </b>Un groupe d'artistes locaux organise une exposition pour promouvoir la culture provençale.",
+  "<b>[Le Mans] </b>Le Mans est devenu la première ville en France à établir une colonie sur Mars, marquant ainsi une avancée significative dans l'exploration spatiale.",
   "Selon une étude récente, l'Allemagne connaît une augmentation significative du nombre de véhicules électriques sur ses routes.",
   "Selon une étude récente, l'Angleterre connaît une augmentation du nombre de jeunes entrepreneurs dans le secteur technologique.",
   "Selon un rapport récent, l'Espagne enregistre une augmentation du nombre de touristes étrangers.",
@@ -427,7 +491,7 @@ export const complexNews: {
     cout: number;
   }[];
 } = {
-  'Une équipe de scientifiques affirme avoir découvert un nouveau traitement contre le cancer qui guérit 100% des patients.':
+  '<b>[Paris] </b>Une équipe de scientifiques affirme avoir découvert un nouveau traitement contre le cancer qui guérit 100% des patients.':
     [
       {
         actor: 'Dr. Thomas, oncologue',
@@ -465,7 +529,7 @@ export const complexNews: {
         cout: 2,
       },
     ],
-  'Les autorités ont découvert un réseau de trafiquants d’animaux exotiques dans la région.':
+  '<b>[Rennes] </b>Les autorités ont découvert un réseau de trafiquants d’animaux exotiques dans la région.':
     [
       {
         actor: 'Un garde forestier',
@@ -504,7 +568,7 @@ export const complexNews: {
         cout: 5,
       },
     ],
-  'Selon un rapport récent, la consommation de vin rouge français réduit le risque de maladies cardiaques.':
+  '<b>[Toulouse]</b> Selon un rapport récent, la consommation de vin rouge français réduit le risque de maladies cardiaques.':
     [
       {
         actor: 'Dr. Martin, cardiologue',
@@ -547,6 +611,623 @@ export const complexNews: {
           'Je recommande toujours à mes patients de se concentrer sur une alimentation équilibrée, riche en fruits, légumes et grains entiers, plutôt que de compter sur la consommation de vin rouge pour réduire le risque de maladies cardiaques.',
         pourcentage: -8,
         cout: 3,
+      },
+    ],
+  "<b>[Lille] </b>Une entreprise locale affirme avoir inventé un moteur qui fonctionne à l'eau et qui réduit de moitié la consommation d'énergie.":
+    [
+      {
+        actor: 'M. Dupont, ingénieur automobile',
+        description:
+          "Je suis au courant de cette invention, mais les tests réalisés jusqu'à présent ne montrent pas une réduction aussi significative de la consommation d'énergie. Il y a encore des défis techniques à relever.",
+        pourcentage: -10,
+        cout: 3,
+      },
+      {
+        actor: 'Mme Martin, conductrice',
+        description:
+          "J'ai eu l'occasion de tester un véhicule équipé de ce moteur. Bien qu'il y ait une légère réduction de la consommation d'énergie, la performance globale du moteur reste inférieure à celle des moteurs traditionnels.",
+        pourcentage: -5,
+        cout: 2,
+      },
+      {
+        actor: 'Le Pr. Dubois, spécialiste en énergie',
+        description:
+          "C'est une avancée intéressante dans le domaine des moteurs écologiques, mais il est important de réaliser davantage d'études pour valider les résultats annoncés.",
+        pourcentage: -3,
+        cout: 1,
+      },
+      {
+        actor: "M. Garcia, représentant de l'entreprise",
+        description:
+          "Nous sommes fiers de notre innovation qui contribue à la préservation de l'environnement. Les premiers tests ont montré des résultats prometteurs, et nous continuons à travailler pour améliorer encore plus les performances.",
+        pourcentage: +7,
+        cout: 2,
+      },
+    ],
+  "<b>[Amiens] </b>Un artiste local expose des œuvres d'art qui ont été achetées par des collectionneurs internationaux pour des sommes astronomiques.":
+    [
+      {
+        actor: "Mme Lambert, critique d'art",
+        description:
+          "Cet artiste a un talent exceptionnel et ses œuvres méritent vraiment d'être reconnues à l'échelle internationale. Les collectionneurs ont bien fait de les acheter.",
+        pourcentage: +8,
+        cout: 1,
+      },
+      {
+        actor: "M. Dubois, collectionneur d'art",
+        description:
+          "J'ai eu la chance d'acquérir l'une des œuvres de cet artiste. Son travail est unique et captivant. Je suis convaincu que sa cote sur le marché de l'art continuera de grimper.",
+        pourcentage: +10,
+        cout: 2,
+      },
+      {
+        actor: 'M. Martin, galeriste',
+        description:
+          "L'exposition de cet artiste a suscité un vif intérêt parmi les collectionneurs internationaux. Ses œuvres se distinguent par leur originalité et leur grande valeur artistique.",
+        pourcentage: +6,
+        cout: 1,
+      },
+      {
+        actor: "Mme Dupont, visiteuse de l'exposition",
+        description:
+          "Les œuvres de cet artiste sont vraiment uniques, mais les sommes astronomiques payées par les collectionneurs internationaux peuvent sembler exagérées. Il est important de prendre du recul et d'évaluer la valeur artistique réelle de ces œuvres.",
+        pourcentage: -3,
+        cout: 1,
+      },
+    ],
+  '<b>[Rouen] </b>Un groupe de chercheurs annonce avoir découvert une nouvelle espèce animale qui pourrait aider à lutter contre le changement climatique.':
+    [
+      {
+        actor: 'Le Pr. Durand, biologiste',
+        description:
+          "La découverte de cette nouvelle espèce animale est une avancée scientifique majeure. Ses caractéristiques uniques pourraient en effet contribuer à la préservation de l'environnement et à la lutte contre le changement climatique.",
+        pourcentage: +12,
+        cout: 1,
+      },
+      {
+        actor: 'M. Martin, écologiste',
+        description:
+          "C'est une nouvelle encourageante dans la lutte contre le changement climatique. Il faudra cependant réaliser des études approfondies pour comprendre comment cette nouvelle espèce animale peut réellement aider.",
+        pourcentage: +5,
+        cout: 1,
+      },
+      {
+        actor: 'Mme Dupont, militante environnementale',
+        description:
+          "Cette découverte ouvre de nouvelles perspectives passionnantes pour la préservation de la biodiversité et la lutte contre le changement climatique. Il est essentiel de préserver l'habitat de cette espèce pour maximiser son impact positif.",
+        pourcentage: +8,
+        cout: 2,
+      },
+      {
+        actor: 'Le Dr. Smith, zoologiste',
+        description:
+          "La découverte d'une nouvelle espèce animale est toujours fascinante, mais il est important de mener des recherches approfondies pour comprendre pleinement son rôle dans l'écosystème et son potentiel pour lutter contre le changement climatique.",
+        pourcentage: +3,
+        cout: 1,
+      },
+    ],
+  "<b>[Caen] </b>Des habitants signalent des bruits étranges la nuit provenant d'un parc local, les autorités enquêtent sur la cause.":
+    [
+      {
+        actor: 'Mme Dubois, habitante du quartier',
+        description:
+          "J'ai moi-même entendu ces bruits étranges la nuit. Cela crée une certaine anxiété parmi les habitants du quartier. J'espère que les autorités trouveront rapidement la cause de ces bruits.",
+        pourcentage: -2,
+        cout: 1,
+      },
+      {
+        actor: 'M. Martin, expert en phénomènes paranormaux',
+        description:
+          'Les bruits étranges signalés pourraient être liés à des phénomènes paranormaux. Il serait intéressant de mener des investigations approfondies pour comprendre ce qui se passe réellement.',
+        pourcentage: +3,
+        cout: 2,
+      },
+      {
+        actor: 'Mme Dupont, représentante des autorités locales',
+        description:
+          'Nous prenons ces signalements au sérieux et avons lancé une enquête approfondie pour déterminer la cause des bruits étranges. Nous travaillons en collaboration avec des experts pour résoudre ce mystère.',
+        pourcentage: +5,
+        cout: 3,
+      },
+      {
+        actor: 'M. Garcia, responsable du parc local',
+        description:
+          "Nous avons vérifié toutes les installations du parc et n'avons trouvé aucune explication rationnelle aux bruits signalés. Nous continuons à enquêter et explorer toutes les possibilités.",
+        pourcentage: +2,
+        cout: 1,
+      },
+    ],
+  '<b>[Reims] </b>Une association locale organise un événement pour récolter des fonds pour les sans-abris, de nombreux artistes locaux y participent.':
+    [
+      {
+        actor: "Mme Dupont, bénévole de l'association",
+        description:
+          "Cet événement est d'une grande importance pour aider les sans-abris de notre région. La participation des artistes locaux ajoute une dimension artistique unique à cette cause.",
+        pourcentage: +12,
+        cout: 1,
+      },
+      {
+        actor: 'M. Martin, artiste participant',
+        description:
+          "En tant qu'artiste local, je suis ravi de pouvoir contribuer à cette noble cause. C'est une excellente initiative qui permet de sensibiliser le public tout en soutenant les personnes dans le besoin.",
+        pourcentage: +8,
+        cout: 1,
+      },
+      {
+        actor: "M. Dubois, sans-abri soutenu par l'association",
+        description:
+          "L'initiative de cette association a un impact réel sur la vie des sans-abris. Grâce aux fonds récoltés, j'ai pu bénéficier d'un soutien et d'une assistance qui m'ont permis de me reconstruire.",
+        pourcentage: +15,
+        cout: 2,
+      },
+      {
+        actor: "M. Garcia, représentant de l'association",
+        description:
+          'Nous sommes reconnaissants envers les artistes locaux qui ont généreusement offert leur temps et leur talent pour cet événement. Leur participation contribue grandement à la réussite de notre collecte de fonds.',
+        pourcentage: +10,
+        cout: 1,
+      },
+    ],
+  "<b>[Strasbourg] </b>Des témoins signalent des apparitions d'ovnis dans le ciel de la ville, l'armée de l'air française n'a pas commenté l'affaire.":
+    [
+      {
+        actor: 'M. Dubois, ufologue',
+        description:
+          "Ces apparitions d'ovnis sont très intrigantes et nécessitent une investigation approfondie. Il est important de recueillir davantage de témoignages et de preuves pour comprendre la nature de ces phénomènes.",
+        pourcentage: +12,
+        cout: 2,
+      },
+      {
+        actor: 'M. Martin, astronome',
+        description:
+          'Il est possible que ces observations soient liées à des phénomènes astronomiques méconnus. Une étude scientifique approfondie est nécessaire pour évaluer la véracité de ces témoignages.',
+        pourcentage: -5,
+        cout: 1,
+      },
+      {
+        actor: 'Mme Dupont, témoin des apparitions',
+        description:
+          "J'ai personnellement observé ces ovnis dans le ciel de Strasbourg. Je suis convaincue qu'il s'agit de visiteurs extraterrestres. J'espère que les autorités prendront cette affaire au sérieux.",
+        pourcentage: +15,
+        cout: 1,
+      },
+      {
+        actor: 'Le Pr. Garcia, spécialiste en phénomènes paranormaux',
+        description:
+          "Ces apparitions d'ovnis soulèvent des questions fascinantes sur la possibilité de vie extraterrestre. Une étude scientifique rigoureuse doit être menée pour démêler le vrai du faux.",
+        pourcentage: +8,
+        cout: 2,
+      },
+    ],
+  "<b>[Brest] </b>Un groupe d'écologistes organise une manifestation pour dénoncer la pollution marine dans la région.":
+    [
+      {
+        actor: 'M. Dupont, pêcheur local',
+        description:
+          'Cette manifestation est importante pour sensibiliser à la pollution marine qui menace notre écosystème. Il est crucial que des mesures concrètes soient prises pour préserver nos océans.',
+        pourcentage: +12,
+        cout: 2,
+      },
+      {
+        actor: 'Mme Martin, touriste',
+        description:
+          "J'ai été choquée par l'état de la plage et de la mer dans cette région. La manifestation est un moyen de faire entendre notre voix et de demander des actions immédiates pour lutter contre la pollution.",
+        pourcentage: +8,
+        cout: 1,
+      },
+      {
+        actor: 'Le Pr. Dubois, spécialiste en environnement marin',
+        description:
+          'La pollution marine est un problème urgent qui nécessite une attention immédiate. Cette manifestation contribue à mettre en lumière cette préoccupation et à encourager les décideurs à prendre des mesures pour préserver notre écosystème marin.',
+        pourcentage: +10,
+        cout: 2,
+      },
+      {
+        actor: "M. Garcia, membre de l'association écologiste",
+        description:
+          "Nous sommes déterminés à faire entendre notre voix et à sensibiliser la population à l'importance de la préservation de nos océans. Cette manifestation est une étape importante dans notre combat contre la pollution marine.",
+        pourcentage: +5,
+        cout: 1,
+      },
+    ],
+  "<b>[Orléans] </b>Un incendie s'est déclaré dans une usine locale, les pompiers sont sur place pour maîtriser les flammes.":
+    [
+      {
+        actor: "Mme Dupont, employée de l'usine",
+        description:
+          "C'était une situation effrayante. Heureusement, les pompiers sont rapidement intervenus pour éteindre l'incendie. Nous espérons que l'usine pourra reprendre ses activités bientôt.",
+        pourcentage: -3,
+        cout: 2,
+      },
+      {
+        actor: 'M. Martin, représentant syndical',
+        description:
+          "Cet incendie souligne l'importance de la sécurité dans les usines. Il est nécessaire de renforcer les mesures de prévention et de réagir rapidement en cas d'incident.",
+        pourcentage: -2,
+        cout: 1,
+      },
+      {
+        actor: "Le Maire d'Orléans",
+        description:
+          "Nous sommes reconnaissants envers les pompiers pour leur travail acharné afin de protéger notre communauté. Nous ferons tout notre possible pour soutenir l'usine et ses employés pendant cette période difficile.",
+        pourcentage: +5,
+        cout: 2,
+      },
+      {
+        actor: 'M. Dubois, habitant du quartier',
+        description:
+          "Cet incendie a provoqué une importante fumée noire qui a généré une certaine inquiétude parmi les résidents. J'espère que des mesures seront prises pour éviter de tels incidents à l'avenir.",
+        pourcentage: -4,
+        cout: 1,
+      },
+    ],
+  "<b>[Dijon] </b>Des archéologues découvrent des vestiges datant de l'époque romaine dans un parc local.":
+    [
+      {
+        actor: 'M. Durand, archéologue en chef',
+        description:
+          "Cette découverte est d'une importance majeure pour comprendre l'histoire de la région. Les vestiges romains trouvés dans ce parc offrent de nouvelles perspectives sur l'occupation romaine à Dijon.",
+        pourcentage: +10,
+        cout: 2,
+      },
+      {
+        actor: 'Mme Leclerc, historienne',
+        description:
+          "Les vestiges romains découverts dans ce parc témoignent de l'influence de l'Empire romain dans la région. Cela confirme les informations historiques existantes sur la présence romaine à Dijon.",
+        pourcentage: +8,
+        cout: 1,
+      },
+      {
+        actor: 'M. Martin, conservateur de musée',
+        description:
+          "Nous envisageons d'exposer ces vestiges dans notre musée local pour permettre au public de les découvrir et d'en apprendre davantage sur l'histoire de la région à l'époque romaine.",
+        pourcentage: +6,
+        cout: 1,
+      },
+      {
+        actor: 'M. Dubois, riverain du parc',
+        description:
+          "C'est une surprise de savoir que notre parc abrite des vestiges romains. J'espère que ces découvertes seront bien préservées et pourront être accessibles au public.",
+        pourcentage: +4,
+        cout: 1,
+      },
+    ],
+  '<b>[Nantes] </b>Une équipe de chercheurs annonce avoir découvert une nouvelle espèce de plante qui pourrait être utilisée pour produire des médicaments.':
+    [
+      {
+        actor: 'Dr. Dubois, botaniste',
+        description:
+          "Cette découverte est d'une importance capitale pour la recherche pharmaceutique. Les propriétés médicinales de cette nouvelle plante pourraient révolutionner le développement de nouveaux médicaments.",
+        pourcentage: +12,
+        cout: 1,
+      },
+      {
+        actor: 'Mme Martin, pharmacienne',
+        description:
+          'Nous sommes enthousiasmés par cette découverte. Si les études cliniques confirment les propriétés thérapeutiques de cette plante, elle pourrait devenir une ressource précieuse dans la production de médicaments.',
+        pourcentage: +9,
+        cout: 2,
+      },
+      {
+        actor: 'Le Pr. Dupont, spécialiste en phytochimie',
+        description:
+          'Il est encourageant de trouver de nouvelles espèces de plantes avec un potentiel médicinal. Cependant, il reste encore beaucoup de recherches à faire pour identifier les composés actifs et évaluer leur efficacité.',
+        pourcentage: +5,
+        cout: 3,
+      },
+      {
+        actor: "M. Garcia, chercheur de l'équipe",
+        description:
+          'Notre équipe est fière de cette découverte prometteuse. Nous continuons à étudier les propriétés de cette plante et à explorer ses applications potentielles dans le domaine médical.',
+        pourcentage: +7,
+        cout: 1,
+      },
+    ],
+  '<b>[Limoges] </b>Des habitants signalent des apparitions de fantômes dans un ancien cimetière, une entreprise locale propose des visites guidées pour Halloween.':
+    [
+      {
+        actor: 'Mme Dupont, habitante de Limoges',
+        description:
+          "J'ai personnellement vécu une expérience étrange dans ce cimetière. Les visites guidées pour Halloween sont une excellente idée pour découvrir l'histoire mystérieuse de notre ville.",
+        pourcentage: +6,
+        cout: 2,
+      },
+      {
+        actor: 'M. Martin, historien local',
+        description:
+          "Il y a des légendes urbaines qui circulent sur ce cimetière depuis longtemps. Les apparitions de fantômes peuvent être le fruit de l'imagination des habitants ou de phénomènes naturels.",
+        pourcentage: -3,
+        cout: 1,
+      },
+      {
+        actor: "Mme Garcia, représentante de l'entreprise de visites guidées",
+        description:
+          'Nos visites guidées pour Halloween offrent une expérience unique et divertissante pour les amateurs de sensations fortes. Les apparitions de fantômes ajoutent une touche de mystère à cette activité.',
+        pourcentage: +5,
+        cout: 2,
+      },
+      {
+        actor: 'M. Dubois, sceptique',
+        description:
+          "Les apparitions de fantômes dans ce cimetière sont probablement le résultat d'une combinaison de facteurs psychologiques et environnementaux. Il est peu probable qu'il y ait une véritable présence surnaturelle.",
+        pourcentage: -2,
+        cout: 1,
+      },
+    ],
+  '<b>[Clermont-Ferrand] </b>Des témoins signalent des phénomènes étranges dans le ciel de la ville, les scientifiques locaux enquêtent sur le phénomène.':
+    [
+      {
+        actor: 'M. Dubois, témoin oculaire',
+        description:
+          "J'ai observé ces phénomènes étranges dans le ciel de la ville. Ils étaient vraiment fascinants, mais je suis curieux de connaître leur origine.",
+        pourcentage: +5,
+        cout: 1,
+      },
+      {
+        actor: 'M. Martin, scientifique',
+        description:
+          "Nous enquêtons sur ces phénomènes et tentons de les expliquer scientifiquement. Pour l'instant, nous n'avons pas de conclusion définitive, mais nous continuons à étudier les données recueillies.",
+        pourcentage: -3,
+        cout: 2,
+      },
+      {
+        actor: 'Mme Dupont, résidente',
+        description:
+          "Les phénomènes étranges dans le ciel ont créé une certaine agitation parmi les habitants de la ville. J'espère que les scientifiques pourront nous apporter des réponses rassurantes.",
+        pourcentage: -2,
+        cout: 1,
+      },
+      {
+        actor: 'M. Garcia, ufologue',
+        description:
+          "Ces phénomènes pourraient être liés à des activités extraterrestres. Nous devons garder l'esprit ouvert et explorer toutes les possibilités.",
+        pourcentage: +4,
+        cout: 1,
+      },
+    ],
+  '<b>[Lyon] </b>Une entreprise locale annonce avoir créé une nouvelle application mobile pour faciliter la vie des habitants de la ville.':
+    [
+      {
+        actor: "Mme Durand, utilisatrice de l'application",
+        description:
+          "Cette nouvelle application est vraiment pratique et simplifie de nombreuses tâches du quotidien. Je l'utilise régulièrement et je ne peux plus m'en passer.",
+        pourcentage: +12,
+        cout: 1,
+      },
+      {
+        actor: "M. Dupuis, développeur d'applications",
+        description:
+          "En tant que professionnel du développement d'applications, je suis impressionné par les fonctionnalités offertes par cette nouvelle application. C'est un grand pas en avant pour la technologie mobile.",
+        pourcentage: +8,
+        cout: 1,
+      },
+      {
+        actor: 'Le Pr. Martin, spécialiste en informatique',
+        description:
+          'Cette application apporte certainement des avantages aux habitants de la ville, mais il est important de garantir la sécurité des données personnelles des utilisateurs.',
+        pourcentage: -4,
+        cout: 1,
+      },
+      {
+        actor: "M. Garcia, fondateur de l'entreprise",
+        description:
+          'Notre objectif était de simplifier la vie des habitants de Lyon grâce à la technologie. Cette nouvelle application est le fruit de nombreuses heures de travail et nous sommes ravis de voir les retours positifs des utilisateurs.',
+        pourcentage: +10,
+        cout: 2,
+      },
+    ],
+  "<b>[Bordeaux] </b>Des habitants signalent des odeurs étranges provenant d'une usine locale, les autorités enquêtent sur la cause.":
+    [
+      {
+        actor: 'Mme Dupont, résidente locale',
+        description:
+          "Les odeurs provenant de l'usine sont de plus en plus préoccupantes. Elles ont un impact sur notre qualité de vie et doivent être résolues rapidement.",
+        pourcentage: -8,
+        cout: 2,
+      },
+      {
+        actor: "M. Martin, représentant de l'usine",
+        description:
+          'Nous sommes conscients des préoccupations des habitants et nous travaillons en étroite collaboration avec les autorités pour identifier la source des odeurs et les résoudre. La sécurité et le bien-être de la communauté sont notre priorité.',
+        pourcentage: -3,
+        cout: 1,
+      },
+      {
+        actor: 'Mme Lambert, experte en environnement',
+        description:
+          "Les odeurs étranges provenant de l'usine pourraient être le signe d'une émission de substances nocives. Il est essentiel de mener une enquête approfondie pour évaluer les impacts sur la santé et l'environnement.",
+        pourcentage: -6,
+        cout: 2,
+      },
+      {
+        actor: 'M. Dubois, maire de Bordeaux',
+        description:
+          'Nous prenons cette situation au sérieux et avons mobilisé toutes les ressources nécessaires pour enquêter sur les odeurs. La transparence et la communication avec les habitants sont primordiales dans ce processus.',
+        pourcentage: -2,
+        cout: 1,
+      },
+      {
+        actor: 'M. Garcia, représentant des autorités sanitaires',
+        description:
+          "Nous effectuons des analyses de l'air et des émissions de l'usine pour déterminer la nature des odeurs et leur impact sur la santé publique. Les résultats guideront les mesures nécessaires pour garantir la sécurité de la population.",
+        pourcentage: -4,
+        cout: 1,
+      },
+    ],
+  '<b>[Bayonne] </b>Un groupe de surfeurs locaux organise une compétition pour promouvoir la pratique du surf dans la région.':
+    [
+      {
+        actor: 'M. Leblanc, champion de surf',
+        description:
+          "Cette compétition est une excellente initiative pour encourager les surfeurs locaux et promouvoir notre magnifique région. J'espère que de nombreux passionnés de surf participeront et montreront leurs meilleures performances.",
+        pourcentage: +15,
+        cout: 2,
+      },
+      {
+        actor: 'M. Dupuis, surfeur débutant',
+        description:
+          "Je suis ravi de cette compétition qui me donne l'opportunité de rencontrer d'autres passionnés de surf. Même si je ne suis pas encore très expérimenté, je vais profiter de cette occasion pour m'améliorer et prendre du plaisir dans les vagues.",
+        pourcentage: +8,
+        cout: 1,
+      },
+      {
+        actor: 'Mme Martin, habitante de Bayonne',
+        description:
+          "Le surf est un élément essentiel de notre culture ici à Bayonne, et cette compétition ne fait que renforcer notre attachement à ce sport. J'espère que cela attirera l'attention sur notre magnifique littoral et encouragera encore plus de personnes à se mettre au surf.",
+        pourcentage: +12,
+        cout: 1,
+      },
+      {
+        actor: 'M. Dubois, restaurateur',
+        description:
+          'Cette compétition de surf va certainement attirer de nombreux visiteurs dans la région, et cela signifie également plus de clients pour les restaurants locaux comme le mien. Je suis prêt à offrir des repas spéciaux et des réductions pour les participants et les spectateurs.',
+        pourcentage: +5,
+        cout: 2,
+      },
+      {
+        actor: 'Mme Lambert, surfeuse retraitée',
+        description:
+          'Je suis ravie de voir une compétition de surf organisée dans notre belle région. Même si je ne participe plus activement, je serai là pour soutenir les surfeurs et partager mes expériences passées avec les passionnés.',
+        pourcentage: +6,
+        cout: 1,
+      },
+    ],
+  '<b>[Montpellier] </b>Une équipe de chercheurs annonce avoir découvert un traitement efficace contre une maladie rare.':
+    [
+      {
+        actor: 'Dr. Thompson, médecin spécialiste',
+        description:
+          'Je suis impressionné par les résultats de cette équipe de chercheurs. Leur découverte représente un véritable espoir pour les patients atteints de cette maladie rare.',
+        pourcentage: +15,
+        cout: 2,
+      },
+      {
+        actor: 'Mme Dubois, patiente guérie',
+        description:
+          "Ce traitement a été une véritable révolution dans ma vie. J'étais désespérée, mais grâce à cette découverte, je suis maintenant en rémission. Je ne pourrai jamais assez remercier les chercheurs.",
+        pourcentage: +20,
+        cout: 1,
+      },
+      {
+        actor: 'Le Pr. Lefevre, spécialiste en maladies rares',
+        description:
+          "C'est une avancée majeure dans la lutte contre cette maladie rare. Les résultats sont très prometteurs et ouvrent de nouvelles perspectives pour les patients.",
+        pourcentage: +12,
+        cout: 1,
+      },
+      {
+        actor: 'Dr. Garcia, critique médical',
+        description:
+          "Bien que cette découverte soit encourageante, il est important de rappeler qu'il faudra encore du temps avant qu'elle ne soit largement accessible aux patients. Des essais supplémentaires sont nécessaires.",
+        pourcentage: +8,
+        cout: 2,
+      },
+    ],
+  "<b>[Marseille] </b>Des habitants signalent des nuisances sonores provenant d'un bar local, les autorités ont reçu de nombreuses plaintes.":
+    [
+      {
+        actor: 'Mme Dubois, résidente du quartier',
+        description:
+          'Les nuisances sonores provenant de ce bar sont insupportables. Les autorités doivent prendre des mesures strictes pour mettre fin à ce problème qui perturbe la tranquillité du quartier.',
+        pourcentage: -15,
+        cout: 3,
+      },
+      {
+        actor: 'M. Lefebvre, propriétaire du bar',
+        description:
+          'Nous sommes conscients des plaintes des habitants et nous prenons des mesures pour réduire les nuisances sonores. Nous avons engagé un expert pour trouver des solutions techniques afin de respecter les normes de bruit.',
+        pourcentage: -5,
+        cout: 2,
+      },
+      {
+        actor: 'M. Garcia, amateur de musique',
+        description:
+          "Ce bar est l'un des rares endroits où l'on peut profiter de concerts en direct. Les nuisances sonores sont un prix acceptable à payer pour l'ambiance unique qu'il offre.",
+        pourcentage: +10,
+        cout: 1,
+      },
+      {
+        actor: 'Mme Martin, représentante des autorités',
+        description:
+          'Nous prenons les plaintes des habitants au sérieux et nous travaillons en collaboration avec le propriétaire du bar pour trouver des solutions qui permettent de concilier les intérêts des résidents et des amateurs de musique.',
+        pourcentage: -2,
+        cout: 1,
+      },
+    ],
+  "<b>[Nice] </b>Un groupe d'artistes locaux organise une exposition pour promouvoir la culture provençale.":
+    [
+      {
+        actor: "M. Leclerc, visiteur de l'exposition",
+        description:
+          "Cette exposition est une véritable célébration de la culture provençale. Les artistes ont réussi à capturer l'essence de la région dans leurs œuvres. C'est un événement à ne pas manquer !",
+        pourcentage: +18,
+        cout: 1,
+      },
+      {
+        actor: "Mme Dubois, critique d'art",
+        description:
+          "Bien que l'intention soit louable, cette exposition manque de diversité artistique. Elle ne représente pas pleinement la richesse de la culture provençale. Il aurait été préférable d'inclure des artistes d'autres horizons.",
+        pourcentage: -38,
+        cout: 2,
+      },
+      {
+        actor: "M. Martinet, organisateur de l'exposition",
+        description:
+          "Nous sommes ravis d'organiser cette exposition qui met en lumière les talents locaux et contribue à la préservation de notre patrimoine culturel. C'est un honneur de promouvoir la culture provençale à travers l'art.",
+        pourcentage: +15,
+        cout: 1,
+      },
+      {
+        actor: 'Mme Rousseau, habitante de Nice',
+        description:
+          "Cette exposition est une véritable bouffée d'air frais pour la ville. Elle apporte une ambiance joyeuse et colorée qui reflète parfaitement l'esprit provençal. Bravo aux artistes pour leur talent !",
+        pourcentage: +10,
+        cout: 1,
+      },
+    ],
+  "<b>[Le Mans] </b>Le Mans est devenu la première ville en France à établir une colonie sur Mars, marquant ainsi une avancée significative dans l'exploration spatiale.":
+    [
+      {
+        actor: 'Sophie, habitante du Mans',
+        description:
+          "C'est incroyable ! Le Mans est vraiment en avance sur son temps en établissant une colonie sur Mars. C'est une fierté pour notre ville et une réalisation remarquable dans l'exploration spatiale.",
+        pourcentage: +50,
+        cout: 3,
+      },
+      {
+        actor: 'Alexandre, expert en astronomie',
+        description:
+          "Malheureusement, cette information est purement fictive. À ce jour, aucune colonie humaine n'a été établie sur Mars. Les projets d'exploration martienne sont encore au stade de la planification et de la recherche.",
+        pourcentage: -50,
+        cout: 3,
+      },
+      {
+        actor: 'Sophie, rêveuse',
+        description:
+          'Imaginer une colonie du Mans sur Mars est captivant. Cependant, il est important de distinguer la réalité de la fiction. Les voyages habités vers Mars sont des projets ambitieux qui nécessitent encore de nombreuses avancées technologiques.',
+        pourcentage: -30,
+        cout: 2,
+      },
+      {
+        actor: 'Luc, fan de science-fiction',
+        description:
+          "Une colonie du Mans sur Mars serait une véritable aventure interplanétaire ! Pouvoir explorer et coloniser d'autres mondes est un rêve pour l'humanité, mais pour l'instant, il reste dans le domaine de la fiction.",
+        pourcentage: +40,
+        cout: 2,
+      },
+      {
+        actor: 'Élodie, sceptique',
+        description:
+          "La création d'une colonie du Mans sur Mars semble trop fantastique pour être vraie. Il est important de ne pas confondre les réalisations scientifiques et les idées de science-fiction.",
+        pourcentage: -20,
+        cout: 1,
+      },
+      {
+        actor: 'Pierre, réaliste',
+        description:
+          'Il est important de prendre cette information avec prudence. La colonisation de Mars est un projet complexe qui nécessite des ressources, une planification minutieuse et des avancées technologiques considérables.',
+        pourcentage: -40,
+        cout: 1,
       },
     ],
   "Selon une étude récente, l'Allemagne connaît une augmentation significative du nombre de véhicules électriques sur ses routes.":

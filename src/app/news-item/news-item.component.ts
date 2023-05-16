@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActionModalComponent } from '../action-modal/action-modal.component';
 import { Globals } from 'src/data/sharedData';
+import { complexNewsEnonce } from 'src/data/complexFakeNews';
 
 @Component({
   selector: 'app-news-item',
@@ -20,6 +21,10 @@ export class NewsItemComponent {
 
   isInNewsProcessed(): boolean {
     return Globals.currentPlayer.newsProcessed.some((value, index) => value.new == this.new);
+  }
+
+  isNewsComplex(news: string) : boolean {
+    return complexNewsEnonce.includes(news);
   }
 
   openDialog(ne: string) {

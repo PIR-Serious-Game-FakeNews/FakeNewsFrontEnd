@@ -1,61 +1,103 @@
-*{
-    box-sizing: border-box;
-    user-select: none;
+* {
+  box-sizing: border-box;
+  user-select: none;
 }
 
-.player-item{
-    cursor: pointer;
-    padding: 15px;
-    height: max-content;
-    width: 80%;
-    margin: 3% 10%;
-    border: 2px solid blue;
-    border-radius: 20%;
+.player-item {
+  cursor: pointer;
+  padding: 15px;
+  height: max-content;
+  width: 80%;
+  margin: 3% 10%;
+  border: 2px solid blue;
+  border-radius: 20%;
 }
 
-.player-item:hover{
-    border: 2px solid rgb(0, 255, 47);
+.player-item:hover {
+  border: 2px solid rgb(0, 255, 47);
 }
 
-.player-item img{
-    width: 75px;
-    height: 75px;
+.player-item img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+}
+
+.player-item .info {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.player-item .info .username {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.player-item .point {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.player-item .credibility {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.credText {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+mat-progress-bar {
+  height: 15px;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 1150px) {
+  .player-item img {
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
+  }
+
+  .credText {
+    font-size: 12px;
+  }
+
+  .player-item .info .username {
+    font-size: 15px;
+  }
 }
 
-.player-item .info{
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-    align-items: center;
-}
+@media screen and (max-width: 700px) {
+  .player-item {
+    padding: 5px;
+    margin: 5% 10%;
+  }
 
-.player-item .info .username{
-    font-size: 20px;
-    font-weight: 600;
-}
+  .player-item img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
 
-.player-item .point{
-    display: flex;
-    height: 100%;
+  .player-item .info {
     flex-direction: column;
-    justify-content: center;
     gap: 10px;
-}
+  }
 
-.player-item .credibility{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+  .credText {
+    font-size: 8px;
+  }
 
-.credText{
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-mat-progress-bar{
-    height: 15px;
-    border-radius: 10px;
+  .player-item .info .username {
+    font-size: 10px;
+  }
 }
