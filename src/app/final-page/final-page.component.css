@@ -175,15 +175,42 @@
   @media screen and (max-width: 550px) {
     .second-place {
         position: absolute;
-        top: 25%;
-        left: -5%;
+        top: 36%;
+        left: 0%;
         z-index: 6;
         background-color: rgba(232, 235, 235, 0.808);
       }
       
       .third-place {
         position: absolute;
-        top: 42%;
+        top: 50%;
+        right: -3%;
+        z-index: 4;
+        background-color: rgba(189, 139, 82, 0.913);
+      }
+
+      .joueur.second-place, .joueur.third-place {
+        width: 100px;
+        height: 100px;
+      }
+
+      .joueur.second-place .joueur-image, .joueur.third-place .joueur-image {
+        width: 55px;
+      }
+  }
+
+  @media screen and (max-width: 400px) {
+    .second-place {
+        position: absolute;
+        top: 36%;
+        left: 0%;
+        z-index: 6;
+        background-color: rgba(232, 235, 235, 0.808);
+      }
+      
+      .third-place {
+        position: absolute;
+        top: 50%;
         right: -5%;
         z-index: 4;
         background-color: rgba(189, 139, 82, 0.913);

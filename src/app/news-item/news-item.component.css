@@ -27,3 +27,23 @@
 .dark-background {
   background-color: darkgrey;
 }
+
+@media screen and (max-width: 700px) {
+  .news-item {
+    padding: 5px;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .news-item {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .news-item button {
+    width: 90%;
+    margin: auto;
+  }
+}
+

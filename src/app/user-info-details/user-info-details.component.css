@@ -1,75 +1,96 @@
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
-.user{
-    display: flex;
-    flex-direction: column;
-    height: 78%;
-    width: 100%;
-    justify-content: start;
-    overflow-y: scroll;
+.user {
+  display: flex;
+  flex-direction: column;
+  height: 78%;
+  width: 100%;
+  justify-content: start;
+  overflow-y: scroll;
 }
 
-.new{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 15px;
-    width: 95%;
-    border: 2px solid #1e5509;
-    border-radius: 5px;
-    margin: 5px auto;
+.new {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  width: 95%;
+  border: 2px solid #1e5509;
+  border-radius: 5px;
+  margin: 5px auto;
 }
 
-.enCours{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 15px;
-    width: 95%;
-    border: 2px solid #1e5509;
-    border-radius: 5px;
-    margin: 5px auto;
+.enCours {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  width: 95%;
+  border: 2px solid #1e5509;
+  border-radius: 5px;
+  margin: 5px auto;
 }
 
-.newNew{
-    width: 40%;
-    min-width: 300px;
-}
-
-mat-progress-bar{
-    width: 175px;
-    margin: 0px 20px;
-}
-
-.gain{
-    margin-left: 15px;
-    font-size: larger;
-    font-weight: 500;
-    color: rgb(17, 76, 17);
-    padding: 5px;
-    cursor: help;
+.newNew {
+  width: 40%;
+  min-width: 300px;
 }
 
 mat-progress-bar {
-    height: 15px;
-    border-radius: 10px;
+  width: 175px;
+  margin: 0px 20px;
 }
 
-.user .title{
-    text-align: center;
-    margin-top: 15px;
-    font-weight: bolder;
-    font-size: 20px;
+.gain {
+  margin-left: 15px;
+  font-size: larger;
+  font-weight: 500;
+  color: rgb(17, 76, 17);
+  padding: 5px;
+  cursor: help;
 }
 
-.actions{
-    width: 100px;
-    display: flex;
+mat-progress-bar {
+  height: 15px;
+  border-radius: 10px;
+}
+
+.user .title {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.actions {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+}
+
+@media screen and (max-width: 700px) {
+  .enCours {
+    height: auto;
     flex-direction: column;
     gap: 10px;
-    justify-content: center;
+  }
+  .actions {
+    flex-direction: row;
+    width: auto;
+  }
+
+  .actions button{
+    height: auto;
+  }
+
+  .newNew {
+    width: 100%;
+    min-width: auto;
+  }
 }

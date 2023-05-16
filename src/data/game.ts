@@ -10,7 +10,12 @@ export let playerRecord: Array<player> = [
   {
     "username": "Brandon",
     "credibility": 17,
-    "newsProcessing": [],
+    "newsProcessing": [{
+      "new": "<b>[Nantes]</b> Le Gouvernement pense que le réchauffement climatique et un complot visant à réduire la productivité.",
+      "score": 75,
+      "actions":[],
+      "sens": 1
+    }],
     "newsProcessed": [
       {
         "new": "<b>[Rennes] </b>Les autorités ont découvert un réseau de trafiquants d’animaux exotiques dans la région.",
