@@ -15,23 +15,23 @@ let subject: Array<string> = [
   'La célébrité du moment',
   "L'influenceur très suivi",
   "Le leader d'une organisation extrémiste",
-  "Le célèbre entrepreneur",
-  "Le sportif de renommée mondiale",
-  "Le chanteur populaire",
+  'Le célèbre entrepreneur',
+  'Le sportif de renommée mondiale',
+  'Le chanteur populaire',
   "Le responsable d'une ONG controversée",
-  "Le dirigeant syndical",
-  "Le scientifique de renom",
+  'Le dirigeant syndical',
+  'Le scientifique de renom',
   "L'économiste renommé",
   "Le directeur d'un institut de recherche",
-  "Le célèbre acteur",
+  'Le célèbre acteur',
   "Le chef de file des défenseurs de l'environnement",
-  "Le représentant politique controversé",
-  "Le militant des droits humains",
+  'Le représentant politique controversé',
+  'Le militant des droits humains',
   "L'écrivain célèbre",
-  "Le célèbre artiste engagé",
+  'Le célèbre artiste engagé',
   "L'expert en technologie",
   "L'expert en sécurité nationale",
-  "Le célèbre avocat",
+  'Le célèbre avocat',
 ];
 
 let verb: Array<string> = [
@@ -61,29 +61,36 @@ let verb: Array<string> = [
   'investit dans la recherche scientifique pour réduire la dépendance aux énergies fossiles',
   'soutient les initiatives culturelles et artistiques pour préserver le patrimoine culturel',
   "a été surpris en train de tricher lors d'une élection",
-  "a été condamné pour fraude financière",
-  "a été impliqué dans un scandale de corruption",
-  "a été critiqué pour son manque de transparence",
-  "a été accusé de manipulation des médias",
-  "a lancé une campagne de désinformation",
-  "a été récompensé pour ses actions humanitaires",
+  'a été condamné pour fraude financière',
+  'a été impliqué dans un scandale de corruption',
+  'a été critiqué pour son manque de transparence',
+  'a été accusé de manipulation des médias',
+  'a lancé une campagne de désinformation',
+  'a été récompensé pour ses actions humanitaires',
   "a été impliqué dans un conflit d'intérêts",
   "a été victime d'un complot politique",
-  "a été appelé à démissionner suite à des allégations de mauvaise conduite",
+  'a été appelé à démissionner suite à des allégations de mauvaise conduite',
   "a été élu personnalité de l'année",
-  "a été impliqué dans un différend territorial",
+  'a été impliqué dans un différend territorial',
   "a promis de lutter contre la pauvreté et l'exclusion sociale",
-  "a été critiqué pour son manque de soutien aux travailleurs",
+  'a été critiqué pour son manque de soutien aux travailleurs',
   "a été accusé de négligence dans la gestion d'une crise",
-  "a été confronté à des manifestations massives de la population",
+  'a été confronté à des manifestations massives de la population',
   "a été impliqué dans une affaire d'espionnage",
   "a été félicité pour ses efforts en matière d'éducation",
-  "a été impliqué dans un scandale sexuel",
-  "a été soutenu par une grande partie de la population dans une réforme controversée",
+  'a été impliqué dans un scandale sexuel',
+  'a été soutenu par une grande partie de la population dans une réforme controversée',
 ];
 
 export type NewsMap = {
   [country: string]: string[];
+};
+
+export type SimpleNewsOnProcess = {
+  [news: string]: {
+    sens: number;
+    finded: boolean;
+  };
 };
 
 export let simpleNewsList: NewsMap = {

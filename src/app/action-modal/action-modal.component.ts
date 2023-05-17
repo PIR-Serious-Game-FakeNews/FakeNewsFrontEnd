@@ -54,12 +54,16 @@ export class ActionModalComponent {
     Globals.currentPlayer.newsProcessing =
       Globals.currentPlayer.newsProcessing.map((value, index) => {
         if (value.new == this.data.news) {
-          sens = value.sens;
+          if(Globals.allNewsProcessed.includes(value.new)){
+            sens = Globals.simpleNewsOnProcess[value.new].sens;
+          }else{
+            sens = value.sens;
+          }
           return {
             new: value.new,
-            score: simpleActions.pourcentage * value.sens + value.score,
+            score: simpleActions.pourcentage * sens + value.score,
             actions: [...value.actions, simpleActions.actor],
-            sens: value.sens,
+            sens: sens,
           };
         } else return value;
       });

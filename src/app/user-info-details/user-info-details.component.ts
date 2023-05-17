@@ -19,7 +19,7 @@ export class UserInfoDetailsComponent {
     return Globals.currentPlayer;
   }
 
-  traiter(news: { new: string; score: number }) {
+  traiter(news: { new: string; score: number; sens: number }) {
     const dialogRef = this.dialog.open(ActionModalComponent, {
       data: {
         simple: !Globals.complexNewsEnonce.includes(news.new),
@@ -34,22 +34,73 @@ export class UserInfoDetailsComponent {
     });
   }
 
-  publier(news: { new: string; score: number }) {
-    Globals.currentPlayer.newsProcessed.push({new: news.new, credit: news.score})
-    const creditToAdd = Globals.calculateCredibility(Globals.getType(news.new), news.score,  Globals.getComplexVeracity(news.new));
-    Globals.currentPlayer.credibility += (Globals.allNewsProcessed.includes(news.new) ? creditToAdd / 2 : creditToAdd)
-    Globals.currentPlayer.credibility = (Globals.currentPlayer.credibility < 0) ? 0 : Globals.currentPlayer.credibility;
-    Globals.currentPlayer.newsProcessing = Globals.currentPlayer.newsProcessing.filter((value, index) => value.new != news.new);
-    Globals.allNewsProcessed.push(news.new);
-    console.log(creditToAdd)
+  publier(news: { new: string; score: number; sens: number }) {
+    Globals.currentPlayer.newsProcessed.push({
+      new: news.new,
+      credit: news.score,
+    });
+    const toAdd: [number, boolean, boolean] = Globals.calculateCredibility(
+      Globals.getType(news.new),
+      news.score,
+      news.new,
+      Globals.getComplexVeracity(news.new)
+    );
+    if (Globals.allNewsProcessed.includes(news.new)) {
+      if (toAdd[1]) {
+        Globals.currentPlayer.credibility += toAdd[0] / 2;
+      } else {
+        Globals.currentPlayer.credibility += toAdd[0];
+      }
+    } else {
+      Globals.currentPlayer.credibility += toAdd[0];
+      Globals.allNewsProcessed.push(news.new);
+      Globals.simpleNewsOnProcess[news.new] = {
+        sens: toAdd[2] ? 1 : -1,
+        finded: toAdd[2],
+      };
+    }
+    Globals.currentPlayer.credibility =
+      Globals.currentPlayer.credibility < 0
+        ? 0
+        : Globals.currentPlayer.credibility;
+    Globals.currentPlayer.newsProcessing =
+      Globals.currentPlayer.newsProcessing.filter(
+        (value, index) => value.new != news.new
+      );
   }
 
-  terminer(news: { new: string; score: number }) {
-    Globals.currentPlayer.newsProcessed.push({new: news.new, credit: news.score})
-    const creditToAdd = Globals.calculateCredibilityFalse(Globals.getType(news.new), news.score,  Globals.getComplexVeracity(news.new));
-    Globals.currentPlayer.credibility += creditToAdd
-    Globals.currentPlayer.credibility = (Globals.currentPlayer.credibility < 0) ? 0 : Globals.currentPlayer.credibility;
-    Globals.currentPlayer.newsProcessing = Globals.currentPlayer.newsProcessing.filter((value, index) => value.new != news.new);
-    console.log(creditToAdd)
+  terminer(news: { new: string; score: number; sens: number }) {
+    Globals.currentPlayer.newsProcessed.push({
+      new: news.new,
+      credit: news.score,
+    });
+    const toAdd: [number, boolean, boolean] = Globals.calculateCredibilityFalse(
+      Globals.getType(news.new),
+      news.score,
+      news.new,
+      Globals.getComplexVeracity(news.new)
+    );
+    if (Globals.allNewsProcessed.includes(news.new)) {
+      if (toAdd[1]) {
+        Globals.currentPlayer.credibility += toAdd[0] / 2;
+      } else {
+        Globals.currentPlayer.credibility += toAdd[0];
+      }
+    } else {
+      Globals.currentPlayer.credibility += toAdd[0];
+      Globals.allNewsProcessed.push(news.new);
+      Globals.simpleNewsOnProcess[news.new] = {
+        sens: toAdd[2] ? 1 : -1,
+        finded: toAdd[2],
+      };
+    }
+    Globals.currentPlayer.credibility =
+      Globals.currentPlayer.credibility < 0
+        ? 0
+        : Globals.currentPlayer.credibility;
+    Globals.currentPlayer.newsProcessing =
+      Globals.currentPlayer.newsProcessing.filter(
+        (value, index) => value.new != news.new
+      );
   }
 }

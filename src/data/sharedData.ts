@@ -4,7 +4,7 @@ import { fakeNews } from "./fakeNews";
 import { allUsers } from "./pageSetup";
 import { simpleActions } from "./simpleActions";
 import { player, playerRecord, unlockLevel } from "./game";
-import { generateAllSimpleNews, simpleNewsList } from "./simpleFakeNews";
+import { SimpleNewsOnProcess, generateAllSimpleNews, simpleNewsList } from "./simpleFakeNews";
 import { complexNewsList, complexNewsEnonce, complexNews, generateAllComplexNews } from "./complexFakeNews";
 import { Router } from "@angular/router";
 
@@ -21,6 +21,7 @@ export class Globals {
   static simpleFakeNews = simpleNewsList;
   static complexFakeNews = complexNewsList;
   static complexNewsEnonce = complexNewsEnonce;
+  static simpleNewsOnProcess : SimpleNewsOnProcess = {};
   static allNewsProcessed : string[] = [];
   static nbTour : number;
   static router: Router;
@@ -45,26 +46,40 @@ export class Globals {
     Globals.currentPlayer = Globals.playerRecord[Globals.currentPlayerIndex];
   }
 
-  static calculateCredibility(type: number, percentage: number, veracity?:boolean) {
+  static calculateCredibility(type: number, percentage: number, news: string, veracity?:boolean): [number, boolean, boolean] {
+    let result : [number, boolean, boolean];
     if (type == 1) {
-      let trueOrFalse : boolean = (Math.random()*100) < percentage;
-      if(trueOrFalse) return Math.round(percentage/5)
-      else return -Math.round(percentage/10)
+      let trueOrFalse : boolean;
+      if(Globals.allNewsProcessed.includes(news)){
+        trueOrFalse = Globals.simpleNewsOnProcess[news].finded;
+      }else{ 
+        trueOrFalse = (Math.random()*100) < percentage;
+      }
+      if(trueOrFalse) result =  [10, true, true]
+      else result = [-15, false, false]
     } else {
-      if(veracity) return Math.round(percentage/5)
-      else return -Math.round(percentage/10)
+      if(veracity) result = [50, true, true]
+      else result = [-60, false, false]
     }
+    return result
   }
 
-  static calculateCredibilityFalse(type: number, percentage: number, veracity?:boolean) {
+  static calculateCredibilityFalse(type: number, percentage: number, news: string, veracity?:boolean): [number, boolean, boolean] {
+    let result : [number, boolean, boolean];
     if (type == 1) {
-      let trueOrFalse : boolean = (Math.random()*100) < percentage;
-      if(trueOrFalse) return -Math.round(percentage/5)
-      else return Math.round((100 - percentage)/10)
+      let trueOrFalse : boolean;
+      if(Globals.allNewsProcessed.includes(news)){
+        trueOrFalse = Globals.simpleNewsOnProcess[news].finded;
+      }else{ 
+        trueOrFalse = (Math.random()*100) < percentage;
+      }
+      if(trueOrFalse) result =  [-15, false, true]
+      else result = [10, true, false]
     } else {
-      if(veracity) return -Math.round(percentage/5)
-      else return Math.round((100 - percentage)/10)
+      if(veracity) result = [-60, false, true]
+      else result = [50, true, false]
     }
+    return result
   }
 
   static getType(news: string) {

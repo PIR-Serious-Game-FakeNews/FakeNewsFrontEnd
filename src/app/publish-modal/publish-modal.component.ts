@@ -17,20 +17,70 @@ export class PublishModalComponent {
   }
   
   publishHandle(){
-    console.log("PUBLISH");
     Globals.currentPlayer.newsProcessing.forEach(element => {
-      Globals.currentPlayer.newsProcessed.push({new: element.new, credit: element.score})
-      const creditToAdd = Globals.calculateCredibility(Globals.getType(element.new), element.score,  Globals.getComplexVeracity(element.new));
-      Globals.currentPlayer.credibility += (Globals.allNewsProcessed.includes(element.new) ? creditToAdd / 2 : creditToAdd)
-      Globals.allNewsProcessed.push(element.new)
-      console.log(creditToAdd)
+      Globals.currentPlayer.newsProcessed.push({
+        new: element.new,
+        credit: element.score,
+      });
+      const toAdd: [number, boolean, boolean] = Globals.calculateCredibility(
+        Globals.getType(element.new),
+        element.score,
+        element.new,
+        Globals.getComplexVeracity(element.new)
+      );
+      if (Globals.allNewsProcessed.includes(element.new)) {
+        if (toAdd[1]) {
+          Globals.currentPlayer.credibility += toAdd[0] / 2;
+        } else {
+          Globals.currentPlayer.credibility += toAdd[0];
+        }
+      } else {
+        Globals.currentPlayer.credibility += toAdd[0];
+        Globals.allNewsProcessed.push(element.new);
+        Globals.simpleNewsOnProcess[element.new] = {
+          sens: toAdd[2] ? 1 : -1,
+          finded: toAdd[2],
+        };
+      }
     });
     Globals.currentPlayer.credibility = (Globals.currentPlayer.credibility < 0) ? 0 : Globals.currentPlayer.credibility;
     Globals.currentPlayer.newsProcessing = [];
     Globals.nextPlayer();
   }
+
+  invaliderHandle(){
+    Globals.currentPlayer.newsProcessing.forEach(element => {
+      Globals.currentPlayer.newsProcessed.push({
+        new: element.new,
+        credit: element.score,
+      });
+      const toAdd: [number, boolean, boolean] = Globals.calculateCredibilityFalse(
+        Globals.getType(element.new),
+        element.score,
+        element.new,
+        Globals.getComplexVeracity(element.new)
+      );
+      if (Globals.allNewsProcessed.includes(element.new)) {
+        if (toAdd[1]) {
+          Globals.currentPlayer.credibility += toAdd[0] / 2;
+        } else {
+          Globals.currentPlayer.credibility += toAdd[0];
+        }
+      } else {
+        Globals.currentPlayer.credibility += toAdd[0];
+        Globals.allNewsProcessed.push(element.new);
+        Globals.simpleNewsOnProcess[element.new] = {
+          sens: toAdd[2] ? 1 : -1,
+          finded: toAdd[2],
+        };
+      }
+    });
+    Globals.currentPlayer.credibility = (Globals.currentPlayer.credibility < 0) ? 0 : Globals.currentPlayer.credibility;
+    Globals.currentPlayer.newsProcessing = [];
+    Globals.nextPlayer();
+  }
+
   finishHandle(){
-    console.log("FINISH");
     Globals.nextPlayer();
     console.log(Globals.currentPlayer)
   }

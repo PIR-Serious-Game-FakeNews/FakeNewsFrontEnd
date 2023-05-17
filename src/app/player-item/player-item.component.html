@@ -10,7 +10,7 @@
     <span class="credText">Crédibilité : {{ playerInfo.credibility }}</span>
     <mat-progress-bar
       mode="determinate"
-      value="{{ playerInfo.credibility }}"
+      value="{{ playerInfo.credibility / 5 }}"
       color="primary"
       class="progressBar"
     ></mat-progress-bar>

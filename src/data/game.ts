@@ -8,7 +8,7 @@ export type player = {
 
 export let playerRecord: Array<player> = [
   {
-    "username": "Brandon",
+    "username": "Marc",
     "credibility": 17,
     "newsProcessing": [{
       "new": "<b>[Nantes]</b> Le Gouvernement pense que le réchauffement climatique et un complot visant à réduire la productivité.",
@@ -24,7 +24,7 @@ export let playerRecord: Array<player> = [
     ]
   },
   {
-    "username": "Clément",
+    "username": "Mady",
     "credibility": 15,
     "newsProcessing": [],
     "newsProcessed": [
