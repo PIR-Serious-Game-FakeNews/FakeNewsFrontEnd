@@ -190,6 +190,20 @@ let franceTowns = [
   'Le Mans',
 ];
 
+let russieTown = ['Moscou', 'Iakoutsk '];
+
+let chinaTown = ['Tibet', 'Pékin'];
+
+let canadaTown = ['Ottawa', 'Vancouver'];
+
+let usaTown = ['Los Angeles', 'Miami', 'Alaska'];
+
+let bresilTown = ['Forêt amazonienne', 'Rio de Janeiro', 'Salvador'];
+
+let argentinaTown = ['Buenos Aires', 'Ushuaïa'];
+
+let australiaTown = ['Sydney', 'Perth', 'Darwin'];
+
 function selectRandomElement(arr: any[]): any {
   const randomIndex = Math.floor(Math.random() * arr.length);
   return arr[randomIndex];
@@ -200,6 +214,69 @@ export function generateSimpleNews(location: string) {
     let sn: string;
     do {
       let town = selectRandomElement(franceTowns);
+      let s = selectRandomElement(subject);
+      let v = selectRandomElement(verb);
+      sn = '<b>[' + town + ']</b> ' + s + ' ' + v + '.';
+    } while (simpleNewsList[location].includes(sn));
+    simpleNewsList[location].push(sn);
+  } else if (location == 'Russie') {
+    let sn: string;
+    do {
+      let town = selectRandomElement(russieTown);
+      let s = selectRandomElement(subject);
+      let v = selectRandomElement(verb);
+      sn = '<b>[' + town + ']</b> ' + s + ' ' + v + '.';
+    } while (simpleNewsList[location].includes(sn));
+    simpleNewsList[location].push(sn);
+  } else if (location == 'Chine') {
+    let sn: string;
+    do {
+      let town = selectRandomElement(chinaTown);
+      let s = selectRandomElement(subject);
+      let v = selectRandomElement(verb);
+      sn = '<b>[' + town + ']</b> ' + s + ' ' + v + '.';
+    } while (simpleNewsList[location].includes(sn));
+    simpleNewsList[location].push(sn);
+  } else if (location == 'Canada') {
+    let sn: string;
+    do {
+      let town = selectRandomElement(canadaTown);
+      let s = selectRandomElement(subject);
+      let v = selectRandomElement(verb);
+      sn = '<b>[' + town + ']</b> ' + s + ' ' + v + '.';
+    } while (simpleNewsList[location].includes(sn));
+    simpleNewsList[location].push(sn);
+  } else if (location == 'Etats-Unis') {
+    let sn: string;
+    do {
+      let town = selectRandomElement(usaTown);
+      let s = selectRandomElement(subject);
+      let v = selectRandomElement(verb);
+      sn = '<b>[' + town + ']</b> ' + s + ' ' + v + '.';
+    } while (simpleNewsList[location].includes(sn));
+    simpleNewsList[location].push(sn);
+  } else if (location == 'Brésil') {
+    let sn: string;
+    do {
+      let town = selectRandomElement(bresilTown);
+      let s = selectRandomElement(subject);
+      let v = selectRandomElement(verb);
+      sn = '<b>[' + town + ']</b> ' + s + ' ' + v + '.';
+    } while (simpleNewsList[location].includes(sn));
+    simpleNewsList[location].push(sn);
+  }else if (location == 'Argentine') {
+    let sn: string;
+    do {
+      let town = selectRandomElement(argentinaTown);
+      let s = selectRandomElement(subject);
+      let v = selectRandomElement(verb);
+      sn = '<b>[' + town + ']</b> ' + s + ' ' + v + '.';
+    } while (simpleNewsList[location].includes(sn));
+    simpleNewsList[location].push(sn);
+  } else if (location == 'Australie') {
+    let sn: string;
+    do {
+      let town = selectRandomElement(argentinaTown);
       let s = selectRandomElement(subject);
       let v = selectRandomElement(verb);
       sn = '<b>[' + town + ']</b> ' + s + ' ' + v + '.';
@@ -235,13 +312,78 @@ export function generateAllSimpleNews() {
         }
       } else {
         if (Math.random() > 0.5) {
-          let sn: string;
-          do {
-            const s = selectRandomElement(subject);
-            const v = selectRandomElement(verb);
-            sn = s + ' ' + v + '.';
-          } while (simpleNewsList[location].includes(sn));
-          simpleNewsList[location].push(sn);
+          if (location == 'Russie') {
+            let sn: string;
+            do {
+              let town = selectRandomElement(russieTown);
+              let s = selectRandomElement(subject);
+              let v = selectRandomElement(verb);
+              sn = '<b>[' + town + ']</b> ' + s + ' ' + v + '.';
+            } while (simpleNewsList[location].includes(sn));
+            simpleNewsList[location].push(sn);
+          } else if (location == 'Chine') {
+            let sn: string;
+            do {
+              let town = selectRandomElement(chinaTown);
+              let s = selectRandomElement(subject);
+              let v = selectRandomElement(verb);
+              sn = '<b>[' + town + ']</b> ' + s + ' ' + v + '.';
+            } while (simpleNewsList[location].includes(sn));
+            simpleNewsList[location].push(sn);
+          } else if (location == 'Canada') {
+            let sn: string;
+            do {
+              let town = selectRandomElement(canadaTown);
+              let s = selectRandomElement(subject);
+              let v = selectRandomElement(verb);
+              sn = '<b>[' + town + ']</b> ' + s + ' ' + v + '.';
+            } while (simpleNewsList[location].includes(sn));
+            simpleNewsList[location].push(sn);
+          } else if (location == 'Etats-Unis') {
+            let sn: string;
+            do {
+              let town = selectRandomElement(usaTown);
+              let s = selectRandomElement(subject);
+              let v = selectRandomElement(verb);
+              sn = '<b>[' + town + ']</b> ' + s + ' ' + v + '.';
+            } while (simpleNewsList[location].includes(sn));
+            simpleNewsList[location].push(sn);
+          } else if (location == 'Brésil') {
+            let sn: string;
+            do {
+              let town = selectRandomElement(bresilTown);
+              let s = selectRandomElement(subject);
+              let v = selectRandomElement(verb);
+              sn = '<b>[' + town + ']</b> ' + s + ' ' + v + '.';
+            } while (simpleNewsList[location].includes(sn));
+            simpleNewsList[location].push(sn);
+          }else if (location == 'Argentine') {
+            let sn: string;
+            do {
+              let town = selectRandomElement(argentinaTown);
+              let s = selectRandomElement(subject);
+              let v = selectRandomElement(verb);
+              sn = '<b>[' + town + ']</b> ' + s + ' ' + v + '.';
+            } while (simpleNewsList[location].includes(sn));
+            simpleNewsList[location].push(sn);
+          } else if (location == 'Australie') {
+            let sn: string;
+            do {
+              let town = selectRandomElement(argentinaTown);
+              let s = selectRandomElement(subject);
+              let v = selectRandomElement(verb);
+              sn = '<b>[' + town + ']</b> ' + s + ' ' + v + '.';
+            } while (simpleNewsList[location].includes(sn));
+            simpleNewsList[location].push(sn);
+          } else {
+            let sn: string;
+            do {
+              let s = selectRandomElement(subject);
+              let v = selectRandomElement(verb);
+              sn = s + ' ' + v + '.';
+            } while (simpleNewsList[location].includes(sn));
+            simpleNewsList[location].push(sn);
+          }
         }
       }
     }
