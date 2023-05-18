@@ -16,7 +16,7 @@ export class AddUserComponent {
 
   handleSubmit() {
     const formData = {
-      username: this.username,
+      username: this.username.trim(),
       image: this.image,
     };
     // Call the function passed as a prop
