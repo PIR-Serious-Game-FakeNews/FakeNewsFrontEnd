@@ -30,28 +30,28 @@ export let europeanCountryFlags: Array<{
   countryName: string;
   flagUrl: string;
 }> = [
-  { countryName: 'France', flagUrl: 'https://flagsapi.com/FR/flat/64.png' },
-  { countryName: 'Angleterre', flagUrl: 'https://flagsapi.com/GB/flat/64.png' },
-  { countryName: 'Espagne', flagUrl: 'https://flagsapi.com/ES/flat/64.png' },
-  { countryName: 'Allemagne', flagUrl: 'https://flagsapi.com/DE/flat/64.png' },
-  { countryName: 'Pologne', flagUrl: 'https://flagsapi.com/PL/flat/64.png' },
-  { countryName: 'Italie', flagUrl: 'https://flagsapi.com/IT/flat/64.png' },
-  { countryName: 'Portugal', flagUrl: 'https://flagsapi.com/PT/flat/64.png' },
-  { countryName: 'Pays-Bas', flagUrl: 'https://flagsapi.com/NL/flat/64.png' },
-  { countryName: 'Suède', flagUrl: 'https://flagsapi.com/SE/flat/64.png' },
-  { countryName: 'Finlande', flagUrl: 'https://flagsapi.com/FI/flat/64.png' },
-  { countryName: 'Norvège', flagUrl: 'https://flagsapi.com/NO/flat/64.png' },
-  { countryName: 'Danemark', flagUrl: 'https://flagsapi.com/DK/flat/64.png' },
-  { countryName: 'Ukraine', flagUrl: 'https://flagsapi.com/UA/flat/64.png' },
-  { countryName: 'Lettonie', flagUrl: 'https://flagsapi.com/LV/flat/64.png' },
-  { countryName: 'Roumanie', flagUrl: 'https://flagsapi.com/RO/flat/64.png' },
-  { countryName: 'Croatie', flagUrl: 'https://flagsapi.com/HR/flat/64.png' },
-  { countryName: 'Grèce', flagUrl: 'https://flagsapi.com/GR/flat/64.png' },
-  { countryName: 'Suisse', flagUrl: 'https://flagsapi.com/CH/flat/64.png' },
-  { countryName: 'Slovaquie', flagUrl: 'https://flagsapi.com/SK/flat/64.png' },
-  { countryName: 'Serbie', flagUrl: 'https://flagsapi.com/RS/flat/64.png' },
-  { countryName: 'Islande', flagUrl: 'https://flagsapi.com/IS/flat/64.png' },
-  { countryName: 'Groenland', flagUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/09/Flag_of_Greenland.svg' },
+  { countryName: 'France', flagUrl: 'https://flagcdn.com/FR.svg' },
+  { countryName: 'Angleterre', flagUrl: 'https://flagcdn.com/GB.svg' },
+  { countryName: 'Espagne', flagUrl: 'https://flagcdn.com/ES.svg' },
+  { countryName: 'Allemagne', flagUrl: 'https://flagcdn.com/DE.svg' },
+  { countryName: 'Pologne', flagUrl: 'https://flagcdn.com/PL.svg' },
+  { countryName: 'Italie', flagUrl: 'https://flagcdn.com/IT.svg' },
+  { countryName: 'Portugal', flagUrl: 'https://flagcdn.com/PT.svg' },
+  { countryName: 'Pays-Bas', flagUrl: 'https://flagcdn.com/NL.svg' },
+  { countryName: 'Suède', flagUrl: 'https://flagcdn.com/SE.svg' },
+  { countryName: 'Finlande', flagUrl: 'https://flagcdn.com/FI.svg' },
+  { countryName: 'Norvège', flagUrl: 'https://flagcdn.com/NO.svg' },
+  { countryName: 'Danemark', flagUrl: 'https://flagcdn.com/DK.svg' },
+  { countryName: 'Ukraine', flagUrl: 'https://flagcdn.com/UA.svg' },
+  { countryName: 'Lettonie', flagUrl: 'https://flagcdn.com/LV.svg' },
+  { countryName: 'Roumanie', flagUrl: 'https://flagcdn.com/RO.svg' },
+  { countryName: 'Croatie', flagUrl: 'https://flagcdn.com/HR.svg' },
+  { countryName: 'Grèce', flagUrl: 'https://flagcdn.com/GR.svg' },
+  { countryName: 'Suisse', flagUrl: 'https://flagcdn.com/CH.svg' },
+  { countryName: 'Slovaquie', flagUrl: 'https://flagcdn.com/SK.svg' },
+  { countryName: 'Serbie', flagUrl: 'https://flagcdn.com/RS.svg' },
+  { countryName: 'Islande', flagUrl: 'https://flagcdn.com/IS.svg' },
+  { countryName: 'Groenland', flagUrl: 'https://flagcdn.com/GL.svg' },
 ];
 
 
@@ -59,20 +59,20 @@ export let asianCountryFlags: Array<{
   countryName: string;
   flagUrl: string;
 }> = [
-  { countryName: 'Turquie', flagUrl: 'https://flagsapi.com/TR/flat/64.png' },
-  { countryName: 'Russie', flagUrl: 'https://flagsapi.com/RU/flat/64.png' },
-  { countryName: 'Kazakhstan', flagUrl: 'https://flagsapi.com/KZ/flat/64.png' },
-  { countryName: 'Mongolie', flagUrl: 'https://flagsapi.com/MN/flat/64.png' },
-  { countryName: 'Japon', flagUrl: 'https://flagsapi.com/JP/flat/64.png' },
-  { countryName: 'Inde', flagUrl: 'https://flagsapi.com/IN/flat/64.png' },
-  { countryName: 'Thaïlande', flagUrl: 'https://flagsapi.com/TH/flat/64.png' },
-  { countryName: 'Philippines', flagUrl: 'https://flagsapi.com/PH/flat/64.png' },
-  { countryName: 'Indonésie', flagUrl: 'https://flagsapi.com/ID/flat/64.png' },
-  { countryName: 'Afghanistan', flagUrl: 'https://flagsapi.com/AF/flat/64.png' },
-  { countryName: 'Chine', flagUrl: 'https://flagsapi.com/CN/flat/64.png' },
-  { countryName: 'Hong Kong', flagUrl: 'https://flagsapi.com/HK/flat/64.png' },
-  { countryName: 'Israël', flagUrl: 'https://flagsapi.com/IL/flat/64.png' },
-  { countryName: 'Emirats Arabes Unis', flagUrl: 'https://flagsapi.com/AE/flat/64.png' },
+  { countryName: 'Turquie', flagUrl: 'https://flagcdn.com/TR.svg' },
+  { countryName: 'Russie', flagUrl: 'https://flagcdn.com/RU.svg' },
+  { countryName: 'Kazakhstan', flagUrl: 'https://flagcdn.com/KZ.svg' },
+  { countryName: 'Mongolie', flagUrl: 'https://flagcdn.com/MN.svg' },
+  { countryName: 'Japon', flagUrl: 'https://flagcdn.com/JP.svg' },
+  { countryName: 'Inde', flagUrl: 'https://flagcdn.com/IN.svg' },
+  { countryName: 'Thaïlande', flagUrl: 'https://flagcdn.com/TH.svg' },
+  { countryName: 'Philippines', flagUrl: 'https://flagcdn.com/PH.svg' },
+  { countryName: 'Indonésie', flagUrl: 'https://flagcdn.com/ID.svg' },
+  { countryName: 'Afghanistan', flagUrl: 'https://flagcdn.com/AF.svg' },
+  { countryName: 'Chine', flagUrl: 'https://flagcdn.com/CN.svg' },
+  { countryName: 'Hong Kong', flagUrl: 'https://flagcdn.com/HK.svg' },
+  { countryName: 'Israël', flagUrl: 'https://flagcdn.com/IL.svg' },
+  { countryName: 'Emirats Arabes Unis', flagUrl: 'https://flagcdn.com/AE.svg' },
 ];
 
 
@@ -80,55 +80,55 @@ export let americanCountryFlags: Array<{
   countryName: string;
   flagUrl: string;
 }> = [
-  { countryName: 'Canada', flagUrl: 'https://flagsapi.com/CA/flat/64.png' },
+  { countryName: 'Canada', flagUrl: 'https://flagcdn.com/CA.svg' },
   {
     countryName: 'Etats-Unis',
-    flagUrl: 'https://flagsapi.com/US/flat/64.png',
+    flagUrl: 'https://flagcdn.com/US.svg',
   },
-  { countryName: 'Mexique', flagUrl: 'https://flagsapi.com/MX/flat/64.png' },
-  { countryName: 'Venezuela', flagUrl: 'https://flagsapi.com/VE/flat/64.png' },
-  { countryName: 'Honduras', flagUrl: 'https://flagsapi.com/HN/flat/64.png' },
-  { countryName: 'Colombie', flagUrl: 'https://flagsapi.com/CO/flat/64.png' },
-  { countryName: 'Pérou', flagUrl: 'https://flagsapi.com/PE/flat/64.png' },
-  { countryName: 'Brésil', flagUrl: 'https://flagsapi.com/BR/flat/64.png' },
+  { countryName: 'Mexique', flagUrl: 'https://flagcdn.com/MX.svg' },
+  { countryName: 'Venezuela', flagUrl: 'https://flagcdn.com/VE.svg' },
+  { countryName: 'Honduras', flagUrl: 'https://flagcdn.com/HN.svg' },
+  { countryName: 'Colombie', flagUrl: 'https://flagcdn.com/CO.svg' },
+  { countryName: 'Pérou', flagUrl: 'https://flagcdn.com/PE.svg' },
+  { countryName: 'Brésil', flagUrl: 'https://flagcdn.com/BR.svg' },
   {
     countryName: 'Guyane Française',
-    flagUrl: 'https://flagsapi.com/GY/flat/64.png',
+    flagUrl: 'https://flagcdn.com/GY.svg',
   },
-  { countryName: 'Bolivie', flagUrl: 'https://flagsapi.com/BO/flat/64.png' },
-  { countryName: 'Argentine', flagUrl: 'https://flagsapi.com/AR/flat/64.png' },
+  { countryName: 'Bolivie', flagUrl: 'https://flagcdn.com/BO.svg' },
+  { countryName: 'Argentine', flagUrl: 'https://flagcdn.com/AR.svg' },
 ];
 
 
 
 export let africanCountryFlags: Array<{ countryName: string; flagUrl: string }> = [
-  { countryName: 'Madagascar', flagUrl: 'https://flagsapi.com/MG/flat/64.png' },
-  { countryName: 'Algérie', flagUrl: 'https://flagsapi.com/DZ/flat/64.png' },
-  { countryName: 'Angola', flagUrl: 'https://flagsapi.com/AO/flat/64.png' },
-  { countryName: 'Cameroun', flagUrl: 'https://flagsapi.com/CM/flat/64.png' },
-  { countryName: 'Côte d\'Ivoire', flagUrl: 'https://flagsapi.com/CI/flat/64.png' },
-  { countryName: 'Egypte', flagUrl: 'https://flagsapi.com/EG/flat/64.png' },
-  { countryName: 'Ethiopie', flagUrl: 'https://flagsapi.com/ET/flat/64.png' },
-  { countryName: 'Kenya', flagUrl: 'https://flagsapi.com/KE/flat/64.png' },
-  { countryName: 'Mali', flagUrl: 'https://flagsapi.com/ML/flat/64.png' },
-  { countryName: 'Maroc', flagUrl: 'https://flagsapi.com/MA/flat/64.png' },
-  { countryName: 'Niger', flagUrl: 'https://flagsapi.com/NE/flat/64.png' },
-  { countryName: 'République du Congo', flagUrl: 'https://flagsapi.com/CG/flat/64.png' },
-  { countryName: 'Sénégal', flagUrl: 'https://flagsapi.com/SN/flat/64.png' },
-  { countryName: 'Afrique du Sud', flagUrl: 'https://flagsapi.com/ZA/flat/64.png' },
-  { countryName: 'Soudan', flagUrl: 'https://flagsapi.com/SD/flat/64.png' },
-  { countryName: 'Tanzanie', flagUrl: 'https://flagsapi.com/TZ/flat/64.png' },
-  { countryName: 'Tunisie', flagUrl: 'https://flagsapi.com/TN/flat/64.png' },
-  { countryName: 'Zambie', flagUrl: 'https://flagsapi.com/ZM/flat/64.png' },
+  { countryName: 'Madagascar', flagUrl: 'https://flagcdn.com/MG.svg' },
+  { countryName: 'Algérie', flagUrl: 'https://flagcdn.com/DZ.svg' },
+  { countryName: 'Angola', flagUrl: 'https://flagcdn.com/AO.svg' },
+  { countryName: 'Cameroun', flagUrl: 'https://flagcdn.com/CM.svg' },
+  { countryName: 'Côte d\'Ivoire', flagUrl: 'https://flagcdn.com/CI.svg' },
+  { countryName: 'Egypte', flagUrl: 'https://flagcdn.com/EG.svg' },
+  { countryName: 'Ethiopie', flagUrl: 'https://flagcdn.com/ET.svg' },
+  { countryName: 'Kenya', flagUrl: 'https://flagcdn.com/KE.svg' },
+  { countryName: 'Mali', flagUrl: 'https://flagcdn.com/ML.svg' },
+  { countryName: 'Maroc', flagUrl: 'https://flagcdn.com/MA.svg' },
+  { countryName: 'Niger', flagUrl: 'https://flagcdn.com/NE.svg' },
+  { countryName: 'République du Congo', flagUrl: 'https://flagcdn.com/CG.svg' },
+  { countryName: 'Sénégal', flagUrl: 'https://flagcdn.com/SN.svg' },
+  { countryName: 'Afrique du Sud', flagUrl: 'https://flagcdn.com/ZA.svg' },
+  { countryName: 'Soudan', flagUrl: 'https://flagcdn.com/SD.svg' },
+  { countryName: 'Tanzanie', flagUrl: 'https://flagcdn.com/TZ.svg' },
+  { countryName: 'Tunisie', flagUrl: 'https://flagcdn.com/TN.svg' },
+  { countryName: 'Zambie', flagUrl: 'https://flagcdn.com/ZM.svg' },
 ];
 
 
 
 
 export let oceaniaCountryFlags: Array<{ countryName: string; flagUrl: string }> = [
-  { countryName: 'Australie', flagUrl: 'https://flagsapi.com/AU/flat/64.png' },
-  { countryName: 'Fidji', flagUrl: 'https://flagsapi.com/FJ/flat/64.png' },
-  { countryName: 'Nouvelle-Zélande', flagUrl: 'https://flagsapi.com/NZ/flat/64.png' },
+  { countryName: 'Australie', flagUrl: 'https://flagcdn.com/AU.svg' },
+  { countryName: 'Fidji', flagUrl: 'https://flagcdn.com/FJ.svg' },
+  { countryName: 'Nouvelle-Zélande', flagUrl: 'https://flagcdn.com/NZ.svg' },
 ];
 
 

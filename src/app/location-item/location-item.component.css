@@ -3,8 +3,16 @@
 }
 
 img {
+  height: auto;
+  width: 150px;
+}
+
+.container-location{
   height: 150px;
   width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .location {
@@ -23,6 +31,10 @@ img {
 
 @media screen and (max-width: 1150px) {
   img {
+    height: auto;
+    width: 100px;
+  }
+  .container-location{
     height: 100px;
     width: 100px;
   }
@@ -38,6 +50,11 @@ img {
 
 @media screen and (max-width: 425px) {
   img {
+    height: auto;
+    width: 50px;
+  }
+
+  .container-location{
     height: 50px;
     width: 50px;
   }

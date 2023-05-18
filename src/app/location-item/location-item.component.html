@@ -1,4 +1,6 @@
 <li class="location" matBadge={{numberOfFakeNews}} matBadgeOverlap="true" matBadgeSize="medium">
-    <img [src]="location.flagUrl" alt="{{ location.countryName }}" />
+    <div class="container-location">
+        <img [src]="location.flagUrl.toLowerCase()" alt="{{ location.countryName }}" />
+    </div>
     <div>{{ location.countryName }}</div>
 </li>
