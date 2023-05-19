@@ -18,10 +18,7 @@ export class PublishModalComponent {
   
   publishHandle(){
     Globals.currentPlayer.newsProcessing.forEach(element => {
-      Globals.currentPlayer.newsProcessed.push({
-        new: element.new,
-        credit: element.score,
-      });
+      let credit = 0;
       const toAdd: [number, boolean, boolean] = Globals.calculateCredibility(
         Globals.getType(element.new),
         element.score,
@@ -30,11 +27,14 @@ export class PublishModalComponent {
       );
       if (Globals.allNewsProcessed.includes(element.new)) {
         if (toAdd[1]) {
+          credit = toAdd[0] / 2;
           Globals.currentPlayer.credibility += toAdd[0] / 2;
         } else {
+          credit = toAdd[0];
           Globals.currentPlayer.credibility += toAdd[0];
         }
       } else {
+        credit = toAdd[0];
         Globals.currentPlayer.credibility += toAdd[0];
         Globals.allNewsProcessed.push(element.new);
         Globals.simpleNewsOnProcess[element.new] = {
@@ -42,6 +42,11 @@ export class PublishModalComponent {
           finded: toAdd[2],
         };
       }
+      Globals.currentPlayer.newsProcessed.push({
+        new: element.new,
+        credit: credit,
+        veracity: toAdd[2]
+      });
     });
     Globals.currentPlayer.credibility = (Globals.currentPlayer.credibility < 0) ? 0 : Globals.currentPlayer.credibility;
     Globals.currentPlayer.newsProcessing = [];
@@ -50,10 +55,7 @@ export class PublishModalComponent {
 
   invaliderHandle(){
     Globals.currentPlayer.newsProcessing.forEach(element => {
-      Globals.currentPlayer.newsProcessed.push({
-        new: element.new,
-        credit: element.score,
-      });
+      let credit = 0;
       const toAdd: [number, boolean, boolean] = Globals.calculateCredibilityFalse(
         Globals.getType(element.new),
         element.score,
@@ -62,11 +64,14 @@ export class PublishModalComponent {
       );
       if (Globals.allNewsProcessed.includes(element.new)) {
         if (toAdd[1]) {
+          credit = toAdd[0] / 2;
           Globals.currentPlayer.credibility += toAdd[0] / 2;
         } else {
+          credit = toAdd[0];
           Globals.currentPlayer.credibility += toAdd[0];
         }
       } else {
+        credit = toAdd[0];
         Globals.currentPlayer.credibility += toAdd[0];
         Globals.allNewsProcessed.push(element.new);
         Globals.simpleNewsOnProcess[element.new] = {
@@ -74,6 +79,11 @@ export class PublishModalComponent {
           finded: toAdd[2],
         };
       }
+      Globals.currentPlayer.newsProcessed.push({
+        new: element.new,
+        credit: credit,
+        veracity: toAdd[2]
+      });
     });
     Globals.currentPlayer.credibility = (Globals.currentPlayer.credibility < 0) ? 0 : Globals.currentPlayer.credibility;
     Globals.currentPlayer.newsProcessing = [];

@@ -295,10 +295,10 @@ export function generateSimpleNews(location: string) {
 
 export function generateAllSimpleNews() {
   const locations = Object.keys(simpleNewsList);
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 2; i++) {
     for (const location of locations) {
       if (location == 'France') {
-        for (let index = 0; index < 3; index++) {
+        for (let index = 0; index < 2; index++) {
           if (Math.random() > 0.5) {
             let sn: string;
             do {
@@ -311,7 +311,7 @@ export function generateAllSimpleNews() {
           }
         }
       } else {
-        if (Math.random() > 0.5) {
+        if (Math.random() > 0.7) {
           if (location == 'Russie') {
             let sn: string;
             do {

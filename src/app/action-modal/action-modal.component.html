@@ -4,7 +4,8 @@
   <div class="actions" *ngFor="let action of actions" [ngClass]="{ 'dark-background': isActionDone(action) }">
     <div class="desc">{{ action.actor }}</div>
     <div class="action">
-      <span title="Coût">{{ action.cout }}</span>
+      <span title="Coût" *ngIf="this.data.simple">{{ action.cout }}</span>
+      <span title="Coût" *ngIf="!this.data.simple">{{ action.cout + 1 }}</span>
       <button
         class="actionBtn"
         mat-raised-button

@@ -35,10 +35,7 @@ export class UserInfoDetailsComponent {
   }
 
   publier(news: { new: string; score: number; sens: number }) {
-    Globals.currentPlayer.newsProcessed.push({
-      new: news.new,
-      credit: news.score,
-    });
+    let credit = 0;
     const toAdd: [number, boolean, boolean] = Globals.calculateCredibility(
       Globals.getType(news.new),
       news.score,
@@ -48,10 +45,13 @@ export class UserInfoDetailsComponent {
     if (Globals.allNewsProcessed.includes(news.new)) {
       if (toAdd[1]) {
         Globals.currentPlayer.credibility += toAdd[0] / 2;
+        credit = toAdd[0] / 2;
       } else {
         Globals.currentPlayer.credibility += toAdd[0];
+        credit = toAdd[0];
       }
     } else {
+        credit = toAdd[0];
       Globals.currentPlayer.credibility += toAdd[0];
       Globals.allNewsProcessed.push(news.new);
       Globals.simpleNewsOnProcess[news.new] = {
@@ -59,6 +59,13 @@ export class UserInfoDetailsComponent {
         finded: toAdd[2],
       };
     }
+
+    Globals.currentPlayer.newsProcessed.push({
+      new: news.new,
+      credit: credit,
+      veracity: toAdd[2]
+    });
+
     Globals.currentPlayer.credibility =
       Globals.currentPlayer.credibility < 0
         ? 0
@@ -70,10 +77,7 @@ export class UserInfoDetailsComponent {
   }
 
   terminer(news: { new: string; score: number; sens: number }) {
-    Globals.currentPlayer.newsProcessed.push({
-      new: news.new,
-      credit: news.score,
-    });
+    let credit = 0;
     const toAdd: [number, boolean, boolean] = Globals.calculateCredibilityFalse(
       Globals.getType(news.new),
       news.score,
@@ -82,11 +86,14 @@ export class UserInfoDetailsComponent {
     );
     if (Globals.allNewsProcessed.includes(news.new)) {
       if (toAdd[1]) {
+        credit = toAdd[0] / 2;
         Globals.currentPlayer.credibility += toAdd[0] / 2;
       } else {
+        credit = toAdd[0];
         Globals.currentPlayer.credibility += toAdd[0];
       }
     } else {
+      credit = toAdd[0];
       Globals.currentPlayer.credibility += toAdd[0];
       Globals.allNewsProcessed.push(news.new);
       Globals.simpleNewsOnProcess[news.new] = {
@@ -94,10 +101,25 @@ export class UserInfoDetailsComponent {
         finded: toAdd[2],
       };
     }
+
+    Globals.currentPlayer.newsProcessed.push({
+      new: news.new,
+      credit: credit,
+      veracity: toAdd[2]
+    });
+
+
     Globals.currentPlayer.credibility =
       Globals.currentPlayer.credibility < 0
         ? 0
         : Globals.currentPlayer.credibility;
+    Globals.currentPlayer.newsProcessing =
+      Globals.currentPlayer.newsProcessing.filter(
+        (value, index) => value.new != news.new
+      );
+  }
+
+  skipnews(news: { new: string; score: number; sens: number }) {
     Globals.currentPlayer.newsProcessing =
       Globals.currentPlayer.newsProcessing.filter(
         (value, index) => value.new != news.new

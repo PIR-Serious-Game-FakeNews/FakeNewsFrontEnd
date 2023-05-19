@@ -1,4 +1,4 @@
-<h1 mat-dialog-title>Infos de {{user.username}}</h1>
+<h1 mat-dialog-title>Infos de {{ user.username }}</h1>
 <mat-divider></mat-divider>
 <div class="user">
   <div class="title">News en cours de traitement</div>
@@ -21,12 +21,27 @@
         <button mat-raised-button (click)="terminer(news)">
           Invalider la news
         </button>
+        <button mat-raised-button (click)="skipnews(news)">
+          Terminer la news
+        </button>
       </div>
     </div>
   </div>
   <div class="title">News déjà traitées</div>
   <div *ngFor="let new of user.newsProcessed" class="new">
-    <span class="oldNew" [innerHTML]="new.new"></span> <span class="gain" title="Véracité finale"> {{ new.credit }}% </span>
+    <span class="oldNew" [innerHTML]="new.new"></span>
+    <span style="display: flex; gap: 10px;">
+      <span class="gain" title="Crédibilité gagnée">
+        {{ new.credit }}
+      </span>
+      <span class="veracity" title="Véracité de la News" *ngIf="new.veracity == true">
+        <span style="color: green;">Vrai</span>
+      </span>
+      <span class="veracity" title="Véracité de la News" *ngIf="new.veracity == false">
+       <span style="color: red;">Faux</span>
+      </span>
+    </span
+    >
   </div>
 </div>
 <div mat-dialog-actions>

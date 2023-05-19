@@ -54,6 +54,17 @@ mat-progress-bar {
   cursor: help;
 }
 
+.veracity{
+  font-size: larger;
+  font-weight: 500;
+  color: rgb(17, 76, 17);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  cursor: help;
+}
+
 mat-progress-bar {
   height: 15px;
   border-radius: 10px;

@@ -3,7 +3,7 @@ export type player = {
   username: string;
   credibility: number;
   newsProcessing: Array<{ new: string; score: number, actions: string[], sens: number }>;
-  newsProcessed: Array<{ new: string; credit: number }>;
+  newsProcessed: Array<{ new: string; credit: number, veracity: boolean }>;
 };
 
 export let playerRecord: Array<player> = [
@@ -19,7 +19,8 @@ export let playerRecord: Array<player> = [
     "newsProcessed": [
       {
         "new": "<b>[Rennes] </b>Les autorités ont découvert un réseau de trafiquants d’animaux exotiques dans la région.",
-        "credit": 83
+        "credit": 83,
+        "veracity": true
       }
     ]
   },
@@ -30,7 +31,8 @@ export let playerRecord: Array<player> = [
     "newsProcessed": [
       {
         "new": "<b>[Nantes]</b> Le Gouvernement pense que le réchauffement climatique et un complot visant à réduire la productivité.",
-        "credit": 75
+        "credit": 75,
+        "veracity": true
       }
     ]
   },
@@ -41,7 +43,8 @@ export let playerRecord: Array<player> = [
     "newsProcessed": [
       {
         "new": "<b>[Rennes] </b>Les autorités ont découvert un réseau de trafiquants d’animaux exotiques dans la région.",
-        "credit": 65
+        "credit": 65,
+        "veracity": true
       }
     ]
   },
@@ -52,7 +55,8 @@ export let playerRecord: Array<player> = [
     "newsProcessed": [
       {
         "new": "<b>[Rennes] </b>Les autorités ont découvert un réseau de trafiquants d’animaux exotiques dans la région.",
-        "credit": 55
+        "credit": 55,
+        "veracity": true
       }
     ]
   }
@@ -63,74 +67,74 @@ export let currentPlayer: player = playerRecord[currentPlayerIndex];
 
 export let unlockLevel: { [country: string]: number } = {
   France: 0,
-  Angleterre: 63,
-  Espagne: 32,
-  Allemagne: 48,
-  Pologne: 78,
-  Italie: 21,
-  Portugal: 56,
-  "Pays-Bas": 89,
-  Suède: 42,
-  Finlande: 71,
-  Norvège: 37,
-  Danemark: 68,
-  Ukraine: 14,
-  Lettonie: 93,
-  Roumanie: 26,
-  Croatie: 53,
-  Grèce: 79,
-  Suisse: 17,
-  Slovaquie: 91,
-  Serbie: 39,
-  Islande: 58,
-  Groenland: 84,
-  Turquie: 29,
-  Russie: 76,
-  Kazakhstan: 23,
-  Mongolie: 62,
-  Japon: 34,
-  Inde: 55,
-  Thaïlande: 81,
-  Philippines: 18,
-  Indonésie: 47,
-  Afghanistan: 73,
-  Chine: 64,
-  "Hong Kong": 95,
-  Israël: 12,
-  "Emirats Arabes Unis": 83,
-  Maroc: 51,
-  Algérie: 36,
-  Egypte: 69,
-  Sénégal: 16,
-  Mali: 88,
-  "Côte d'Ivoire": 27,
-  Cameroun: 54,
-  Niger: 80,
-  Soudan: 25,
-  Ethiopie: 60,
-  Kenya: 41,
-  "République du Congo": 74,
-  Angola: 30,
-  "Afrique du Sud": 66,
-  Madagascar: 87,
-  Tanzanie: 22,
-  Zambie: 57,
-  Tunisie: 33,
-  Canada: 72,
-  "Etats-Unis": 19,
-  Alaska: 86,
-  Mexique: 13,
-  Venezuela: 61,
-  Honduras: 40,
-  Colombie: 75,
-  Pérou: 31,
-  Brésil: 44,
-  "Guyane Française": 77,
-  Bolivie: 35,
-  Argentine: 28,
-  Australie: 37,
-  "Nouvelle-Zélande": 63,
-  Fidji: 70,
+  Angleterre: 40,
+  Espagne: 40,
+  Allemagne: 40,
+  Pologne: 40,
+  Italie: 40,
+  Portugal: 40,
+  "Pays-Bas": 40,
+  Suède: 40,
+  Finlande: 40,
+  Norvège: 40,
+  Danemark: 40,
+  Ukraine: 40,
+  Lettonie: 40,
+  Roumanie: 40,
+  Croatie: 40,
+  Grèce: 40,
+  Suisse: 40,
+  Slovaquie: 40,
+  Serbie: 40,
+  Islande: 40,
+  Groenland: 40,
+  Turquie: 100,
+  Russie: 100,
+  Kazakhstan: 100,
+  Mongolie: 100,
+  Japon: 100,
+  Inde: 100,
+  Thaïlande: 100,
+  Philippines: 100,
+  Indonésie: 100,
+  Afghanistan: 100,
+  Chine: 100,
+  "Hong Kong": 100,
+  Israël: 100,
+  "Emirats Arabes Unis": 100,
+  Maroc: 170,
+  Algérie: 170,
+  Egypte: 170,
+  Sénégal: 170,
+  Mali: 170,
+  "Côte d'Ivoire": 170,
+  Cameroun: 170,
+  Niger: 170,
+  Soudan: 170,
+  Ethiopie: 170,
+  Kenya: 170,
+  "République du Congo": 170,
+  Angola: 170,
+  "Afrique du Sud": 170,
+  Madagascar: 170,
+  Tanzanie: 170,
+  Zambie: 170,
+  Tunisie: 170,
+  Canada: 220,
+  "Etats-Unis": 220,
+  Alaska: 220,
+  Mexique: 220,
+  Venezuela: 220,
+  Honduras: 220,
+  Colombie: 220,
+  Pérou: 220,
+  Brésil: 220,
+  "Guyane Française": 220,
+  Bolivie: 220,
+  Argentine: 220,
+  Australie: 275,
+  "Nouvelle-Zélande": 275,
+  Fidji: 275,
 };
 
 
