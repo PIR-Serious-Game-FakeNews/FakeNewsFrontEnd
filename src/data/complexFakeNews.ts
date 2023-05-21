@@ -568,7 +568,7 @@ export const complexNews: {
         cout: 5,
       },
     ],
-  '<b>[Toulouse]</b> Selon un rapport récent, la consommation de vin rouge français réduit le risque de maladies cardiaques.':
+  '<b>[Toulouse] </b>Selon un rapport récent, la consommation de vin rouge français réduit le risque de maladies cardiaques.':
     [
       {
         actor: 'Dr. Martin, cardiologue',
