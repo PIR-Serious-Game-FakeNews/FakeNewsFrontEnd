@@ -105,3 +105,25 @@ mat-progress-bar {
     min-width: auto;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .enCours {
+    height: auto;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: auto;
+  }
+
+  .actions button{
+    height: auto;
+  }
+
+  .newNew {
+    width: 100%;
+    min-width: auto;
+  }
+}

@@ -73,6 +73,18 @@ export class PlayerSetupPageComponent {
       dialogRef.afterClosed().subscribe((result) => {
         // console.log(`Dialog result: ${result}`);
       });
+    } else if (this.tour < 1) {
+      const dialogRef = this.dialog.open(NotificationModalComponent, {
+        data: {
+          message: 'Un minimum de 1 tour est nécessaire au lancement du jeu.',
+        },
+        width: '750px',
+        height: 'max-content',
+      });
+
+      dialogRef.afterClosed().subscribe((result) => {
+        // console.log(`Dialog result: ${result}`);
+      });
     } else {
       for (let i = 0; i < Globals.allUsers.length; i++) {
         let gamePlayer: player = {
